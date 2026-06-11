@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × Travel — Research Library</title>
+<meta name="description" content="A growing library of DVF opportunity and venture feasibility studies on AI and the travel industry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --paper-2:#F1F0EB;
+  --black:#000000;
+  --ink:#141414;
+  --ink-soft:#5E6266;
+  --mute:#8D9297;
+  --accent:#15E0C6;
+  --accent-ink:#06120F;
+  --accent-deep:#0C7A69;
+  --line:#14141414;
+  --line-strong:#14141424;
+  --sans:'PP Neue Montreal','Geist','Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  --r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:#26282A;font-family:var(--sans);
+  font-size:17px;line-height:1.55;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:500;line-height:1.04;letter-spacing:-.03em;color:var(--ink)}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-.038em;line-height:1.0}
+h2{font-size:clamp(1.8rem,3.8vw,2.6rem);letter-spacing:-.035em}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#14141438;
+  text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+section{padding:84px 0;border-top:1px solid var(--line)}
+.dark{background:var(--black);color:#F1F0EB;border:none}
+.dark h2,.dark h3{color:#F1F0EB}
+
+nav{position:sticky;top:0;z-index:10;background:#FFFFFFF2;backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;
+  max-width:1060px;margin:0 auto}
+.wordmark{font-weight:500;letter-spacing:-.03em;font-size:1.05rem;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:var(--mute);text-decoration:none;font-size:.92rem;letter-spacing:-.005em}
+.nav-links a:hover{color:var(--ink)}
+
+.eyebrow{display:inline-block;font-weight:500;font-size:.74rem;letter-spacing:-.005em;
+  color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;
+  padding:5px 13px;margin-bottom:18px}
+.dark .eyebrow{color:var(--accent);border-color:#FFFFFF2E}
+
+.hero{padding:110px 0 90px;border-top:none}
+.hero p.lede{margin-top:24px;max-width:640px;font-size:1.18rem;color:var(--ink-soft)}
+.hero-meta{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;
+  font-size:.74rem;font-weight:500;color:var(--ink-soft)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-top:46px}
+.card{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;
+  background:var(--paper);display:flex;flex-direction:column}
+.card-top{background:var(--paper-2);padding:22px 24px;display:flex;
+  align-items:center;justify-content:space-between}
+.card-num{font-weight:500;font-size:.74rem;letter-spacing:-.005em;color:var(--mute)}
+.badge{border-radius:999px;font-size:.64rem;font-weight:500;padding:4px 11px;letter-spacing:-.005em}
+.badge-go{background:var(--accent);color:var(--accent-ink)}
+.badge-cond{background:var(--black);color:#F1F0EB}
+.card-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-body h3{font-size:1.34rem;letter-spacing:-.03em}
+.card-body h3 a{text-decoration:none}
+.card-body h3 a:hover{text-decoration:underline;text-decoration-color:var(--ink)}
+.card-meta{font-size:.78rem;font-weight:500;color:var(--mute);letter-spacing:-.005em}
+.card-body p{font-size:.95rem;color:var(--ink-soft);flex:1}
+.card-links{display:flex;gap:10px;margin-top:6px}
+.btn{background:var(--accent);color:var(--accent-ink);font-weight:500;font-size:.85rem;
+  padding:9px 18px;border-radius:999px;border:none;text-decoration:none;display:inline-block}
+.btn:hover{background:#0FD1B8;text-decoration:none}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong)}
+.btn-ghost:hover{background:var(--paper-2)}
+
+.method p{max-width:640px;color:var(--ink-soft);margin-top:18px}
+.method-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:40px}
+.tile{background:#0E0E0E;border:1px solid #FFFFFF1A;border-radius:10px;padding:24px}
+.tile .k{color:var(--accent);font-weight:500;font-size:.74rem;letter-spacing:-.005em;margin-bottom:10px}
+.tile p{font-size:.92rem;color:#C9CBC6}
+
+footer{border-top:1px solid var(--line);padding:34px 0;font-size:.82rem;color:var(--mute)}
+.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">AI × Travel · Research</a>
+    <div class="nav-links">
+      <a href="#studies">Studies</a>
+      <a href="#method">Method</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Research Library · 2026</span>
+    <h1>AI is rewiring travel.<br>These studies map where the money moves.</h1>
+    <p class="lede">A growing library of opportunity and venture feasibility studies on AI and the travel industry — each framed, evidenced, scored on Desirability–Viability–Feasibility, sized, and independently stress-tested.</p>
+    <div class="hero-meta">
+      <span class="chip">3 studies published</span>
+      <span class="chip">DVF methodology</span>
+      <span class="chip">Sourced evidence ledgers</span>
+    </div>
+  </div>
+</header>
+
+<section id="studies">
+  <div class="wrap">
+    <span class="eyebrow">The studies</span>
+    <h2>Each one a verdict, not just a map.</h2>
+
+    <div class="grid">
+      <!-- To add a new study: copy a card, point links at study-N/ -->
+      <article class="card">
+        <div class="card-top">
+          <span class="card-num">Study 01</span>
+          <span class="badge badge-go">Verdict · GO</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="study-1/index.html">AI × Travel — Where the Opportunity Is</a></h3>
+          <div class="card-meta">Opportunity Study · 2026</div>
+          <p>AI is loud on the demand side and quiet on the supply side — and the money is on the quiet side. Maps the disruption, scores the opportunities on DVF, and sizes the prize. The bankable near-term bet: supply-side B2B plus SME self-serve.</p>
+          <div class="card-links">
+            <a class="btn" href="study-1/index.html">Summary</a>
+            <a class="btn btn-ghost" href="study-1/report.html">Full report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-num">Study 02</span>
+          <span class="badge badge-cond">Verdict · Conditional GO</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="study-2/index.html">The Editorial House — A Luxury Travel Agency Venture Study</a></h3>
+          <div class="card-meta">Build / No-Build · DVF Venture Feasibility · 2026</div>
+          <p>Can you build a defensible luxury travel agency in the age of AI? A go/no-go study of an AI-augmented, human-advisor luxury agency — who it's for, how it's positioned, and whether the economics hold. DVF 4/4/4, medium confidence.</p>
+          <div class="card-links">
+            <a class="btn" href="study-2/index.html">Summary</a>
+            <a class="btn btn-ghost" href="study-2/report.html">Full report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="card-num">Study 03</span>
+          <span class="badge badge-go">Opportunity Map</span>
+        </div>
+        <div class="card-body">
+          <h3><a href="study-3/index.html">Travel Adjacencies — DVF Opportunity Map</a></h3>
+          <div class="card-meta">DVF Opportunity Study · Global · June 2026</div>
+          <p>Where the money moves when AI rewires travel's edges. A DVF scan of the industries adjacent to travel — services, software, insurance, media and tooling — for a small, AI-native operator. 35 sourced evidence rows, independently stress-tested.</p>
+          <div class="card-links">
+            <a class="btn" href="study-3/index.html">Summary</a>
+            <a class="btn btn-ghost" href="study-3/report.html">Full report</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dark method" id="method">
+  <div class="wrap">
+    <span class="eyebrow">Method</span>
+    <h2>How every study is built.</h2>
+    <p>Each study runs the same staged pipeline, so verdicts are comparable across the library.</p>
+    <div class="method-row">
+      <div class="tile"><div class="k">01 · Frame</div><p>Scope the boundary, the buyer, and the question the study must answer.</p></div>
+      <div class="tile"><div class="k">02 · Gather</div><p>Build a sourced evidence ledger — primary data over commentary.</p></div>
+      <div class="tile"><div class="k">03 · Score</div><p>Rate every opportunity on Desirability, Viability, Feasibility.</p></div>
+      <div class="tile"><div class="k">04 · Stress-test</div><p>An independent red-team pass challenges the verdict before it ships.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>AI × Travel · Research Library</span>
+    <span>More studies are added as they complete.</span>
+  </div>
+</footer>
+
+</body>
+</html>
