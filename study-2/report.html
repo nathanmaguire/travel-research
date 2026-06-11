@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luxury Travel Agency — Venture Feasibility Study · Detailed Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;--paper-2:#F1F0EB;--black:#000000;--ink:#141414;--ink-soft:#5E6266;
+  --mute:#8D9297;--accent:#15E0C6;--accent-ink:#06120F;--accent-deep:#0C7A69;
+  --line:#14141414;--line-strong:#14141424;
+  --sans:'PP Neue Montreal','Geist','Hanken Grotesk',system-ui,-apple-system,sans-serif;--r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:#26282A;font-family:var(--sans);font-size:17px;line-height:1.58;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--sans);font-weight:500;line-height:1.04;letter-spacing:-.03em;color:var(--ink)}
+h1{font-size:clamp(2.4rem,5.4vw,4.4rem);letter-spacing:-.038em;line-height:1.0}
+h2{font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-.035em;margin-bottom:8px}
+h3{font-size:1.18rem;letter-spacing:-.02em;margin:26px 0 8px}
+p{margin:0 0 16px}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#14141438;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:840px;margin:0 auto;padding:0 28px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+.eyebrow{display:inline-block;font-weight:500;font-size:.74rem;letter-spacing:-.005em;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;margin-bottom:18px}
+.snum{font-size:.78rem;color:var(--mute);letter-spacing:.02em;margin-bottom:6px}
+nav{position:sticky;top:0;z-index:20;background:#FFFFFFF2;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navin{max-width:1060px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mark{font-weight:500;letter-spacing:-.02em;font-size:.98rem}
+.mark span{color:var(--mute)}
+.navlinks{display:flex;gap:20px;align-items:center;font-size:.86rem}
+.navlinks a{color:var(--ink-soft);text-decoration:none}
+.navlinks a:hover{color:var(--ink)}
+.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:500;padding:8px 16px;border-radius:999px;text-decoration:none;font-size:.84rem}
+.nav-cta:hover{background:#0FD1B8}
+.hero{padding:74px 0 54px}
+.lead{font-size:1.16rem;color:var(--ink-soft);max-width:680px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.chip{font-size:.78rem;font-weight:500;border:1px solid var(--line-strong);border-radius:999px;padding:6px 13px;color:var(--ink)}
+.chip.go{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.toc{columns:2;gap:30px;font-size:.92rem}
+.toc a{display:block;color:var(--ink-soft);text-decoration:none;padding:5px 0;border-bottom:1px solid var(--line)}
+.toc a:hover{color:var(--ink)}
+.callout{background:var(--paper-2);border-left:3px solid var(--ink);border-radius:8px;padding:18px 22px;margin:22px 0}
+.callout.tealcue{border-left-color:var(--accent)}
+.callout .lab{font-size:.72rem;font-weight:500;letter-spacing:.03em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:6px}
+.callout p:last-child{margin-bottom:0}
+figure{margin:26px 0}
+figure img,figure svg.figsvg{width:100%;height:auto;display:block;border:1px solid var(--line-strong);border-radius:var(--r)}
+figcaption{font-size:.82rem;color:var(--mute);margin-top:9px}
+.tablewrap{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;margin:22px 0}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--paper-2);font-weight:500;color:var(--ink)}
+tbody tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.badge{font-size:.66rem;font-weight:500;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.b-go{background:var(--accent);color:var(--accent-ink)}
+.b-mid{background:var(--paper-2);color:var(--ink-soft)}
+.b-ink{background:var(--ink);color:#fff}
+.dark{background:var(--black);color:#F1F0EB;border:none}
+.dark h1,.dark h2,.dark h3{color:#F1F0EB}
+.dark .eyebrow{color:var(--accent);border-color:#FFFFFF2E}
+.dark .lead{color:#C7CBCB}
+.dark a{color:#F1F0EB}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:500;font-size:.78rem;padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.tile{background:var(--paper-2);border-radius:10px;padding:18px 20px}
+.tile .k{font-size:1.7rem;font-weight:500;letter-spacing:-.03em;color:var(--ink)}
+.tile .l{font-size:.82rem;color:var(--ink-soft);margin-top:2px}
+.dark .tile{background:#141414;border:1px solid #FFFFFF1A}
+.dark .tile .k{color:#F1F0EB}.dark .tile .l{color:#9aa0a0}
+.small{font-size:.84rem;color:var(--mute)}
+ul.clean{margin:0 0 16px 0;padding-left:20px}
+ul.clean li{margin-bottom:7px}
+footer{background:var(--black);color:#9aa0a0;font-size:.84rem;padding:40px 0}
+footer .wrap{max-width:1060px}
+@media(max-width:640px){.toc,.grid2{columns:1;grid-template-columns:1fr}.navlinks{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <div class="mark">The Editorial House <span>· Venture Study</span></div>
+    <div class="navlinks">
+      <a href="#summary">Summary</a>
+      <a href="#market">Market</a>
+      <a href="#whitespace">White space</a>
+      <a href="#economics">Economics</a>
+      <a href="#gonogo">Go / No-Go</a>
+      <a class="nav-cta" href="index.html">The overview ↗</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Build / No-Build · DVF Venture Feasibility · 2026</span>
+    <h1>Can you build a defensible luxury travel agency in the age of AI?</h1>
+    <p class="lead">A Big-4-standard Desirability–Viability–Feasibility study of whether — and how — to build an AI-augmented, human-advisor luxury travel agency. It stands on a prior industry study and ends in a go/no-go.</p>
+    <div class="meta">
+      <span class="chip go">Verdict · Conditional GO</span>
+      <span class="chip">Concept · The Editorial House</span>
+      <span class="chip">DVF · 4 / 4 / 4</span>
+      <span class="chip">Confidence · Medium</span>
+    </div>
+  </div>
+</header>
+
+<section id="contents">
+  <div class="wrap">
+    <div class="snum">Contents</div>
+    <div class="toc">
+      <a href="#summary">01 · Executive summary</a>
+      <a href="#question">02 · The venture question</a>
+      <a href="#market">03 · The market &amp; the affluent traveller</a>
+      <a href="#whitespace">04 · Competitive landscape &amp; white space</a>
+      <a href="#concept">05 · The concept &amp; positioning</a>
+      <a href="#model">06 · The business model</a>
+      <a href="#economics">07 · Venture economics</a>
+      <a href="#risks">08 · Risks &amp; what breaks the thesis</a>
+      <a href="#gonogo">09 · Go / No-Go recommendation</a>
+      <a href="#method">10 · Method, confidence &amp; sources</a>
+    </div>
+  </div>
+</section>
+
+<section id="summary">
+  <div class="wrap">
+    <div class="snum">01</div>
+    <h2>Executive summary</h2>
+    <p>There is a real, defensible, fundable opportunity to build a luxury travel agency — but only if it is built as a <strong>brand-and-relationship business with a point of view</strong>, not as a thin AI planner and not as a generic "bespoke" agency. The prior industry study established the terrain this one builds on: AI is trusted to <em>plan</em> but not to <em>book</em>; the disruption is re-intermediation, not disintermediation; defensibility is structural (proprietary supply, clean data, liability rails), not model-based; and curation is worth most at the luxury end, where AI augments the advisor rather than replacing them.</p>
+    <p>Against that backdrop, the recommended concept is <strong>The Editorial House</strong>: a branded luxury agency known for its taste, where named human curators own discernment, access and trust, and AI does the research and assembly behind them. It is entered through a single <strong>interest-vertical wedge</strong> (where willingness-to-pay is most acute and supply is hardest-won) and matured into a <strong>membership</strong> relationship for frequent-luxury clients. The three moves are a sequence, each resolving the others' weaknesses.</p>
+    <div class="callout tealcue">
+      <div class="lab">The verdict in one line</div>
+      <p><strong>Conditional GO</strong> — build it as a high-margin services-and-membership brand, not a SaaS-scale ARR business. The base case reaches roughly <strong>$10M revenue and ~20% EBITDA by Year 3</strong> with a compounding <strong>~$4M membership ARR</strong>; the downside case does not reach profitability in three years. The single number not to over-trust: affluent-tier willingness-to-pay for taste and membership, as distinct from access and time.</p>
+    </div>
+    <div class="grid2">
+      <div class="tile"><div class="k">~10%</div><div class="l">of affluent travellers use a traditional agent — yet 84% say an advisor beats internet research</div></div>
+      <div class="tile"><div class="k">$59.8tn</div><div class="l">global UHNW wealth (510,810 individuals), shifting from ownership to experience</div></div>
+      <div class="tile"><div class="k">&lt;5% → 12–20%</div><div class="l">net margin lift from commission-only to a fee-led model</div></div>
+      <div class="tile"><div class="k">~$4M</div><div class="l">recurring membership ARR by Year 3 (base) — the compounding core</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="question">
+  <div class="wrap">
+    <div class="snum">02</div>
+    <h2>The venture question</h2>
+    <p>The prior study asked <em>where</em> AI creates value across travel. This study asks a sharper, narrower question: <strong>is there a defensible, fundable opportunity to build a luxury travel agency — and if so, for whom, on what positioning, on what model, and at what economics?</strong> The distinction matters. The earlier study was about selling AI <em>to</em> the travel industry, and it scored luxury as a niche. This study is about <em>being</em> the agency — a services-and-brand business whose moat is taste, access and client trust, not whose software wins.</p>
+    <p>The question resolves into four sub-questions, answered in sequence by the study: <strong>for whom</strong> (which luxury sub-segment is acute, reachable and willing to pay), <strong>on what positioning</strong> (does discernment out-pull access, concierge-service, or occasion framing), <strong>on what model</strong> (commission, fees, retainer/membership, markup), and <strong>at what economics</strong> (does a focused entrant reach a fundable scale). The lead hypothesis carried in — and tested, not assumed — is that the durable edge is <strong>editorial taste</strong>.</p>
+  </div>
+</section>
+
+<section id="market">
+  <div class="wrap">
+    <div class="snum">03 · Desirability</div>
+    <h2>The market &amp; the affluent traveller</h2>
+    <p>Packaged "luxury travel market" figures span $1.6–2.4tn at 6–9% growth, but they vary roughly two-fold by definition and are treated here as order-of-magnitude only. The firmer demand signal is wealth and behaviour. The global ultra-wealthy population reached <strong>510,810</strong> individuals holding <strong>$59.8tn</strong> (mid-2025), forecast to grow to ~677,000 by 2030 — and both Altrata and Julius Baer document the same structural shift from <strong>ownership to experience</strong>, with ~$45bn/yr of UHNW spend flowing to luxury hospitality and experiences.</p>
+    <p>The behavioural core is a single tension. Affluent Americans are ~20% of the population but ~51% of travel spend, and yet only about <strong>10% use a traditional travel agent</strong>. At the same time, <strong>84%</strong> say a trusted advisor is more valuable than time-consuming internet research, roughly two-thirds report travel budgets of $25,000 or more, and the human channel is <em>gaining</em> share (from ~21% of the travel market in 2022 toward ~26% in 2026). The reasons affluent travellers give for using an advisor — saving time, exclusive access and amenities, curated itineraries, removing stress, securing upgrades — show that <strong>willingness-to-pay attaches to access and time, not to the itinerary document itself</strong>.</p>
+    <div class="callout">
+      <div class="lab">The tension this study had to resolve</div>
+      <p>Is the ~10% a <strong>ceiling</strong> (a small pie) or <strong>headroom</strong> (the 84% who value an advisor but don't use one)? The study comes down on <strong>predominantly headroom, conditional on legibility</strong>: the 10% measures the dated traditional model; the gap converts only when the offer is made legible and low-friction — which is precisely the editorial-brand-plus-AI thesis. Rated Medium; the residual ceiling risk is carried as a live falsifier.</p>
+    </div>
+  </div>
+</section>
+
+<section id="whitespace">
+  <div class="wrap">
+    <div class="snum">04</div>
+    <h2>Competitive landscape &amp; white space</h2>
+    <p>Plotted on two axes — positioning (generic "luxury/bespoke" → distinctive editorial voice) and delivery model (software-led → human-advisor) — every competitor falls into one of three corners, and the fourth sits empty. <strong>Incumbents</strong> (Virtuoso-affiliated agencies, EMBARK Beyond, Serandipians) own the access that matters — consortia amenities, GM-level relationships, off-market inventory — but compete in identical "luxury/bespoke" language that no longer differentiates. <strong>AI-natives</strong> (Mindtrip, Layla) are fast and generic, run on public APIs, hit the "invisible-hotel" bias, and stall at the transaction (only ~2% trust autonomous AI to book). <strong>Fora</strong> proves the bionic host model scales (~15,000 advisors, ~$2.5bn bookings) but is a deliberately taste-neutral platform. <strong>Voyagier</strong> is the nearest mover — B2B AI rails with a creator/editorial angle — but it sells infrastructure to advisors rather than being the taste-led brand a traveller chooses.</p>
+    <figure>
+      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'Geist','Hanken Grotesk',system-ui,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;display=swap');
+      text{letter-spacing:-0.012em}
+      .h{font-weight:500;letter-spacing:-0.03em}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="960" height="720" fill="#FFFFFF"/>
+
+  <text x="64" y="68" class="h" font-size="30" fill="#141414">The white space is taste, delivered by a human.</text>
+  <text x="64" y="98" font-size="15" fill="#5E6266">Luxury-travel competitive map — where each archetype sits, and the corner no one owns at scale</text>
+  <line x1="64" y1="116" x2="896" y2="116" stroke="#14141424" stroke-width="1"/>
+
+  <line x1="150" y1="170" x2="150" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="150" y1="620" x2="880" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="515" y1="170" x2="515" y2="620" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
+  <line x1="150" y1="395" x2="880" y2="395" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
+
+  <!-- white-space highlight -->
+  <rect x="525" y="180" width="345" height="205" rx="12" fill="#15E0C6" opacity="0.14"/>
+  <rect x="525" y="180" width="345" height="205" rx="12" fill="none" stroke="#0C7A69" stroke-width="1.5" stroke-dasharray="2 6"/>
+
+  <text x="515" y="655" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em">POSITIONING  →</text>
+  <text x="165" y="640" font-size="11" fill="#8D9297">generic “luxury / bespoke”</text>
+  <text x="878" y="640" text-anchor="end" font-size="11" fill="#8D9297">distinctive editorial voice</text>
+  <text x="128" y="395" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em" transform="rotate(-90 128 395)">DELIVERY MODEL  →</text>
+  <text x="160" y="190" font-size="11" fill="#8D9297">human advisor · relationship-led</text>
+  <text x="160" y="610" font-size="11" fill="#8D9297">software-led · self-serve</text>
+
+  <!-- incumbents: ink dots -->
+  <circle cx="250" cy="240" r="7" fill="#141414"/>
+  <text x="265" y="237" class="h" font-size="14" fill="#141414">Virtuoso network agencies</text>
+  <text x="265" y="255" font-size="11.5" fill="#5E6266">deep access · undifferentiated voice</text>
+  <circle cx="330" cy="305" r="7" fill="#141414"/>
+  <text x="345" y="302" class="h" font-size="14" fill="#141414">EMBARK Beyond</text>
+  <text x="345" y="320" font-size="11.5" fill="#5E6266">luxury advisory + Blackbook AI</text>
+  <circle cx="262" cy="352" r="7" fill="#141414"/>
+  <text x="277" y="349" class="h" font-size="14" fill="#141414">Serandipians</text>
+  <text x="277" y="367" font-size="11.5" fill="#5E6266">boutique “travel designer” network</text>
+
+  <!-- bionic host: ink dot -->
+  <circle cx="455" cy="445" r="7" fill="#141414"/>
+  <text x="470" y="442" class="h" font-size="14" fill="#141414">Fora Travel</text>
+  <text x="470" y="460" font-size="11.5" fill="#5E6266">bionic host · taste-neutral platform</text>
+
+  <!-- AI-natives: mute grey dots -->
+  <circle cx="235" cy="530" r="7" fill="#8D9297"/>
+  <text x="250" y="527" class="h" font-size="14" fill="#141414">Mindtrip</text>
+  <text x="250" y="545" font-size="11.5" fill="#5E6266">agentic B2C booking</text>
+  <circle cx="320" cy="565" r="7" fill="#8D9297"/>
+  <text x="335" y="562" class="h" font-size="14" fill="#141414">Layla</text>
+  <text x="335" y="580" font-size="11.5" fill="#5E6266">conversational discovery</text>
+  <circle cx="660" cy="520" r="7" fill="#8D9297"/>
+  <text x="675" y="517" class="h" font-size="14" fill="#141414">Voyagier</text>
+  <text x="675" y="535" font-size="11.5" fill="#5E6266">B2B AI rails + creator “Navigator”</text>
+
+  <!-- white space marker -->
+  <circle cx="700" cy="250" r="9" fill="#15E0C6" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="700" y="220" text-anchor="middle" class="h" font-size="18" fill="#0C7A69">THE WHITE SPACE</text>
+  <text x="700" y="285" text-anchor="middle" class="h" font-size="13" fill="#141414">Editorial-taste luxury agency,</text>
+  <text x="700" y="303" text-anchor="middle" class="h" font-size="13" fill="#141414">AI-augmented · own the supply</text>
+  <text x="700" y="345" text-anchor="middle" font-size="11.5" fill="#5E6266">distinctive voice + relationship + access,</text>
+  <text x="700" y="361" text-anchor="middle" font-size="11.5" fill="#5E6266">with AI as leverage rather than the product</text>
+
+  <line x1="64" y1="678" x2="896" y2="678" stroke="#14141424" stroke-width="1"/>
+  <text x="64" y="700" font-size="12" fill="#5E6266">Incumbents (ink) own access but speak in generic luxury language · AI-natives (grey) own tech but lack relationships and stall at the trust gate.</text>
+  <text x="64" y="715" font-size="10" fill="#8D9297">Stage 2 · Synthesis · positions are editorial judgement from the gather, not measured coordinates</text>
+</svg>
+      <figcaption>Exhibit 1 — The competitive map. Teal marks the unoccupied corner: distinctive voice + human delivery + owned supply + AI as leverage.</figcaption>
+    </figure>
+    <p>No player at scale combines a distinctive editorial point of view with human-advisor delivery, owned supply relationships, and AI as leverage. Each incumbent would face a different, non-trivial migration to reach that corner — incumbents must find a voice, AI-natives must acquire relationships and clear the trust gate, the host model must abandon taste-neutrality — which is what makes the corner defensible rather than merely empty. Held honestly: it may be under-occupied partly <em>because</em> editorial taste is hard to scale, a point the concept and the red-team must test rather than assume away.</p>
+  </div>
+</section>
+
+<section id="concept">
+  <div class="wrap">
+    <div class="snum">05 · the recommendation</div>
+    <h2>The concept &amp; positioning</h2>
+    <p>Three distinct concepts were defined and DVF-scored. They are not equal — and, importantly, not mutually exclusive.</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Concept</th><th>Desirability</th><th>Viability</th><th>Feasibility</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A · Editorial House</strong><br><span class="small">discernment / taste</span></td><td>4 <span class="badge b-mid">M</span></td><td>4 <span class="badge b-mid">M</span></td><td>4 <span class="badge b-mid">M</span></td><td>Occupies the white space. Risk: WTP for taste unproven; hard to franchise.</td></tr>
+        <tr><td><strong>B · Vertical Authority</strong><br><span class="small">one interest-vertical</span></td><td>4 <span class="badge b-mid">M-H</span></td><td>3–4 <span class="badge b-mid">M</span></td><td>5 <span class="badge b-go">High</span></td><td>The most buildable and defensible; lower ceiling.</td></tr>
+        <tr><td><strong>C · Membership Concierge</strong><br><span class="small">retainer-first</span></td><td>3–4 <span class="badge b-mid">M</span></td><td>4–5 <span class="badge b-mid">M</span></td><td>3 <span class="badge b-mid">M</span></td><td>Best economics, worst cold-start. Right destination, wrong entry.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The sharpest answer is a <strong>sequence</strong>: build <strong>A (the Editorial House)</strong> as the brand, enter through <strong>B (a single Vertical Authority wedge)</strong> where willingness-to-pay is most acute and supply is hardest-won, and mature toward <strong>C (membership)</strong> as the lifetime-value destination. B gives A the credibility taste-claims can't manufacture and solves A's cold-start; A lifts B's ceiling; C banks the trust A and B build, without the cold-start that sinks C alone.</p>
+    <figure>
+      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'Geist','Hanken Grotesk',system-ui,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;display=swap');
+      text{letter-spacing:-0.012em}
+      .h{font-weight:500;letter-spacing:-0.03em}
+    </style>
+    <marker id="arrowc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0C7A69"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="720" fill="#FFFFFF"/>
+
+  <text x="64" y="68" class="h" font-size="26" fill="#141414">One brand, entered on a wedge, grown into membership.</text>
+  <text x="64" y="98" font-size="15" fill="#5E6266">Three candidate concepts on the positioning map — and the sequence that resolves each other’s weaknesses</text>
+  <line x1="64" y1="116" x2="896" y2="116" stroke="#14141424" stroke-width="1"/>
+
+  <line x1="150" y1="170" x2="150" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="150" y1="620" x2="880" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="515" y1="170" x2="515" y2="620" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
+  <line x1="150" y1="395" x2="880" y2="395" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
+
+  <text x="515" y="655" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em">WHAT YOU’RE BUYING  →</text>
+  <text x="165" y="640" font-size="11" fill="#8D9297">access &amp; logistics</text>
+  <text x="878" y="640" text-anchor="end" font-size="11" fill="#8D9297">taste &amp; point of view</text>
+  <text x="128" y="395" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em" transform="rotate(-90 128 395)">RELATIONSHIP  →</text>
+  <text x="160" y="190" font-size="11" fill="#8D9297">ongoing · membership</text>
+  <text x="160" y="610" font-size="11" fill="#8D9297">per-trip · transactional</text>
+
+  <!-- faded incumbent reference -->
+  <circle cx="250" cy="540" r="6" fill="#8D9297" opacity="0.5"/>
+  <text x="264" y="537" font-size="12.5" fill="#8D9297">generic access-led agencies</text>
+  <text x="264" y="553" font-size="10.5" fill="#8D9297" opacity="0.8">(today’s incumbents — for reference)</text>
+
+  <!-- sequence path B -> A -> C -->
+  <path d="M 600 530 C 690 480, 720 440, 716 392" fill="none" stroke="#0C7A69" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowc)"/>
+  <path d="M 716 372 C 712 320, 690 270, 656 236" fill="none" stroke="#0C7A69" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowc)"/>
+  <text x="788" y="470" font-size="10.5" fill="#0C7A69">recommended</text>
+  <text x="788" y="485" font-size="10.5" fill="#0C7A69">sequence →</text>
+
+  <!-- B -->
+  <circle cx="600" cy="540" r="8" fill="#141414"/>
+  <text x="600" y="585" text-anchor="middle" class="h" font-size="15" fill="#141414">B · Vertical Authority</text>
+  <text x="600" y="603" text-anchor="middle" font-size="11.5" fill="#5E6266">the wedge — deep, defensible, acute WTP</text>
+  <text x="600" y="520" text-anchor="middle" font-size="9.5" fill="#5E6266" letter-spacing="0.04em">① START HERE</text>
+
+  <!-- A (recommended, teal) -->
+  <circle cx="716" cy="382" r="13" fill="#15E0C6" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="716" y="345" text-anchor="middle" class="h" font-size="18" fill="#0C7A69">A · The Editorial House</text>
+  <text x="716" y="418" text-anchor="middle" font-size="11.5" fill="#5E6266">the brand &amp; point of view — the recommended core</text>
+  <text x="716" y="320" text-anchor="middle" font-size="9.5" fill="#0C7A69" letter-spacing="0.04em">② BECOME THE BRAND</text>
+
+  <!-- C -->
+  <circle cx="648" cy="222" r="8" fill="#141414"/>
+  <text x="648" y="200" text-anchor="middle" class="h" font-size="15" fill="#141414">C · Membership Concierge</text>
+  <text x="648" y="255" text-anchor="middle" font-size="11.5" fill="#5E6266">the LTV destination — recurring, drag-free</text>
+  <text x="648" y="182" text-anchor="middle" font-size="9.5" fill="#5E6266" letter-spacing="0.04em">③ DEEPEN TO MEMBERSHIP</text>
+
+  <line x1="64" y1="678" x2="896" y2="678" stroke="#14141424" stroke-width="1"/>
+  <text x="64" y="700" font-size="12" fill="#5E6266">The wedge (B) earns the credibility taste-claims can’t manufacture · the brand (A) lifts B’s ceiling · membership (C) banks the trust A+B built.</text>
+  <text x="64" y="715" font-size="10" fill="#8D9297">Stage 3 · Concept · recommended DVF  D 4 / V 4 / F 4 · confidence Medium · positions are editorial judgement, not measured coordinates</text>
+</svg>
+      <figcaption>Exhibit 2 — The three concepts and the recommended sequence. Teal marks the recommended core and its path.</figcaption>
+    </figure>
+    <p><strong>Recommended-concept DVF — D4 / V4 / F4, confidence Medium.</strong> Desirability: sits in the unoccupied white space and enters on the most acute, highest-WTP moments; the reservation is that WTP for taste-as-such is inferred. Viability: layered revenue with margins that improve as fees and membership carry weight, and editorial content as a low-CAC moat; the reservation is that brand-building is slow and people-dependent. Feasibility: the host-agency route clears the supply-access gate cheaply and AI augmentation is proven; the binding constraint is human — recruiting curators with genuine, brand-defining taste.</p>
+  </div>
+</section>
+
+<section id="model">
+  <div class="wrap">
+    <div class="snum">06 · Viability</div>
+    <h2>The business model</h2>
+    <p>Five revenue models were compared — consortia commission, net-rate markup, planning/booking fees, retainer/membership, and a B2B2C angle. None wins alone; they are layers that stack and shift over time. <strong>Commission</strong> is the supplier-paid base (luxury hotels pay ~15–25% via consortia) but is a sub-5%-margin commodity on its own. <strong>Net-rate markup</strong> (20–35% on custom DMC components) expands margin and compounds the access moat. <strong>Planning fees</strong> ($500–1,000+ at the luxury end) are the repositioning lever — they lift net margin to 12–20% and signal quality, reframing "agent" as "advisor". <strong>Membership</strong> ($5–25k/yr at the affluent tier; Knightsbridge Circle charges $25k) is the recurring, drag-free, high-LTV destination. A <strong>B2B2C</strong> angle (supplier-funded placement; a creator affiliate; or licensing the editorial/AI engine) is optional upside, with engine-licensing a deliberate later fork rather than part of the core thesis.</p>
+    <figure>
+      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'Geist','Hanken Grotesk',system-ui,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;display=swap');
+      text{letter-spacing:-0.012em}
+      .h{font-weight:500;letter-spacing:-0.03em}
+    </style>
+    <marker id="arrowr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0C7A69"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="960" height="720" fill="#FFFFFF"/>
+
+  <text x="64" y="68" class="h" font-size="28" fill="#141414">The mix shifts from transactional to recurring.</text>
+  <text x="64" y="98" font-size="15" fill="#5E6266">Revenue architecture across the three phases — fees win margin early, membership banks recurring value late</text>
+  <line x1="64" y1="116" x2="896" y2="116" stroke="#14141424" stroke-width="1"/>
+
+  <!-- legend -->
+  <g font-size="12" fill="#26282A">
+    <rect x="64" y="150" width="14" height="14" rx="3" fill="#C9CCce"/>
+    <text x="84" y="162">Consortia commission</text>
+    <rect x="240" y="150" width="14" height="14" rx="3" fill="#8D9297"/>
+    <text x="260" y="162">Net-rate markup</text>
+    <rect x="396" y="150" width="14" height="14" rx="3" fill="#141414"/>
+    <text x="416" y="162">Planning / booking fees</text>
+    <rect x="576" y="150" width="14" height="14" rx="3" fill="#15E0C6"/>
+    <text x="596" y="162">Membership / retainer</text>
+  </g>
+
+  <line x1="120" y1="600" x2="840" y2="600" stroke="#141414" stroke-width="1.5"/>
+
+  <!-- Phase 1 -->
+  <rect x="260" y="500" width="130" height="100" fill="#C9CCce"/>
+  <rect x="260" y="440" width="130" height="60" fill="#8D9297"/>
+  <rect x="260" y="380" width="130" height="60" fill="#141414"/>
+  <text x="325" y="625" text-anchor="middle" class="h" font-size="15" fill="#141414">Phase 1 · Wedge</text>
+  <text x="325" y="643" text-anchor="middle" font-size="11" fill="#5E6266">fees + commission + markup</text>
+  <text x="325" y="660" text-anchor="middle" font-size="10" fill="#8D9297">host route · ~12–20% net</text>
+
+  <!-- Phase 2 -->
+  <rect x="470" y="510" width="130" height="90" fill="#C9CCce"/>
+  <rect x="470" y="430" width="130" height="80" fill="#8D9297"/>
+  <rect x="470" y="320" width="130" height="110" fill="#141414"/>
+  <text x="535" y="625" text-anchor="middle" class="h" font-size="15" fill="#141414">Phase 2 · Brand</text>
+  <text x="535" y="643" text-anchor="middle" font-size="11" fill="#5E6266">higher fees &amp; trip value</text>
+  <text x="535" y="660" text-anchor="middle" font-size="10" fill="#8D9297">direct DMC · approach consortia</text>
+
+  <!-- Phase 3 -->
+  <rect x="680" y="530" width="130" height="70" fill="#C9CCce"/>
+  <rect x="680" y="460" width="130" height="70" fill="#8D9297"/>
+  <rect x="680" y="390" width="130" height="70" fill="#141414"/>
+  <rect x="680" y="240" width="130" height="150" fill="#15E0C6"/>
+  <text x="745" y="625" text-anchor="middle" class="h" font-size="15" fill="#141414">Phase 3 · Membership</text>
+  <text x="745" y="643" text-anchor="middle" font-size="11" fill="#5E6266">+ recurring membership</text>
+  <text x="745" y="660" text-anchor="middle" font-size="10" fill="#8D9297">drag-free · high-LTV</text>
+
+  <text x="828" y="318" font-size="10.5" fill="#0C7A69" letter-spacing="0.04em" transform="rotate(90 828 318)">RECURRING</text>
+
+  <path d="M 330 372 C 480 350, 600 300, 740 232" fill="none" stroke="#0C7A69" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowr)"/>
+  <text x="330" y="305" font-size="12.5" fill="#0C7A69" font-style="italic">margin &amp; recurring share rising</text>
+
+  <text x="108" y="420" text-anchor="middle" font-size="11" fill="#8D9297" letter-spacing="0.02em" transform="rotate(-90 108 420)">REVENUE MIX  →</text>
+
+  <line x1="64" y1="678" x2="896" y2="678" stroke="#14141424" stroke-width="1"/>
+  <text x="64" y="700" font-size="11.5" fill="#5E6266">Commission alone is a sub-5%-margin commodity · fees lift net margin to 12–20% · membership banks recurring value once trust is earned.</text>
+  <text x="64" y="715" font-size="10" fill="#8D9297">Stage 4 · Business model · proportions are illustrative/directional — the sized economics are Stage 5</text>
+</svg>
+      <figcaption>Exhibit 3 — The phased revenue architecture. Teal marks the recurring membership layer that compounds.</figcaption>
+    </figure>
+    <p>The cost structure is dominated by <strong>people, not technology</strong>: curator compensation is both the moat and the main expense, while AI is leased — not built — to raise curator capacity so that cost scales sub-linearly with revenue. Supply strategy enters via the <strong>host-agency route</strong> (which clears the $2–5M consortia sales gate cheaply) and graduates to direct consortium membership on volume. The recommended primary model is therefore <strong>fee-led advisory plus consortia commission and net-rate markup, migrating to membership-led recurring revenue</strong>, with supplier-funded placement and a creator affiliate as secondary lines.</p>
+  </div>
+</section>
+
+<section id="economics">
+  <div class="wrap">
+    <div class="snum">07 · the numbers</div>
+    <h2>Venture economics</h2>
+    <p>A directional model — per-curator unit economics × a three-year headcount and productivity ramp × a growing membership layer, less curator compensation and operating overhead — sizes the recommended concept across high, base and low scenarios. It is a go/no-go gate, not an operating model; every assumption is explicit and logged.</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Scenario (Year 3)</th><th class="n">Revenue</th><th class="n">EBITDA</th><th class="n">Margin</th><th class="n">Membership ARR</th><th>Path to profit</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Low</strong></td><td class="n">~$3.7M</td><td class="n">(~$1.2M)</td><td class="n">(31)%</td><td class="n">~$1.5M</td><td>Not profitable by Yr3 — curator cost outruns uptake</td></tr>
+        <tr><td><strong>Base</strong></td><td class="n">~$10.0M</td><td class="n">~$2.0M</td><td class="n">20%</td><td class="n">~$4.0M</td><td>Profitable from Year 2; recurring core compounds</td></tr>
+        <tr><td><strong>High</strong></td><td class="n">~$26.0M</td><td class="n">~$13.5M</td><td class="n">52%</td><td class="n">~$9.8M</td><td>Strongly profitable; large recurring layer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The base trajectory runs through a realistic ramp J-curve — Year 1 ~$1.2M (a small loss), Year 2 ~$4.5M (~12%), Year 3 ~$10.0M (~20%) — while membership ARR compounds from ~$0.4M to ~$4.0M. That recurring layer is the part of the business with durable equity value. The honest reframing the numbers force: this is an attractive, high-margin specialty-and-brand business reaching low-tens-of-millions in three years, <strong>not</strong> the low-hundreds-of-millions of ARR a SaaS opportunity could reach. An investor underwriting SaaS-scale ARR should pass; one underwriting a defensible, profitable services-and-membership brand should proceed.</p>
+    <div class="callout">
+      <div class="lab">Red-team caveat on these numbers</div>
+      <p>The base case is <strong>fragile to its softest inputs</strong>: a single adverse assumption — a worse commission mix (9% vs 12% take), a higher curator cost ($200k vs $165k), or weaker bookings per curator — <strong>roughly halves Year-3 EBITDA</strong>, and three together turn the ~$2.0M profit into a ~$1.0M loss. The <strong>high case (52% EBITDA) is a ceiling illustration, not a forecast</strong> — services-and-people businesses rarely sustain margins above ~30–35%, and that scenario's overhead is light. Read the base case as a <em>target conditional on willingness-to-pay</em>, not an expectation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="risks">
+  <div class="wrap">
+    <div class="snum">08</div>
+    <h2>Risks &amp; what would break the thesis</h2>
+    <p>The low case is live, not theoretical, and the three load-bearing risks all push the same way:</p>
+    <ul class="clean">
+      <li><strong>Affluent-tier WTP for fees and membership is inferred, not measured.</strong> If fees don't attach and members don't convert, the high-margin layers thin and the business is a sub-5%-margin commission shop. This is the single number not to over-trust.</li>
+      <li><strong>The blended take-rate (~12%) is an estimate.</strong> A worse trip mix — more low-commission airfare, fewer high-commission hotel and DMC nights — moves revenue materially.</li>
+      <li><strong>Curator economics are unbenchmarked.</strong> The recommended model rests on talented curators whose loaded cost is assumed; if they cost more or ramp slower, the J-curve deepens and profitability slips — exactly the low-case mechanism.</li>
+    </ul>
+    <p>All three are <strong>monitorable and cheaply testable</strong>. A small wedge launch would measure fee attach, membership conversion and real blended take within a year — the least-cost way to retire the risk before scaling headcount. Stated fairly, the strongest case against the venture is that editorial taste is hard to scale and harder to franchise, so the brand stays founder-dependent and small; the study's answer is that the moat is structural (access, data, relationships, recurring membership), not interface-deep, and that a defensible few-tens-of-millions business with a recurring spine is a sound venture even if it never becomes a platform.</p>
+  </div>
+</section>
+
+<section id="gonogo" class="dark">
+  <div class="wrap">
+    <span class="tag">Verdict · Conditional GO</span>
+    <h2>Go / No-Go recommendation</h2>
+    <p class="lead">Build The Editorial House — entered through a single vertical wedge, matured into membership — as a high-margin services-and-brand business, not a SaaS-scale ARR play.</p>
+    <p style="margin-top:18px">The recommended concept clears the gate on all three lenses: a <strong>desirable</strong> position in the one corner no competitor owns, riding a documented shift to meaning-over-status; a <strong>viable</strong> layered model whose margin improves as fees and membership carry weight; and a <strong>feasible</strong> build that clears the supply gate cheaply via the host route, with AI augmentation already proven. The base case is an attractive, defensible, profitable business with a compounding recurring core; the high case is materially larger; the low case is a real, survivable-but-unprofitable downside driven by the same WTP question that gates the whole thesis.</p>
+    <div class="grid2" style="margin-top:24px">
+      <div class="tile"><div class="k">D 4 · V 4 · F 4</div><div class="l">DVF read on the recommended concept</div></div>
+      <div class="tile"><div class="k">Medium</div><div class="l">overall confidence — gated on affluent-tier WTP</div></div>
+    </div>
+    <p style="margin-top:22px">Recommended next step before any scale commitment: a <strong>single-vertical wedge launch</strong> that treats Year 1 as a paid experiment to measure fee attach, membership conversion and real take-rate — the cheapest way to convert the study's confidence into a fundable Yes or a clean No.</p>
+    <p style="margin-top:14px;color:#9aa0a0;font-size:.92rem">Confidence, split after red-team: <strong>Medium</strong> on the strategy, positioning and white space; <strong>Medium-Low</strong> on the sized three-year economics, which are fragile to willingness-to-pay, curator cost and commission mix. Underwrite this as a founder- and talent-dependent brand-and-services business — not a scalable software venture — and scale headcount only after the pilot converts the economics confidence into a measured Yes.</p>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="snum">10</div>
+    <h2>Method, confidence &amp; sources</h2>
+    <p>This is a DVF (Desirability–Viability–Feasibility) opportunity assessment to Big-4 standard, built on <strong>public sources and structured estimation only</strong>. Every quantified claim is logged in the project ledger with its source or estimation method and a confidence rating; vendor- and aggregator-reported figures are flagged and rated down; gross bookings are never compared to revenue. The study reconciled two independent gather sources (an in-house pass and a Gemini deep-research pass) — agreements raised confidence, conflicts were flagged. Sizing is directional and order-of-magnitude, built for a go/no-go gate, not a bottoms-up operating model.</p>
+    <p class="small"><strong>Confidence ratings.</strong> High — multiple independent or primary sources agree. Medium — sound but single-source or definition-sensitive. Low — estimated or thin evidence, flagged.</p>
+    <h3>Key sources</h3>
+    <p class="small">Altrata, World Ultra Wealth Report 2025 (UHNW population &amp; experiential spend) · Skift Research, The Luxury Traveler (advisor usage; share of spend) · Preferred Hotels &amp; Resorts Luxury Travel Report 2025 (advisor value; budgets) · Virtuoso 2025–2026 press &amp; Luxe Report (network sales, advisors, $50k+ trends) · Fora Travel (Skift / Travel Research Online / PitchBook — bookings, advisor count, funding) · Phocuswright / IBISWorld / ASTA (US advisor market) · AltexSoft &amp; DMC Quote (commissions, fees, margins — aggregator, rated down) · HostAgencyReviews (advisor productivity &amp; income) · EliteVoyage Luxury Travel Report 2024 (UHNW behaviour — single-region, flagged) · Global Travel Collection "Atlas", GDS Genie (advisor AI tooling) · prior study: <em>AI × Travel — The Detailed Report</em>. Full source list and the figure-by-figure ledger accompany the study files.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Luxury Travel Agency Opportunity Study · DVF venture-feasibility assessment · 2026 · public sources + structured estimation · directional sizing for a go/no-go gate. &nbsp;<a href="index.html" style="color:#15E0C6;text-decoration:none">← The overview</a>
+  </div>
+</footer>
+
+</body>
+</html>
