@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × Travel — The Detailed Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ===== Selfbook design system ===== */
+  :root{
+    --paper:#FFFFFF; --paper-2:#F1F0EB; --black:#000000;
+    --ink:#141414; --ink-soft:#5E6266; --mute:#8D9297;
+    --petrol:#141414; --petrol-soft:#3A3D40; --clay:#141414; --clay-soft:#15E0C6;
+    --accent:#15E0C6; --accent-ink:#06120F; --accent-deep:#0C7A69;
+    --line:#14141414; --line-strong:#14141424;
+    --sans:'PP Neue Montreal','Geist','Hanken Grotesk',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:#26282A;font-family:var(--sans);
+    font-size:17px;line-height:1.6;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
+  .mono{font-family:var(--sans);font-size:.74rem;letter-spacing:-.005em;text-transform:none;color:var(--mute)}
+  h1,h2,h3,h4{font-family:var(--sans);font-weight:500;line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:#14141438;text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{text-decoration-color:var(--ink)}
+  p{margin:0 0 18px}
+  .wrap{max-width:840px;margin:0 auto;padding:0 28px}
+  .eyebrow{color:var(--ink);font-weight:500;letter-spacing:-.005em;font-size:.74rem;text-transform:none;
+    font-family:var(--sans);margin-bottom:16px;display:inline-block;border:1px solid var(--line-strong);
+    border-radius:999px;padding:5px 13px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:#FFFFFFF2;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1060px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-family:var(--sans);font-weight:500;font-size:1.08rem;letter-spacing:-.03em;color:var(--ink)}
+  .brand b{color:var(--ink);font-weight:500}
+  .nav-links{display:flex;gap:22px;font-size:.84rem}
+  .nav-links a{color:var(--ink-soft);font-weight:400;text-decoration:none}
+  .nav-links a:hover{color:var(--ink);text-decoration:none}
+  .nav-cta{font-family:var(--sans);font-size:.82rem;text-transform:none;letter-spacing:-.01em;font-weight:500;
+    background:var(--accent);color:var(--accent-ink);padding:9px 18px;border-radius:999px;border:none;white-space:nowrap;text-decoration:none}
+  .nav-cta:hover{background:#0FD1B8;color:var(--accent-ink);text-decoration:none}
+  @media(max-width:820px){.nav-links{display:none}}
+
+  /* DOC HEAD */
+  .dochead{padding:80px 0 48px}
+  .dochead h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:500;letter-spacing:-.038em;max-width:18ch;line-height:1.02}
+  .dochead .sub{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--ink-soft);max-width:56ch;margin-top:22px;line-height:1.4;letter-spacing:-.015em}
+  .docmeta{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line-strong);
+    font-size:.8rem;color:var(--ink-soft)}
+  .docmeta span b{color:var(--ink);font-family:var(--sans);font-weight:500}
+
+  /* TOC */
+  .toc{background:var(--paper-2);border:1px solid var(--line-strong);border-radius:var(--r,12px);padding:28px 32px;margin:8px 0 10px}
+  .toc h4{font-family:var(--sans);font-size:.74rem;letter-spacing:-.005em;text-transform:none;color:var(--ink);margin-bottom:16px;font-weight:500}
+  .toc ol{list-style:none;counter-reset:toc;columns:2;column-gap:40px}
+  .toc li{counter-increment:toc;font-size:.92rem;margin-bottom:11px;break-inside:avoid}
+  .toc li::before{content:counter(toc,decimal-leading-zero);font-family:var(--sans);font-size:.74rem;font-weight:500;
+    color:var(--mute);margin-right:10px}
+  .toc a{color:var(--ink);text-decoration:none}
+  .toc a:hover{text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:680px){.toc ol{columns:1}}
+
+  /* SECTIONS */
+  section{padding:58px 0;border-top:1px solid var(--line)}
+  section.lead{border-top:none}
+  h2.sec{font-size:clamp(1.8rem,3.6vw,2.4rem);max-width:24ch;margin-bottom:8px;font-weight:500;letter-spacing:-.035em}
+  .sec-num{font-family:var(--sans);font-size:.76rem;color:var(--mute);letter-spacing:-.005em;display:block;margin-bottom:12px;font-weight:500}
+  h3.sub{font-size:1.34rem;margin:34px 0 12px;color:var(--ink);letter-spacing:-.03em}
+  h4.subb{font-size:1.08rem;margin:24px 0 8px;font-family:var(--sans);font-weight:500;letter-spacing:-.02em}
+  .lede-p{font-size:1.16rem;color:var(--ink);max-width:60ch;letter-spacing:-.015em;line-height:1.45}
+  em{font-style:italic}
+  strong{font-weight:600}
+
+  /* CALLOUT */
+  .callout{background:var(--paper-2);border-left:3px solid var(--ink);padding:20px 24px;margin:24px 0;border-radius:0 10px 10px 0}
+  .callout p:last-child{margin-bottom:0}
+  .callout.petrol{border-left-color:var(--accent)}
+  .callout .lab{font-family:var(--sans);font-size:.7rem;letter-spacing:-.005em;text-transform:none;
+    color:var(--ink-soft);display:block;margin-bottom:8px;font-weight:500}
+  .callout.petrol .lab{color:var(--accent-deep)}
+
+  /* VERDICT band */
+  .verdict-band{background:var(--black);color:#F1F0EB;border:none}
+  .verdict-band .eyebrow{color:var(--accent);border-color:#FFFFFF2E}
+  .verdict-band h2{color:#F1F0EB;font-size:clamp(1.7rem,3.4vw,2.3rem);max-width:22ch;margin-bottom:18px;letter-spacing:-.035em}
+  .verdict-band p{color:#F1F0EBD9;max-width:62ch}
+  .verdict-band .tag{display:inline-flex;align-items:center;gap:12px;background:#15161A;padding:8px 14px;border-radius:999px;margin-bottom:22px}
+  .verdict-band .tag b{font-family:var(--sans);font-size:.74rem;letter-spacing:-.005em;text-transform:none;font-weight:500;
+    background:var(--accent);color:var(--accent-ink);padding:5px 11px;border-radius:999px}
+  .verdict-band .tag span{font-size:.88rem;letter-spacing:-.01em}
+
+  /* TABLES */
+  .tbl-scroll{overflow-x:auto;border:1px solid var(--line-strong);border-radius:12px;margin:24px 0}
+  table.data{border-collapse:collapse;width:100%;min-width:560px;font-size:.86rem}
+  table.data th,table.data td{padding:12px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;letter-spacing:-.01em}
+  table.data thead th{font-family:var(--sans);font-size:.68rem;letter-spacing:-.005em;text-transform:none;
+    color:var(--ink-soft);background:var(--paper-2);font-weight:500}
+  table.data tbody tr:last-child td{border-bottom:none}
+  table.data td.stage,table.data td.k{font-family:var(--sans);font-weight:500;white-space:nowrap;letter-spacing:-.02em}
+  table.data tr.supply td{background:#14141406}
+  .ex{font-weight:600;letter-spacing:.5px}
+  .ex.hi{color:var(--ink)} .ex.mid{color:var(--accent-deep)} .ex.lo{color:var(--mute)}
+  .pill{font-family:var(--sans);font-size:.64rem;text-transform:none;letter-spacing:-.005em;font-weight:500;
+    padding:3px 10px;border-radius:999px;white-space:nowrap;display:inline-block}
+  .pill.co{background:var(--paper-2);color:var(--ink-soft)} .pill.vi{background:#15E0C626;color:var(--accent-deep)}
+  .pill.mix{background:#1414140D;color:var(--ink-soft)}
+
+  /* OPPORTUNITY block */
+  .opp{border:1px solid var(--line-strong);border-radius:12px;margin:30px 0;overflow:hidden;background:var(--paper)}
+  .opp-head{padding:24px 28px 22px;border-bottom:1px solid var(--line);position:relative}
+  .opp-head .z{font-family:var(--sans);font-size:.7rem;color:var(--mute);letter-spacing:-.005em;font-weight:500}
+  .opp-head h3{font-size:1.55rem;margin:6px 0 4px;letter-spacing:-.03em}
+  .opp-head .pair{font-family:var(--sans);font-size:.74rem;color:var(--ink-soft);letter-spacing:-.005em}
+  .opp-head .tierbadge{position:absolute;top:24px;right:28px;font-family:var(--sans);font-size:.64rem;
+    letter-spacing:-.005em;text-transform:none;padding:5px 12px;border-radius:999px;font-weight:500}
+  .tier-1{background:var(--black);color:#FFFFFF} .tier-2{background:var(--accent);color:var(--accent-ink)} .tier-3{background:var(--paper-2);color:var(--ink-soft)}
+  .opp-body{padding:24px 28px}
+  .opp-body p{font-size:.96rem}
+  .scores{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong);
+    border-radius:10px;overflow:hidden;margin:4px 0 22px}
+  .sc{background:var(--paper-2);padding:16px 18px}
+  .sc .lab{font-family:var(--sans);font-size:.62rem;letter-spacing:-.005em;color:var(--ink-soft);text-transform:none;font-weight:500}
+  .sc .row{display:flex;align-items:baseline;gap:8px;margin-top:4px}
+  .sc .val{font-family:var(--sans);font-weight:500;font-size:2.05rem;line-height:1;letter-spacing:-.03em}
+  .sc .val.s5{color:var(--ink)} .sc .val.s4{color:var(--accent-deep)}
+  .sc .val.s3{color:var(--ink-soft)} .sc .val.s2{color:var(--mute)} .sc .val.s1{color:var(--mute)}
+  .sc .of{font-size:.8rem;color:var(--ink-soft)}
+  .sc .cf{font-family:var(--sans);font-size:.62rem;color:var(--ink-soft);margin-top:6px;text-transform:none;letter-spacing:-.005em}
+  @media(max-width:560px){.scores{grid-template-columns:1fr}}
+  .dvf-line{font-size:.94rem;margin-bottom:14px}
+  .dvf-line b{font-family:var(--sans);font-weight:500}
+  .readline{background:var(--paper-2);border-radius:10px;padding:14px 18px;font-size:.92rem;margin-top:8px}
+  .readline b{color:var(--accent-deep);font-weight:500}
+
+  /* assumption chain */
+  .chain{border:1px solid var(--line-strong);border-radius:10px;padding:16px 20px;margin:16px 0;font-size:.9rem;background:var(--paper-2)}
+  .chain .lab{font-family:var(--sans);font-size:.68rem;letter-spacing:-.005em;text-transform:none;color:var(--accent-deep);display:block;margin-bottom:8px;font-weight:500}
+  .chain code{font-family:'Geist Mono','SF Mono',ui-monospace,monospace;font-size:.84em;background:#14141410;padding:1px 6px;border-radius:4px}
+
+  .conf-tag{font-family:var(--sans);font-size:.66rem;letter-spacing:-.005em;text-transform:none;font-weight:500;
+    padding:2px 9px;border-radius:999px;white-space:nowrap}
+  .conf-h{background:#15E0C626;color:var(--accent-deep)} .conf-m{background:#1414140F;color:var(--ink-soft)} .conf-l{background:#1414140D;color:var(--mute)}
+
+  ul.clean{margin:0 0 18px;padding-left:0;list-style:none}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:10px;font-size:.96rem}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:10px;width:6px;height:6px;background:var(--ink);border-radius:50%}
+
+  /* sources */
+  .src-list{font-size:.86rem;color:var(--ink-soft);line-height:1.5}
+  .src-list div{padding:10px 0;border-bottom:1px solid var(--line)}
+  .src-list div:last-child{border-bottom:none}
+  .src-list .s-k{font-family:var(--sans);font-weight:500;color:var(--ink)}
+
+  footer{border-top:1px solid var(--line-strong);padding:44px 0 72px;font-size:.82rem;color:var(--ink-soft)}
+  .backlink{display:inline-block;margin-top:18px;font-family:var(--sans);font-size:.8rem;text-transform:none;letter-spacing:-.01em;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">AI <b>×</b> Travel</div>
+    <div class="nav-links">
+      <a href="#summary">Summary</a>
+      <a href="#themes">Themes</a>
+      <a href="#map">Heat map</a>
+      <a href="#segments">Segments</a>
+      <a href="#zones">Opportunities</a>
+      <a href="#sizing">Sizing</a>
+      <a href="#risks">Risks</a>
+    </div>
+    <a class="nav-cta" href="index.html">← The map</a>
+  </div>
+</nav>
+
+<header class="dochead wrap">
+  <span class="eyebrow">AI × Travel · Opportunity Study · Detailed Report · 2026</span>
+  <h1>Where AI actually creates value in travel — and where it only looks like it does.</h1>
+  <p class="sub">A DVF (Desirability–Viability–Feasibility) opportunity assessment of how AI is reorganising the travel value chain, which segments it disrupts, where the prize is large enough and buildable enough to back, and a go/no-go read.</p>
+  <div class="docmeta">
+    <span><b>Standard</b> · Big-4 DVF assessment</span>
+    <span><b>Sources</b> · public + structured estimation</span>
+    <span><b>Sizing</b> · directional, order-of-magnitude</span>
+    <span><b>Verdict</b> · GO — stress-tested, anchored on Z2</span>
+    <span><b>Review</b> · Stage 6 red-team passed</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#summary">Executive summary</a></li>
+      <li><a href="#question">The strategic question</a></li>
+      <li><a href="#themes">Five disruption themes</a></li>
+      <li><a href="#map">The value-chain heat map</a></li>
+      <li><a href="#segments">The segment model</a></li>
+      <li><a href="#zones">The six opportunity zones</a></li>
+      <li><a href="#priority">Prioritisation — the 2×2</a></li>
+      <li><a href="#sizing">Directional sizing</a></li>
+      <li><a href="#risks">Risks &amp; what breaks the thesis</a></li>
+      <li><a href="#verdict">Go / no-go recommendation</a></li>
+      <li><a href="#method">Method, confidence &amp; sources</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- 1 EXEC SUMMARY -->
+<section class="lead" id="summary">
+  <div class="wrap">
+    <span class="sec-num">01</span>
+    <h2 class="sec">Executive summary</h2>
+    <p class="lede-p">AI is loud on the demand side of travel and quiet on the supply side — and the money is on the quiet side. That single asymmetry is the finding the whole study turns on.</p>
+    <p>Travellers have adopted AI fast for inspiration and planning: a majority of US travellers have now used AI for a trip, and generative AI accounts for roughly a third of trip research. But adoption collapses at the transaction. Around two-thirds of people will not let AI complete a booking, and OpenAI itself pulled in-chat checkout in March 2026. The result is a market that is enthusiastic upstream, dissatisfied at the point of pain, and structurally blocked at the moment money changes hands.</p>
+    <p>Meanwhile, on the supply side, AI already pays its way. Revenue-management systems lift ADR/RevPAR by 10–15%, service automation cuts cost by around 30% while automating roughly two-thirds of contacts, and operations tooling is taking real cost out of disruption handling. This is unglamorous, cost-out-as-efficiency work — but it is bankable, measurable, and shipping today.</p>
+    <p>Assessed on Desirability, Viability and Feasibility, six opportunity zones sort into three tiers. Two clear the gate now, but they are not equal. <strong>Supply-side revenue-management and service tooling (Z2)</strong> is the firmer anchor: it is bankable today and robust even if the consumer trust gap eventually closes. <strong>SME / unmanaged self-serve corporate travel AI (Z1)</strong> is a real but more contested fast-follow — and, on closer reading, a <em>take-rate</em> business rather than a software annuity (the clearest comparable, Navan, books only ~$62M of its ~$702M revenue as subscription). Each addresses a serviceable pool of roughly <strong>$2–5bn</strong> with a proven buyer, and a focused category leader can credibly reach <strong>low-hundreds-of-$M ARR</strong> within about three years — without depending on the <em>consumer</em> booking-trust gap closing. The rest are gated optionality: in-trip disruption recovery (Z3) is the most desirable moment in the entire data set but the least deliverable; long-tail supply aggregation (Z4) sits on a large pool but is ops-heavy; agentic booking rails (Z5) are strategically large but dated to a 2027+ horizon by the trust gap; the luxury advisor backend (Z6) is a reliable but small niche.</p>
+    <div class="callout petrol">
+      <span class="lab">The verdict in one line</span>
+      <p style="font-size:1.05rem"><strong>GO</strong> — the bankable near-term AI-travel bet is <strong>supply-side B2B plus SME self-serve</strong>, not consumer planning and not agentic booking. The recommendation survives an independent red-team; it sharpens to <strong>anchor on Z2, with Z1 as a deliberate, eyes-open second bet</strong>. The supporting numbers carry the thesis, not just the narrative.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 QUESTION -->
+<section id="question">
+  <div class="wrap">
+    <span class="sec-num">02</span>
+    <h2 class="sec">The strategic question</h2>
+    <p class="lede-p">As AI reorganises travel, where is the opportunity large enough, desirable enough, and buildable enough to back?</p>
+    <p>The study treats that question through three complementary lenses rather than choosing one. <strong>Value-chain stages</strong> answer where in the journey AI bites. <strong>Demand segments</strong> answer who wants it and how badly — the Desirability lens. <strong>Supply-side buyer layers</strong> answer who will pay for it and whether the economics hold — the Viability lens. Feasibility runs across all three as an honest read on what current AI capability can actually deliver past the trust and liability gate.</p>
+    <p>The join between the lenses is a simple cost-out / value-in typing. Any given opportunity is a <em>(stage × segment × buyer-layer)</em> cell with a disruption type and a DVF profile. The synthesis builds the map and culls the dead cells; the assessment scores what survives.</p>
+    <div class="callout">
+      <span class="lab">The opportunity logic</span>
+      <p>Demand-side AI is where attention and dissatisfaction concentrate — Desirability is strong, but Viability and Feasibility are weak at booking. Supply-side AI is where money and ROI concentrate — Viability and Feasibility are strong, and Desirability is a sale to a rational buyer rather than a consumer longing.</p>
+      <p style="margin-bottom:0"><strong>The best opportunities sit where a demand-side pain meets a supply-side buyer willing to pay to solve it.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 THEMES -->
+<section id="themes">
+  <div class="wrap">
+    <span class="sec-num">03</span>
+    <h2 class="sec">Five disruption themes</h2>
+    <p>Read together, these are the load-bearing patterns the evidence keeps returning to. Each is the resolution of several working hypotheses, and each carries a confidence rating.</p>
+
+    <h3 class="sub">Theme 1 — The planning / booking split is the spine of the market <span class="conf-tag conf-h">Conf · High</span></h3>
+    <p>Adoption is mainstream and accelerating upstream — roughly 56% of US travellers have used AI for a trip and generative AI is about a third of research — but it collapses at the transaction. Around 66% will not let AI book, 68% still prefer a trusted brand to complete the purchase, and Klook has measured an 89-point gap between willingness to plan with AI and willingness to book with it. OpenAI pulling in-chat checkout in March 2026 is the same fracture line showing up in a frontier lab's own product decisions. This single split determines which opportunities are real now and which are gated; almost everything else is a corollary of it.</p>
+
+    <h3 class="sub">Theme 2 — This is re-intermediation, not disintermediation <span class="conf-tag conf-h">Conf · High</span></h3>
+    <p>Agentic search — Google's AI Mode and UCP, ChatGPT and the Agentic Commerce Protocol — inserts a new surface <em>above</em> the booking layer, but routes the transaction <em>through</em> incumbents who keep merchant-of-record status, payment rails, inventory aggregation and post-booking support. The visible "research tax" interface is exposed to competition; the commission pool is defended. Value migrates to whoever owns the new top surface and to whoever owns the defensible rails underneath — and is squeezed out of the undifferentiated middle of thin planners and metasearch.</p>
+
+    <h3 class="sub">Theme 3 — Supply-side B2B is where AI already pays its way <span class="conf-tag conf-m">Conf · Medium-High</span></h3>
+    <p>Revenue management (hotel ADR/RevPAR up 10–15%; McKinsey's 3–10% per year; airline RM up 3.5–20%), service automation (around 30% cost reduction, roughly two-thirds of contacts automated, 15% upsell), and operations (SITA/OCCam cutting disruption cost by about 30%) show concrete, quantified ROI today. This is cost-out executed as efficiency rather than new demand creation — but it is bankable, measurable, and nearer-term than any consumer play. The principal caveat is that several of the uplift figures are vendor-reported and rated down accordingly.</p>
+
+    <h3 class="sub">Theme 4 — Defensibility is structural, not model-based <span class="conf-tag conf-h">Conf · High</span></h3>
+    <p>The model layer is commoditising: a thin wrapper can write a serviceable itinerary, and raw LLMs score in the low single digits to ~10% on hard travel-planning benchmarks against roughly 77% for purpose-built systems. Durable advantage therefore comes from proprietary supply and inventory, clean machine-readable data, transactional history (Sabre's ~50 petabytes), and merchant-of-record liability rails. The corollary is the long-tail risk: fragmented supply without modern APIs becomes invisible to agents — which is simultaneously a disruption threat to those suppliers and an aggregation opportunity for whoever cleans the data.</p>
+
+    <h3 class="sub">Theme 5 — Trust, liability and capability are the binding constraints <span class="conf-tag conf-h">Conf · High</span></h3>
+    <p><em>Moffatt v. Air Canada</em> — where the carrier was held liable for its chatbot's hallucinated advice — turned AI error into a balance-sheet risk rather than mere UX friction. The moments of highest latent willingness-to-pay, above all in-trip disruption recovery, are exactly where AI needs live booking and PNR access to <em>act</em> rather than merely advise. Where AI only has to advise — planning, RM, service triage — it ships. Where it must transact or act with consequences, it stalls. These constraints gate value-in opportunities more tightly than cost-out ones.</p>
+
+    <div class="callout petrol">
+      <span class="lab">The shape in one line</span>
+      <p style="margin-bottom:0">AI's impact is steeply graded along the journey and <em>inverted</em> between demand and supply: loud-but-shallow for travellers, quiet-but-deep for operators. The opportunity gradient runs from "loud and unmonetised" at the top of the funnel to "quiet and bankable" on the supply side.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 HEAT MAP -->
+<section id="map">
+  <div class="wrap">
+    <span class="sec-num">04</span>
+    <h2 class="sec">The value-chain heat map</h2>
+    <p>AI-exposure intensity by stage, with disruption type, deployment maturity and where the value actually lands. The two demand stages run hot but capture little; the two supply stages run hot <em>and</em> capture. Booking is the deliberate cold spot — the contested choke point the incumbents defend. Intensity: ●●● high · ●● medium · ● low.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Stage</th><th>Exposure</th><th>Type</th><th>Maturity</th><th>Where value lands</th></tr></thead>
+        <tbody>
+          <tr><td class="stage">Inspiration</td><td><span class="ex hi">●●●</span></td><td><span class="pill vi">value-in</span></td><td>High adoption · low monetisation</td><td>Owner of the new discovery surface; incumbents fight to recapture via brand assistants</td></tr>
+          <tr><td class="stage">Planning</td><td><span class="ex hi">●●●</span></td><td><span class="pill vi">value-in*</span></td><td>High enthusiasm · medium reliability</td><td>Purpose-built agents beat raw LLMs; crowded and low-moat for pure planners</td></tr>
+          <tr><td class="stage">Booking</td><td><span class="ex lo">●</span></td><td><span class="pill mix">gated</span></td><td>Low · 2027+ frontier</td><td>Incumbents retain the transaction via merchant-of-record</td></tr>
+          <tr><td class="stage">In-trip</td><td><span class="ex mid">●●</span></td><td><span class="pill vi">value-in</span></td><td>Medium · rising</td><td>Highest latent WTP — gated by live PNR access to <em>act</em></td></tr>
+          <tr><td class="stage">Post-trip</td><td><span class="ex lo">●</span></td><td><span class="pill mix">mixed</span></td><td>Medium corporate · low consumer</td><td>Expense/audit automation; supplier re-marketing; thin public evidence</td></tr>
+          <tr class="supply"><td class="stage">Distribution</td><td><span class="ex mid">●●</span></td><td><span class="pill mix">mixed</span></td><td>In flux · land-grab</td><td>Aggregation &amp; rails defensible; long-tail without APIs at risk</td></tr>
+          <tr class="supply"><td class="stage">Revenue mgmt</td><td><span class="ex hi">●●●</span></td><td><span class="pill vi">value-in</span></td><td>High · structurally defensible</td><td>Clearest near-term ROI; anchored in proprietary demand data</td></tr>
+          <tr class="supply"><td class="stage">Operations</td><td><span class="ex mid">●●</span></td><td><span class="pill co">cost-out</span></td><td>Medium · fragmented</td><td>Disruption handling, staffing, turn optimisation</td></tr>
+          <tr class="supply"><td class="stage">Customer service</td><td><span class="ex hi">●●●</span></td><td><span class="pill co">cost-out</span></td><td>High · low defensibility</td><td>Fast payback; the moat is data/integration, not the bot</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The reading is the whole argument: the two ●●● demand stages are high-exposure but low-capture, while the two ●●● supply stages are high-exposure <em>and</em> high-capture. Booking sits at ● by structure, not by lack of interest — it is where trust and liability hold the line. <span class="mono">* value-in at planning is feasibility-gated by reliability and trust.</span></p>
+  </div>
+</section>
+
+<!-- 5 SEGMENTS -->
+<section id="segments">
+  <div class="wrap">
+    <span class="sec-num">05</span>
+    <h2 class="sec">The segment model</h2>
+    <p>The taxonomy refines to a two-plane model: <strong>eight demand segments</strong> (the Desirability lens) crossed with <strong>four supply-side buyer layers</strong> (the Viability and Feasibility lens). Splitting the old single B2B row into four layers matters because they have materially different buyers, economics and defensibility — collapsing them would have hidden the most bankable opportunity in the study.</p>
+
+    <h3 class="sub">Demand segments — who wants it, and how badly</h3>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>#</th><th>Segment</th><th>Dominant AI moment</th><th>Type</th><th>WTP signal</th></tr></thead>
+        <tbody>
+          <tr><td class="k">D1</td><td class="stage">Budget / value leisure</td><td>Inspiration + planning; social-video discovery</td><td><span class="pill vi">value-in</span></td><td>Low — price-sensitive, won't pay for tools</td></tr>
+          <tr><td class="k">D2</td><td class="stage">Mid-market leisure</td><td>Planning + booking surface (re-intermediation risk)</td><td><span class="pill mix">mixed</span></td><td>Low-medium</td></tr>
+          <tr><td class="k">D3</td><td class="stage">Premium leisure</td><td>In-trip companion + AI-assisted curation</td><td><span class="pill vi">value-in</span></td><td>Medium</td></tr>
+          <tr><td class="k">D4</td><td class="stage">Luxury &amp; bespoke</td><td>Backend advisor augmentation</td><td><span class="pill co">cost-out</span></td><td>Med-high (paid via advisor, not direct)</td></tr>
+          <tr><td class="k">D5</td><td class="stage">Business — managed</td><td>Post-trip expense/audit + service automation in TMC</td><td><span class="pill co">cost-out</span></td><td>High — org pays</td></tr>
+          <tr><td class="k">D6</td><td class="stage">SME / unmanaged business</td><td>Planning + booking self-service</td><td><span class="pill vi">value-in</span></td><td><strong>High white space — $544bn pool</strong></td></tr>
+          <tr><td class="k">D7</td><td class="stage">Groups &amp; MICE</td><td>Planning / coordination, venue sourcing</td><td><span class="pill mix">gated</span></td><td>Medium — under-instrumented</td></tr>
+          <tr><td class="k">D8</td><td class="stage">In-trip / disruption</td><td>Real-time recovery &amp; recommendations</td><td><span class="pill vi">value-in</span></td><td><strong>Highest latent, unproven</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>D8 is a <em>moment</em> that cuts across the cohorts rather than a customer type, but it earns its own row because it concentrates both the highest latent willingness-to-pay and the sharpest feasibility wall.</p>
+
+    <h3 class="sub">Supply-side buyer layers — who pays, and whether the economics hold</h3>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>#</th><th>Layer</th><th>Buyer</th><th>Dominant AI play</th><th>Defensibility</th></tr></thead>
+        <tbody>
+          <tr class="supply"><td class="k">S1</td><td class="stage">Revenue mgmt / pricing</td><td>Hotels, airlines</td><td>RL/ML dynamic &amp; continuous pricing</td><td><strong>High</strong> — proprietary demand data</td></tr>
+          <tr class="supply"><td class="k">S2</td><td class="stage">Customer service</td><td>Hotels, OTAs, TMCs</td><td>Conversational resolution + upsell</td><td>Low — data/integration only</td></tr>
+          <tr class="supply"><td class="k">S3</td><td class="stage">Operations</td><td>Airlines, hotels, ground</td><td>Forecasting, IRROPS, staffing, turn</td><td>Medium</td></tr>
+          <tr class="supply"><td class="k">S4</td><td class="stage">Distribution &amp; rails</td><td>OTAs, GDS, suppliers, long-tail</td><td>Room-mapping, API aggregation, agentic rails</td><td><strong>Highest</strong> — merchant-of-record, inventory</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Where the two planes meet, six live opportunity zones emerge — assessed next. The synthesis explicitly culled three dead cells: thin consumer GPT-wrapper planners (no WTP, no moat, incumbent-replicable for free), direct consumer AI booking (trust-gated; it folds into the rails zone rather than standing alone), and consumer-facing groups/MICE (too little WTP evidence today — a watch-item, not a bet).</p>
+  </div>
+</section>
+
+<!-- 6 ZONES / DVF -->
+<section id="zones">
+  <div class="wrap">
+    <span class="sec-num">06</span>
+    <h2 class="sec">The six opportunity zones</h2>
+    <p>Each zone is scored 1–5 on Desirability, Viability and Feasibility, with a confidence rating tied back to the evidence base. Desirability asks whether there is a real, felt demand and a willingness to pay. Viability asks whether the economic case holds — who pays, the pricing and margin logic, defensibility and pool size. Feasibility asks, honestly, whether it can be built and delivered with current AI capability, past the trust and liability gate.</p>
+
+    <!-- Z2 -->
+    <div class="opp">
+      <div class="opp-head">
+        <span class="tierbadge tier-1">Tier 1 · build now</span>
+        <span class="z">Z2 · S1 + S2 × any segment</span>
+        <h3>Supply-side RM &amp; service tooling</h3>
+        <span class="pair">selling AI to the industry</span>
+      </div>
+      <div class="opp-body">
+        <p>Selling AI <em>to</em> the industry: dynamic and continuous revenue management (S1), and conversational service plus upsell automation (S2).</p>
+        <div class="scores">
+          <div class="sc"><div class="lab">Desirability</div><div class="row"><span class="val s4">4</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium-High</div></div>
+          <div class="sc"><div class="lab">Viability</div><div class="row"><span class="val s4">4</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+          <div class="sc"><div class="lab">Feasibility</div><div class="row"><span class="val s5">5</span><span class="of">/ 5</span></div><div class="cf">Conf · High</div></div>
+        </div>
+        <p class="dvf-line"><b>Desirability.</b> Suppliers actively buy this now and ROI is the sales pitch — hotels and airlines have both budget and urgency. This is desirability as a sale to a rational buyer, the most reliable kind, rather than a consumer longing.</p>
+        <p class="dvf-line"><b>Viability.</b> Quantified ROI (ADR/RevPAR +10–15%; McKinsey 3–10%/yr; airline RM +3.5–20%; service −30% cost, +15% upsell) on B2B SaaS margins. Two caveats sharpen this. First, the uplift figures are vendor-reported and rated ≤Medium — if real-world uplift runs at half the claim, supplier willingness-to-pay compresses. Second, "AI revenue management" is a <em>feature war inside a consolidated category</em> (IDeaS, Duetto, Amadeus, Sabre, PROS), not greenfield — the open ground is the mid-market and the long-tail of suppliers those enterprise vendors under-serve. RM is the defensible half, anchored in proprietary demand data; the service half has low defensibility, with the moat in data and integration rather than the bot.</p>
+        <p class="dvf-line"><b>Feasibility.</b> Already deployed at scale — Booking's Smart Messenger handles roughly 250k messages a day; Accor and Hyatt are live; SITA/OCCam ships in operations. No trust wall, because the AI optimises or triages while a human or system stays in control. The highest feasibility in the set.</p>
+        <div class="readline"><b>Read.</b> Tier 1 — and the <b>firmer of the two Tier-1 anchors</b>: bankable today and robust even if the trust gap closes. Win the mid-market and long-tail rather than trying to displace IDeaS/Duetto at the enterprise top, and read the $50–250M-ARR SOM as a credible <em>ceiling</em> for a well-funded leader, not a base-case plan. Split the bet: RM is defensible and premium; service is volume and commoditising.</div>
+      </div>
+    </div>
+
+    <!-- Z1 -->
+    <div class="opp">
+      <div class="opp-head">
+        <span class="tierbadge tier-1">Tier 1 · build now</span>
+        <span class="z">Z1 · D6 × S2/S4</span>
+        <h3>SME / unmanaged self-serve corporate AI</h3>
+        <span class="pair">unmanaged business travel</span>
+      </div>
+      <div class="opp-body">
+        <p>A self-serve, policy-aware AI booking and expense tool for the roughly 38% of corporate travel spend that sits unmanaged — the mid-market too small for a full TMC but too large to run on consumer OTAs.</p>
+        <div class="scores">
+          <div class="sc"><div class="lab">Desirability</div><div class="row"><span class="val s4">4</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+          <div class="sc"><div class="lab">Viability</div><div class="row"><span class="val s4">4</span><span class="of">/ 5</span></div><div class="cf">Conf · Med-High</div></div>
+          <div class="sc"><div class="lab">Feasibility</div><div class="row"><span class="val s4">4</span><span class="of">/ 5</span></div><div class="cf">Conf · Med-High</div></div>
+        </div>
+        <p class="dvf-line"><b>Desirability.</b> Clear, felt pain — no policy enforcement, manual expense, no duty-of-care — and an organisation that already pays for software. Navan Edge exists precisely because this demand is real. The caveat: direct WTP for the <em>AI</em> layer specifically, as distinct from the booking platform, is inferred rather than measured, so this is rated Medium not High.</p>
+        <p class="dvf-line"><b>Viability.</b> A $544bn unmanaged pool and a genuine buyer in the SME rather than the traveller. But the stress-test sharpened the character of this business: Navan's FY2026 revenue of $702M is roughly <strong>$640M usage and only ~$62M subscription</strong> — so this is a <em>take-rate business with a software wrapper</em>, not a high-multiple SaaS annuity. The implication: the right way to size it is GBV × take-rate (as done), and the defensible recurring slice is thinner than a pure-software framing implies. Defensibility is moderate (workflow lock-in and data), and well-capitalised incumbents — Navan, TravelPerk, Ramp, Brex — are already here.</p>
+        <p class="dvf-line"><b>Feasibility.</b> Mostly advise-and-automate-within-policy — the part of AI that ships reliably. Critically, there is no transaction-trust wall because the <em>organisation</em> authorises the agent inside a managed context: Z1 clears the <em>consumer</em> trust gap rather than depending on it closing. Capability is proven, with Ramp and others moving to autonomous expense by late 2026.</p>
+        <div class="readline"><b>Read.</b> Tier 1, but <b>below Z2 in conviction</b> — a real, large opportunity that is also a contested, transaction-exposed fast-follow. It is won on distribution and workflow lock-in, not on a moat, and "AI" is a feature every incumbent is adding rather than a differentiator. The opportunity exists; the question is competitive entry.</div>
+      </div>
+    </div>
+
+    <!-- Z3 -->
+    <div class="opp">
+      <div class="opp-head">
+        <span class="tierbadge tier-2">Tier 2 · gated</span>
+        <span class="z">Z3 · D8 × S3</span>
+        <h3>In-trip / disruption-recovery companion</h3>
+        <span class="pair">the acute moment</span>
+      </div>
+      <div class="opp-body">
+        <p>An always-on agent that handles the acute in-trip moment — delays, cancellations, re-booking, and real-time local recommendations.</p>
+        <div class="scores">
+          <div class="sc"><div class="lab">Desirability</div><div class="row"><span class="val s5">5</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium (WTP Low)</div></div>
+          <div class="sc"><div class="lab">Viability</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Low-Medium</div></div>
+          <div class="sc"><div class="lab">Feasibility</div><div class="row"><span class="val s2">2</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+        </div>
+        <p class="dvf-line"><b>Desirability.</b> The highest-satisfaction moment in the evidence — 95% found in-trip AI helpful, 51% used it — and the moment of greatest acute pain, so the highest <em>latent</em> WTP. A datapoint surfaced in the stress-test cuts both ways: 40% of travellers fear poor service if AI completes a purchase, which simultaneously confirms the appetite for a recovery companion <em>and</em> confirms the distrust at exactly the acting moment. "Helpful" is not "paid for," and direct WTP evidence is thin — this is the study's single biggest evidence gap: a high score held deliberately at Medium confidence.</p>
+        <p class="dvf-line"><b>Viability.</b> A plausible premium subscription, or a supplier-funded model where the airline or hotel pays to retain a disrupted guest — but no proven pricing model and unclear ownership of the relationship. Unsized.</p>
+        <p class="dvf-line"><b>Feasibility.</b> The feasibility wall of the whole study. To <em>act</em> — re-book, not just advise — the agent needs live booking/PNR access and the authority to transact under disruption, exactly where trust, liability (<em>Moffatt v. Air Canada</em>) and capability are weakest. The advisory-only version is feasible now; the valuable acting version is not.</p>
+        <div class="readline"><b>Read.</b> Tier 2 — the most desirable, the least deliverable. Build the advisory wedge now at low cost; the prize (autonomous recovery) is gated. Pressure-test WTP before any sizing is trusted.</div>
+      </div>
+    </div>
+
+    <!-- Z4 -->
+    <div class="opp">
+      <div class="opp-head">
+        <span class="tierbadge tier-2">Tier 2 · gated</span>
+        <span class="z">Z4 · S4 × D1/D2/D7</span>
+        <h3>Long-tail supply aggregation</h3>
+        <span class="pair">picks &amp; shovels</span>
+      </div>
+      <div class="opp-body">
+        <p>Make fragmented, non-API tours, activities and independent inventory "visible to agents" — clean, map and expose messy supply.</p>
+        <div class="scores">
+          <div class="sc"><div class="lab">Desirability</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+          <div class="sc"><div class="lab">Viability</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Low-Medium</div></div>
+          <div class="sc"><div class="lab">Feasibility</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+        </div>
+        <p class="dvf-line"><b>Desirability.</b> A real structural need — long-tail supply without modern APIs becomes invisible to agentic search. Demand comes from both suppliers wanting visibility and aggregators wanting inventory. Felt, but diffuse.</p>
+        <p class="dvf-line"><b>Viability.</b> An aggregation/take-rate model with structural defensibility <em>if</em> you own the cleaned data layer — the most durable moat in travel. But the pool is unsized, supply onboarding is slow and manual, and consolidation is already under way (HBX acquired Bridgify in May 2026).</p>
+        <p class="dvf-line"><b>Feasibility.</b> Room-mapping and inventory normalisation are hard for raw LLMs but tractable with purpose-built tooling (Zentrum Hub runs 100+ suppliers, sub-500ms, ~8k bookings/day). Doable, but operationally heavy — the work is supply ops, not modelling.</p>
+        <div class="readline"><b>Read.</b> Tier 2 — strategically attractive because it owns a defensible layer, but capital- and ops-intensive and unsized with precision. A picks-and-shovels play, not a quick win.</div>
+      </div>
+    </div>
+
+    <!-- Z5 -->
+    <div class="opp">
+      <div class="opp-head">
+        <span class="tierbadge tier-3">Tier 3 · option</span>
+        <span class="z">Z5 · S4 × D2</span>
+        <h3>Agentic booking rails</h3>
+        <span class="pair">in-scope · 2027+</span>
+      </div>
+      <div class="opp-body">
+        <p>Infrastructure for AI-initiated transactions, aligned to the emerging ACP/UCP/MCP protocols — the rails that let an agent actually book through incumbents.</p>
+        <div class="scores">
+          <div class="sc"><div class="lab">Desirability</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+          <div class="sc"><div class="lab">Viability</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Low-Medium</div></div>
+          <div class="sc"><div class="lab">Feasibility</div><div class="row"><span class="val s2">2</span><span class="of">/ 5</span></div><div class="cf">Conf · Low-Medium</div></div>
+        </div>
+        <p class="dvf-line"><b>Desirability.</b> The whole industry is positioning here — Google UCP, OpenAI ACP, Expedia and Booking partnerships — but <em>consumer</em> demand to transact via AI is currently low (8% comfortable; 66% won't). Demand is coming from platforms and suppliers, not travellers, yet.</p>
+        <p class="dvf-line"><b>Viability.</b> Potentially huge, sitting on the ~$94–107bn commission pool — but value accrues to incumbents who own merchant-of-record. An independent rails startup is squeezed between the platforms above and the OTAs/GDS below. Highly timing-dependent.</p>
+        <p class="dvf-line"><b>Feasibility.</b> OpenAI walked this back in March 2026 — the clearest possible signal that the acting/transacting layer is not ready (inventory sync, compliance, trust). A 2027+ horizon.</p>
+        <div class="readline"><b>Read.</b> Tier 3 — an option, not a base case. Worth a watching brief and a low-cost positioning bet aligned to the emerging protocols, not a primary investment now. Re-rate when the trust gap narrows.</div>
+      </div>
+    </div>
+
+    <!-- Z6 -->
+    <div class="opp">
+      <div class="opp-head">
+        <span class="tierbadge tier-3">Tier 3 · niche</span>
+        <span class="z">Z6 · D4 × S2</span>
+        <h3>Luxury advisor-augmentation backend</h3>
+        <span class="pair">behind the human</span>
+      </div>
+      <div class="opp-body">
+        <p>AI behind the human advisor — proposal generation, CRM synthesis, rate monitoring — never traveller-facing.</p>
+        <div class="scores">
+          <div class="sc"><div class="lab">Desirability</div><div class="row"><span class="val s4">4</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+          <div class="sc"><div class="lab">Viability</div><div class="row"><span class="val s3">3</span><span class="of">/ 5</span></div><div class="cf">Conf · Medium</div></div>
+          <div class="sc"><div class="lab">Feasibility</div><div class="row"><span class="val s5">5</span><span class="of">/ 5</span></div><div class="cf">Conf · High</div></div>
+        </div>
+        <p class="dvf-line"><b>Desirability.</b> Concrete, proven value — proposal generation in 5 minutes versus 1.5 hours. Advisors and agencies want it, and the agency (the buyer) pays. Strong fit, but a narrow buyer base.</p>
+        <p class="dvf-line"><b>Viability.</b> Healthy per-seat SaaS economics and genuinely defensible (discretion, CRM data, human-in-loop is the point), but the total pool is small — luxury advisory is a thin slice of the market. A good business with a limited ceiling.</p>
+        <p class="dvf-line"><b>Feasibility.</b> Pure back-office augmentation — no transaction wall, no consumer trust gap, capability is here today.</p>
+        <div class="readline"><b>Read.</b> Tier 3 by size, Tier 1 by deliverability. A reliable niche — attractive for a focused entrant, not a market-defining bet.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 7 PRIORITISATION -->
+<section id="priority">
+  <div class="wrap">
+    <span class="sec-num">07</span>
+    <h2 class="sec">Prioritisation — attractiveness × feasibility</h2>
+    <p>The 2×2 splits "worth doing" from "doable now" deliberately, so a desirable-but-gated zone such as in-trip is visibly distinct rather than averaged into a misleading middle. Attractiveness is (D+V)/2; feasibility is F on its own axis.</p>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Zone</th><th>D</th><th>V</th><th>F</th><th>Attractiveness</th><th>Feasibility</th><th>Tier</th><th>Conf.</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Z2 Supply RM + service</td><td>4</td><td>4</td><td>5</td><td><strong>4.0</strong></td><td><strong>5</strong></td><td>1</td><td>M</td></tr>
+          <tr><td class="k">Z1 SME self-serve corporate</td><td>4</td><td>4</td><td>4</td><td><strong>4.0</strong></td><td><strong>4</strong></td><td>1</td><td>M</td></tr>
+          <tr><td class="k">Z6 Luxury advisor backend</td><td>4</td><td>3</td><td>5</td><td>3.5</td><td>5</td><td>3 (small)</td><td>M</td></tr>
+          <tr><td class="k">Z3 In-trip / disruption</td><td>5</td><td>3</td><td>2</td><td>4.0</td><td>2</td><td>2</td><td>M (WTP L)</td></tr>
+          <tr><td class="k">Z4 Long-tail aggregation</td><td>3</td><td>3</td><td>3</td><td>3.0</td><td>3</td><td>2</td><td>L-M</td></tr>
+          <tr><td class="k">Z5 Agentic booking rails</td><td>3</td><td>3</td><td>2</td><td>3.0</td><td>2</td><td>3 (option)</td><td>L-M</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The top-right quadrant — high attractiveness, high feasibility — holds the build-now bets, Z2 and Z1. Z3 sits top-left: maximally attractive but currently undeliverable in its valuable form, a watch-and-wedge. Z4 and Z5 are the mid and option plays. Z6 plots high-feasibility but its attractiveness ceiling is capped by a small pool — a strong niche, not a market-maker. Nothing lands in the bottom-right "easy but pointless" trap, because the synthesis already culled those cells: thin GPT-wrapper planners, consumer AI booking, and consumer MICE.</p>
+  </div>
+</section>
+
+<!-- 8 SIZING -->
+<section id="sizing">
+  <div class="wrap">
+    <span class="sec-num">08</span>
+    <h2 class="sec">Directional sizing</h2>
+    <p>These are order-of-magnitude sizes for a go/no-go gate, not a bottoms-up operating model. The one non-negotiable discipline: where a pool is gross booking value (GBV), it is converted to a revenue pool via an explicit take-rate <em>before</em> any obtainable share is drawn — gross bookings are never compared to revenue. TAM is the total annual pool the opportunity could theoretically touch; SAM is the slice realistically serviceable now; SOM is a credible ~3-year capture for a focused category leader, expressed as ARR for a software business.</p>
+
+    <h4 class="subb">Anchor pools (sourced)</h4>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Anchor</th><th>Value</th><th>Conf.</th></tr></thead>
+        <tbody>
+          <tr><td class="k">T&amp;T contribution to global GDP (2025)</td><td>$11.6tn</td><td>H</td></tr>
+          <tr><td class="k">OTA commission revenue pool</td><td>~$94bn (2024) → ~$107bn (2026)</td><td>M</td></tr>
+          <tr><td class="k">Global airline revenue (2025)</td><td>~$979bn total · ~$705bn passenger + ~$145bn ancillary</td><td>H</td></tr>
+          <tr><td class="k">Unmanaged corporate travel spend</td><td>$544bn (GBV)</td><td>M</td></tr>
+          <tr><td class="k">Travel &amp; expense software market (2025)</td><td>~$4–5bn → ~$13.5bn by 2032</td><td>M</td></tr>
+          <tr><td class="k">Hotel revenue-management software (2025)</td><td>~$1.9–3.8bn RMS · ~$4–6bn broader</td><td>L-M</td></tr>
+          <tr><td class="k">Online tours &amp; activities reservations (2025)</td><td>~$185bn GBV · ~$360bn broader "experiences"</td><td>M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Z2 — Supply-side RM + service tooling <span class="conf-tag conf-m">Conf · Medium</span></h3>
+    <p>Two ways to size it: a conservative software-spend frame, and the much larger value-pool behind it.</p>
+    <div class="chain">
+      <span class="lab">Assumption chain — TAM (software frame) ≈ $8–12bn/yr</span>
+      hotel RM software <code>~$2–4bn</code> (anchor) + airline RM / offer-optimisation software <code>~$3–4bn</code> (estimate: subset of GDS/airline-IT spend — Amadeus Air IT ~€2.3bn, Sabre IT ~$0.55bn, plus the PROS/Fetcherr/Accelya class) + travel customer-service automation <code>~$3–4bn</code> (estimate: AI share of travel contact-centre spend).
+    </div>
+    <div class="chain">
+      <span class="lab">Cross-check — value pool ≈ $70bn+/yr of revenue uplift created</span>
+      airline passenger revenue <code>~$693bn × ~3.5%</code> AI-RM uplift ≈ <code>$24bn</code>; global hotel/lodging revenue (est. ~$1.3–1.6tn) <code>× 3–10%</code> McKinsey lift ≈ <code>$40–150bn</code>. A vendor captures only a slice of value created (~5–15% via SaaS/success-fee), which reconciles to the $8–12bn software TAM. <em>(IATA mid-year 2025 puts passenger revenue at ~$693bn, of a $979bn total.)</em>
+    </div>
+    <p><strong>SAM ≈ $3–5bn/yr</strong> — the AI-native, agentic-RM-and-service slice addressable to mid-and-large suppliers ready to adopt now, ~30–40% of TAM. <strong>SOM ≈ $50–250M ARR</strong> for a focused category leader over ~3 years, capturing ~1–5% of SAM. RM is the defensible half (proprietary demand data); service automation is lower-moat and should expect margin pressure. The most bankable zone — split the bet between defensible RM and commoditising service.</p>
+
+    <h3 class="sub">Z1 — SME / unmanaged self-serve corporate AI <span class="conf-tag conf-m">Conf · Low-Medium</span></h3>
+    <div class="chain">
+      <span class="lab">Assumption chain — TAM (revenue pool) ≈ $11–22bn/yr</span>
+      unmanaged corporate travel <code>$544bn GBV × ~2–4%</code> blended platform take (SaaS subscription + transaction fee + expense automation) = <code>$11–22bn</code>. Cross-check: total T&amp;E software ~$4–5bn today → ~$13.5bn by 2032; the SME/unmanaged slice (~40%) implies a near-term software-only SAM of ~$2–5bn.
+    </div>
+    <p><strong>SAM ≈ $2–5bn/yr</strong> — the share reachable by an AI-enabled self-serve product now (digitally mature SMEs, supported geographies), ~15–25% of TAM. <strong>SOM ≈ $100–300M ARR</strong> over ~3–5 years. The anchor: Navan reached $702M revenue (FY2026, +31%) with first positive non-GAAP operating income — proof a leader scales. Two cautions from the stress-test: only ~$62M of that $702M is subscription, so the "ARR" here is mostly usage/take-rate, not a software annuity; and a <em>new</em> entrant reaching $100–300M in three years sits at the optimistic end of comparables (Navan is a decade old and raised ~$2.2bn). The key uncertainty remains the GBV→take conversion (a different take rate moves the pool ~2×), and the AI-specific WTP is inferred rather than measured — flagged.</p>
+
+    <h3 class="sub">Z4 — Long-tail supply aggregation <span class="conf-tag conf-l">Conf · Low</span></h3>
+    <div class="chain">
+      <span class="lab">Assumption chain — TAM (revenue pool) ≈ $18–46bn/yr</span>
+      online tours &amp; activities reservations <code>~$185bn GBV × ~10–25%</code> aggregator take-rate. (Broader "experiences" at ~$360bn would roughly double the ceiling.)
+    </div>
+    <p><strong>SAM ≈ $4–18bn/yr</strong> — the non-API, hard-to-aggregate long-tail that AI tooling specifically unlocks, ~20–40% of the take-rate pool. <strong>SOM</strong> is small and ops-gated: onboarding messy supply is manual and slow, and incumbents are already consolidating (HBX/Bridgify, May 2026). A focused entrant is plausibly low-tens-of-$M ARR in three years. Owns a defensible data layer if executed, but capital- and ops-intensive — a picks-and-shovels bet.</p>
+
+    <h3 class="sub">Z3 — In-trip / disruption-recovery <span class="conf-tag conf-l">Conf · Low · excluded from gate math</span></h3>
+    <p>Deliberately left unsized as a base case, because willingness-to-pay is unproven — the study's single biggest evidence gap. Carried as directional upside only.</p>
+    <div class="chain">
+      <span class="lab">Illustrative band only — not a forecast — ≈ $1–5bn/yr</span>
+      if ~10% of the 1.54bn international trips carry a <code>~$10–30</code> in-trip-assist value (traveller-paid or supplier-funded retention), that is <code>~$1.5–4.6bn</code>, plus an unquantified supplier-funded "retain the disrupted guest" pool.
+    </div>
+    <p>SAM and SOM are negligible near-term until the live-PNR / transaction feasibility wall clears. Build the advisory wedge now at low cost, and pressure-test WTP before any sizing is trusted. <strong>This number must not enter the go/no-go math except as upside.</strong></p>
+
+    <h3 class="sub">Z6 — Luxury advisor backend <span class="conf-tag conf-l">Conf · Low</span></h3>
+    <div class="chain">
+      <span class="lab">Assumption chain — TAM ≈ $0.1–0.5bn/yr</span>
+      global travel advisors in the tens of thousands <code>× ~$1–5k/yr</code> per-seat SaaS for proposal-generation / CRM-synthesis tooling.
+    </div>
+    <p><strong>SAM ≈ $50–200M; SOM ≈ single-digit $M ARR.</strong> High feasibility (pure back-office, no trust wall) but a small ceiling. A reliable niche with strong margins, not a market-maker.</p>
+
+    <h3 class="sub">Z5 — Agentic booking rails <span class="conf-tag conf-l">Conf · Low · scenario only</span></h3>
+    <p>Sits on the ~$94–107bn OTA commission pool plus airline/hotel direct. As a scenario: if agentic flows eventually re-route even 5–10% of commission value through new rails, that is a ~$5–10bn pool in motion — but value accrues to incumbents who hold merchant-of-record (Google UCP / OpenAI ACP route <em>through</em> Expedia/Booking). OpenAI's March-2026 checkout walkback dates the opportunity to 2027+. Carried as optionality, not a base-case number.</p>
+
+    <h4 class="subb">Consolidated sizing (annual, directional)</h4>
+    <div class="tbl-scroll">
+      <table class="data">
+        <thead><tr><th>Zone</th><th>TAM (pool)</th><th>SAM</th><th>SOM (~3-yr leader)</th><th>Conf.</th></tr></thead>
+        <tbody>
+          <tr><td class="k">Z2 Supply RM + service</td><td>$8–12bn software · $70bn+ value</td><td>$3–5bn</td><td>$50–250M ARR</td><td>M</td></tr>
+          <tr><td class="k">Z1 SME self-serve corporate</td><td>$11–22bn revenue pool</td><td>$2–5bn</td><td>$100–300M ARR</td><td>L-M</td></tr>
+          <tr><td class="k">Z4 Long-tail aggregation</td><td>$18–46bn revenue pool</td><td>$4–18bn</td><td>low-tens $M ARR</td><td>L</td></tr>
+          <tr><td class="k">Z3 In-trip / disruption</td><td>$1–5bn (upside only)</td><td>negligible now</td><td>negligible now</td><td>L</td></tr>
+          <tr><td class="k">Z6 Luxury advisor backend</td><td>$0.1–0.5bn</td><td>$50–200M</td><td>single-digit $M ARR</td><td>L</td></tr>
+          <tr><td class="k">Z5 Agentic rails</td><td>scenario on $94–107bn commission</td><td>n/a (base)</td><td>n/a (base)</td><td>L</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <span class="lab">The heart of the GO</span>
+      <p style="margin-bottom:0">A focused leader can credibly reach low-hundreds-of-$M ARR in either Tier-1 zone — without relying on the contested booking transaction. In-trip is carried as upside only until willingness-to-pay is tested. That is the single most important number not to over-trust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 RISKS -->
+<section id="risks">
+  <div class="wrap">
+    <span class="sec-num">09</span>
+    <h2 class="sec">Risks &amp; what would break the thesis</h2>
+    <p>The honest version of a go-recommendation names the things that would falsify it. The stress-test (Stage 6) re-verified the four load-bearing anchors against primary sources — the $544bn unmanaged pool, Navan's $702M (SEC-filed), IATA's $979bn total, and the trust gap (raised to High) — and none failed. What follows are the conditions under which the call should still change.</p>
+    <h4 class="subb">The three falsifiers — monitorable, none evident today</h4>
+    <ul class="clean">
+      <li><strong>Real-world RM / service uplift materially below vendor claims.</strong> The Z2 ROI figures (RM +10–15%, service −30%, airline RM +3.5–20%) are largely self-reported by sellers. If true uplift runs at half the claim, supplier willingness-to-pay compresses and the $70bn+ value pool halves. The direction is corroborated by named at-scale deployments — but always read the conservative $8–12bn software frame, never the value pool alone.</li>
+      <li><strong>The SME-AI layer commands no premium over a plain booking tool.</strong> Z1's AI-specific WTP is inferred, not measured, and the business is take-rate-monetised (Navan: ~$62M subscription of $702M). If "AI" is just table stakes that every incumbent adds, Z1 is a distribution fight, not a moat — its case weakens to the lower end.</li>
+      <li><strong>The consumer trust gap closes inside ~2 years.</strong> OpenAI's March-2026 walkback proves <em>unreadiness</em>, not permanent impossibility. If protocols (ACP/UCP/MCP) and liability frameworks mature fast, the demand-side surface captures more value than assumed and "stay supply-side" looks too conservative — elevating agentic rails (Z5). This is the single variable to monitor; it is the trigger that re-rates the whole map.</li>
+    </ul>
+    <div class="callout petrol">
+      <span class="lab">Why the GO is robust to its own biggest risk</span>
+      <p style="margin-bottom:0">Even if the trust gap closes early, value still routes <em>through</em> incumbents — the re-intermediation finding (Theme 2). So the supply-side tooling thesis, and Z2 in particular, holds up whether the gap persists or closes; what shifts is only the <em>relative</em> attractiveness of the rails option. That asymmetry is a large part of why Z2 is the firmer anchor of the two Tier-1 bets.</p>
+    </div>
+    <h4 class="subb">Standing low-confidence flags</h4>
+    <ul class="clean">
+      <li><strong>Z3 has no proven willingness-to-pay.</strong> The $1–5bn band is illustrative and excluded from the gate math; this is the most important single number not to over-trust. Build the advisory wedge now; test WTP before it enters any size.</li>
+      <li><strong>Z4 take-rate (10–25%) and long-tail share (20–40%) are both estimates;</strong> precision is low, the work is supply ops not modelling, and incumbent consolidation (HBX/Bridgify) could close the window.</li>
+      <li><strong>All software-market anchors are aggregator-sourced</strong> with methodology variance, rated Low-Medium — re-validate before any investment-grade use.</li>
+    </ul>
+    <div class="callout petrol">
+      <span class="lab">Counter-position, stated fairly</span>
+      <p style="margin-bottom:0">The strongest case <em>against</em> the supply-side thesis: cost-out tooling is efficiency, not new demand, so it competes on price and commoditises, while the consumer-planning surface — however unmonetised today — is where the durable category-defining brands may ultimately form. The study's answer is that defensibility in travel is structural (data, inventory, liability rails), not interface-deep, and that a bankable few-hundred-million-ARR business beats a large-but-contested land-grab for an entrant without platform-scale distribution. That is a judgement, and it is the judgement the stress-test should attack.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 VERDICT -->
+<section class="verdict-band" id="verdict">
+  <div class="wrap">
+    <span class="eyebrow">The recommendation</span>
+    <div class="tag"><b>Verdict · GO</b><span>on the supply-side B2B + SME self-serve thesis</span></div>
+    <h2>The Tier-1 case clears the gate — anchored on Z2.</h2>
+    <p>Z2 (~$3–5bn SAM) and Z1 (~$2–5bn SAM) are large enough, have proven buyers and ROI, and a focused entrant can credibly reach low-hundreds-of-$M ARR — without relying on the contested booking transaction. An independent Stage-6 red-team did not break the thesis; it sharpened it. <strong>Z2 (AI revenue management for the mid-market and long-tail) is the firmer anchor</strong> — its demand holds whether or not the consumer trust gap ever closes. <strong>Z1 (SME self-serve travel) is a deliberate, eyes-open fast-follow</strong>: real, but more contested, and — on the clearest comparable (Navan books only ~$62M of its ~$702M revenue as subscription) — a take-rate business rather than a software annuity. Read its low-hundreds-of-$M SOM as a credible ceiling, not a base-case plan.</p>
+    <p>Tier-2 is real optionality, not base case: Z4 (long-tail) has a genuinely large pool but is ops-heavy and unsized with precision; Z3 (in-trip) is the most desirable moment in the market but must not enter the go/no-go math until WTP is tested — it is upside. Tier-3 is a profitable niche (Z6) and a watch-and-position option keyed to the trust gap closing (Z5).</p>
+    <p style="margin-bottom:0"><strong>Robust to its own biggest risk.</strong> Even if consumers never come to trust AI with the booking, value re-intermediates through the incumbents Z2 and Z1 already sell to — so the GO does not depend on the trust gap closing. The three things that <em>would</em> falsify it (RM/service uplift below vendor claims; SME AI commanding no premium; a sub-two-year trust-gap close) are monitorable and none is evident today.</p>
+  </div>
+</section>
+
+<!-- 11 METHOD / SOURCES -->
+<section id="method">
+  <div class="wrap">
+    <span class="sec-num">11</span>
+    <h2 class="sec">Method, confidence &amp; sources</h2>
+    <p>This is a DVF (Desirability–Viability–Feasibility) opportunity assessment to Big-4 standard, built on public sources and structured estimation only — no proprietary research. Every quantified claim is logged in the project ledger with its source or estimation method and a confidence rating; vendor-reported figures are flagged and rated down; gross bookings are never compared to revenue. Sizing is directional and order-of-magnitude — built for a go/no-go gate, not a bottoms-up operating model — with assumption chains kept short and visible.</p>
+    <p><strong>Confidence ratings.</strong> <span class="conf-tag conf-h">High</span> multiple independent or primary sources agree · <span class="conf-tag conf-m">Medium</span> sound but single-source or definition-sensitive · <span class="conf-tag conf-l">Low</span> estimated or thin evidence, flagged.</p>
+
+    <h4 class="subb">Key sources</h4>
+    <div class="src-list">
+      <div><span class="s-k">IATA</span> — 2025 airline revenue ~$979bn; passenger ~$693bn (mid-year outlook) + ancillary $145bn. <a href="https://www.iata.org/en/pressroom/2025-releases/2025-06-02-01/">iata.org</a> · <a href="https://www.businesstravelnews.com/Transportation/Air/IATA-Projects-2025-Airline-Revenue-to-Top-1-Trillion">businesstravelnews.com</a></div>
+      <div><span class="s-k">360iResearch / Statista</span> — tours &amp; activities reservations ~$185bn (2025); experiences ~$360bn. <a href="https://www.360iresearch.com/library/intelligence/tours-activities-reservations">360iresearch.com</a> · <a href="https://www.statista.com/topics/13250/experiential-travel-tours-activities-and-attractions/">statista.com</a></div>
+      <div><span class="s-k">SkyQuest / Mordor / Fortune</span> — T&amp;E software market ~$4–5bn (2025) → ~$13.5bn (2032). <a href="https://www.skyquestt.com/report/travel-and-expense-management-software-market">skyquestt.com</a> · <a href="https://www.mordorintelligence.com/industry-reports/travel-and-expense-management-market">mordorintelligence.com</a></div>
+      <div><span class="s-k">Coherent / Market Research Intellect / Straits</span> — hotel RM &amp; hospitality software ~$2–6bn (2025). <a href="https://www.coherentmarketinsights.com/industry-reports/hotel-management-software-market">coherentmarketinsights.com</a> · <a href="https://www.marketresearchintellect.com/product/global-hotel-revenue-management-software-market-size-forecast/">marketresearchintellect.com</a></div>
+      <div><span class="s-k">WTTC</span> — Travel &amp; Tourism contribution to global GDP 2025 (~$11.6tn). Skift Research — OTA commission pool ~$94bn (2024). Maximize/Fortune — unmanaged corporate travel $544bn. Navan — FY2026 financials ($702M revenue). <span class="mono">full provenance in /LEDGER.md</span></div>
+    </div>
+    <p style="margin-top:24px;font-size:.84rem;color:var(--ink-soft)">AI × Travel Opportunity Study · Stage 5 deliverable (detailed report), with Stage 6 red-team applied · 2026. The companion <a href="index.html">interactive map</a> leads with the headline; this report holds the depth. Demand-side adoption and trust figures (56% AI usage, 66% won't book, Klook 89-point gap, <em>Moffatt v. Air Canada</em>, in-trip 95%/51%) are logged with their sources in the project ledger.</p>
+    <a class="backlink" href="index.html">← Back to the interactive map</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p style="margin-bottom:0">AI <strong>×</strong> Travel · Opportunity Study · A DVF opportunity assessment · Public sources and structured estimation only · Directional sizing for a go/no-go gate · 2026.</p>
+  </div>
+</footer>
+
+</body>
+</html>
