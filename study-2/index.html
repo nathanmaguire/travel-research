@@ -6,17 +6,17 @@
 <title>The Editorial House — A Luxury Travel Agency Venture Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FFFFFF;--paper-2:#F5F5F7;--black:#000505;--ink:#000505;--ink-soft:#6E6E73;
-  --mute:#6E6E73;--accent:#0075A2;--accent-ink:#FFFFFF;--accent-deep:#0075A2;
-  --line:#00050514;--line-strong:#00050524;
-  --sans:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;--r:12px;
+  --paper:#FFFFFF;--paper-2:#F1F0EB;--black:#000000;--ink:#141414;--ink-soft:#5E6266;
+  --mute:#8D9297;--accent:#15E0C6;--accent-ink:#06120F;--accent-deep:#0C7A69;
+  --line:#14141414;--line-strong:#14141424;
+  --sans:'PP Neue Montreal','Geist','Hanken Grotesk',system-ui,-apple-system,sans-serif;--r:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:#000505;font-family:var(--sans);font-size:17px;line-height:1.55;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:#26282A;font-family:var(--sans);font-size:17px;line-height:1.55;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:var(--sans);font-weight:500;line-height:1.04;letter-spacing:-.03em;color:var(--ink)}
 h1{font-size:clamp(2.8rem,7vw,5.4rem);letter-spacing:-.04em;line-height:.98}
 h2{font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.035em}
@@ -25,7 +25,7 @@ p{margin:0 0 16px}
 a{color:var(--ink);text-decoration:none}
 .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
 section{padding:88px 0;border-top:1px solid var(--line)}
-.eyebrow{display:inline-block;font-weight:500;font-size:.74rem;letter-spacing:-.005em;color:var(--ink);border:1px solid var(--line-strong);border-radius:8px;padding:5px 13px;margin-bottom:20px}
+.eyebrow{display:inline-block;font-weight:500;font-size:.74rem;letter-spacing:-.005em;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;margin-bottom:20px}
 .dark .eyebrow{color:var(--accent);border-color:#FFFFFF2E}
 nav{position:sticky;top:0;z-index:20;background:#FFFFFFF2;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .navin{max-width:1060px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -34,16 +34,16 @@ nav{position:sticky;top:0;z-index:20;background:#FFFFFFF2;backdrop-filter:blur(1
 .navlinks{display:flex;gap:22px;align-items:center;font-size:.86rem}
 .navlinks a{color:var(--ink-soft)}
 .navlinks a:hover{color:var(--ink)}
-.nav-cta{background:var(--accent);color:var(--accent-ink)!important;font-weight:500;padding:8px 16px;border-radius:8px;font-size:.84rem}
-.nav-cta:hover{background:#005F84}
+.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:500;padding:8px 16px;border-radius:999px;font-size:.84rem}
+.nav-cta:hover{background:#0FD1B8}
 .hero{padding:96px 0 70px}
 .hero .lead{font-size:1.25rem;color:var(--ink-soft);max-width:660px;margin-top:22px}
 .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.chip{font-size:.78rem;font-weight:500;border:1px solid var(--line-strong);border-radius:8px;padding:7px 14px;color:var(--ink)}
+.chip{font-size:.78rem;font-weight:500;border:1px solid var(--line-strong);border-radius:999px;padding:7px 14px;color:var(--ink)}
 .chip.go{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-ink)!important;font-weight:500;padding:12px 22px;border-radius:8px;font-size:.92rem}
-.btn:hover{background:#005F84}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:500;padding:12px 22px;border-radius:999px;font-size:.92rem}
+.btn:hover{background:#0FD1B8}
 .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong)}
 .btn.ghost:hover{border-color:var(--ink)}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px}
@@ -61,14 +61,14 @@ figure img,figure svg.figsvg{width:100%;height:auto;display:block;border:1px sol
 figcaption{font-size:.84rem;color:var(--mute);margin-top:10px}
 .exlink{display:inline-block;margin-top:14px;font-size:.9rem;color:var(--ink);border-bottom:1px solid var(--line-strong);padding-bottom:1px}
 .exlink:hover{border-color:var(--ink)}
-.dark{background:var(--black);color:#F5F5F7;border:none}
-.dark h1,.dark h2,.dark h3{color:#F5F5F7}
-.dark .lede{color:#A1A1A6}
-.tag{display:inline-block;background:var(--accent);color:var(--accent-ink)!important;font-weight:500;font-size:.78rem;padding:6px 14px;border-radius:8px;margin-bottom:20px}
+.dark{background:var(--black);color:#F1F0EB;border:none}
+.dark h1,.dark h2,.dark h3{color:#F1F0EB}
+.dark .lede{color:#C7CBCB}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-ink);font-weight:500;font-size:.78rem;padding:6px 14px;border-radius:999px;margin-bottom:20px}
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.vcard{background:#000505;border:1px solid #FFFFFF1A;border-radius:var(--r);padding:24px}
-.vcard .k{font-size:1.9rem;font-weight:500;letter-spacing:-.03em;color:#F5F5F7}
-.vcard .l{font-size:.84rem;color:#A1A1A6;margin-top:6px}
+.vcard{background:#141414;border:1px solid #FFFFFF1A;border-radius:var(--r);padding:24px}
+.vcard .k{font-size:1.9rem;font-weight:500;letter-spacing:-.03em;color:#F1F0EB}
+.vcard .l{font-size:.84rem;color:#9aa0a0;margin-top:6px}
 .tablewrap{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;margin-top:30px}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
@@ -77,9 +77,9 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 tbody tr:last-child td{border-bottom:none}
 .dark .tablewrap{border-color:#FFFFFF1F}
 .dark table th,.dark table td{border-color:#FFFFFF16}
-.dark thead th{background:#000505;color:#F5F5F7}
+.dark thead th{background:#141414;color:#F1F0EB}
 .seclead{max-width:680px;color:var(--ink-soft)}
-footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
+footer{background:var(--black);color:#9aa0a0;font-size:.86rem;padding:48px 0}
 .footrow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .footrow a{color:var(--accent)}
 @media(max-width:820px){.kpis,.steps,.vgrid{grid-template-columns:1fr 1fr}}
@@ -90,7 +90,7 @@ footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
 
 <nav>
   <div class="navin">
-    <div class="mark">The Editorial House <span>· Venture Study</span></div>
+    <div class="mark"><a href="../index.html" style="color:inherit;text-decoration:none">AI × Travel <span>· Research</span></a></div>
     <div class="navlinks">
       <a href="#thesis">Thesis</a>
       <a href="#whitespace">White space</a>
@@ -140,74 +140,74 @@ footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
     <h2>The corner no one owns at scale.</h2>
     <p class="seclead" style="margin-top:16px">Incumbents own access but speak in identical "luxury/bespoke" language. AI-natives own technology but lack relationships and stall at the trust gate. The bionic host is taste-neutral. No one combines a distinctive editorial voice, human delivery, owned supply, and AI as leverage.</p>
     <figure>
-      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Inter','Segoe UI',system-ui,sans-serif">
+      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'Geist','Hanken Grotesk',system-ui,sans-serif">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;display=swap');
       text{letter-spacing:-0.012em}
       .h{font-weight:500;letter-spacing:-0.03em}
     </style>
   </defs>
   <rect x="0" y="0" width="960" height="720" fill="#FFFFFF"/>
 
-  <text x="64" y="68" class="h" font-size="30" fill="#000505">The white space is taste, delivered by a human.</text>
-  <text x="64" y="98" font-size="15" fill="#6E6E73">Luxury-travel competitive map — where each archetype sits, and the corner no one owns at scale</text>
-  <line x1="64" y1="116" x2="896" y2="116" stroke="#00050524" stroke-width="1"/>
+  <text x="64" y="68" class="h" font-size="30" fill="#141414">The white space is taste, delivered by a human.</text>
+  <text x="64" y="98" font-size="15" fill="#5E6266">Luxury-travel competitive map — where each archetype sits, and the corner no one owns at scale</text>
+  <line x1="64" y1="116" x2="896" y2="116" stroke="#14141424" stroke-width="1"/>
 
-  <line x1="150" y1="170" x2="150" y2="620" stroke="#000505" stroke-width="1.5"/>
-  <line x1="150" y1="620" x2="880" y2="620" stroke="#000505" stroke-width="1.5"/>
-  <line x1="515" y1="170" x2="515" y2="620" stroke="#00050524" stroke-width="0.75" stroke-dasharray="4 5"/>
-  <line x1="150" y1="395" x2="880" y2="395" stroke="#00050524" stroke-width="0.75" stroke-dasharray="4 5"/>
+  <line x1="150" y1="170" x2="150" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="150" y1="620" x2="880" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="515" y1="170" x2="515" y2="620" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
+  <line x1="150" y1="395" x2="880" y2="395" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
 
   <!-- white-space highlight -->
-  <rect x="525" y="180" width="345" height="205" rx="12" fill="#0075A2" opacity="0.14"/>
-  <rect x="525" y="180" width="345" height="205" rx="12" fill="none" stroke="#0075A2" stroke-width="1.5" stroke-dasharray="2 6"/>
+  <rect x="525" y="180" width="345" height="205" rx="12" fill="#15E0C6" opacity="0.14"/>
+  <rect x="525" y="180" width="345" height="205" rx="12" fill="none" stroke="#0C7A69" stroke-width="1.5" stroke-dasharray="2 6"/>
 
-  <text x="515" y="655" text-anchor="middle" font-size="12" fill="#6E6E73" letter-spacing="0.02em">POSITIONING  →</text>
-  <text x="165" y="640" font-size="11" fill="#6E6E73">generic “luxury / bespoke”</text>
-  <text x="878" y="640" text-anchor="end" font-size="11" fill="#6E6E73">distinctive editorial voice</text>
-  <text x="128" y="395" text-anchor="middle" font-size="12" fill="#6E6E73" letter-spacing="0.02em" transform="rotate(-90 128 395)">DELIVERY MODEL  →</text>
-  <text x="160" y="190" font-size="11" fill="#6E6E73">human advisor · relationship-led</text>
-  <text x="160" y="610" font-size="11" fill="#6E6E73">software-led · self-serve</text>
+  <text x="515" y="655" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em">POSITIONING  →</text>
+  <text x="165" y="640" font-size="11" fill="#8D9297">generic “luxury / bespoke”</text>
+  <text x="878" y="640" text-anchor="end" font-size="11" fill="#8D9297">distinctive editorial voice</text>
+  <text x="128" y="395" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em" transform="rotate(-90 128 395)">DELIVERY MODEL  →</text>
+  <text x="160" y="190" font-size="11" fill="#8D9297">human advisor · relationship-led</text>
+  <text x="160" y="610" font-size="11" fill="#8D9297">software-led · self-serve</text>
 
   <!-- incumbents: ink dots -->
-  <circle cx="250" cy="240" r="7" fill="#000505"/>
-  <text x="265" y="237" class="h" font-size="14" fill="#000505">Virtuoso network agencies</text>
-  <text x="265" y="255" font-size="11.5" fill="#6E6E73">deep access · undifferentiated voice</text>
-  <circle cx="330" cy="305" r="7" fill="#000505"/>
-  <text x="345" y="302" class="h" font-size="14" fill="#000505">EMBARK Beyond</text>
-  <text x="345" y="320" font-size="11.5" fill="#6E6E73">luxury advisory + Blackbook AI</text>
-  <circle cx="262" cy="352" r="7" fill="#000505"/>
-  <text x="277" y="349" class="h" font-size="14" fill="#000505">Serandipians</text>
-  <text x="277" y="367" font-size="11.5" fill="#6E6E73">boutique “travel designer” network</text>
+  <circle cx="250" cy="240" r="7" fill="#141414"/>
+  <text x="265" y="237" class="h" font-size="14" fill="#141414">Virtuoso network agencies</text>
+  <text x="265" y="255" font-size="11.5" fill="#5E6266">deep access · undifferentiated voice</text>
+  <circle cx="330" cy="305" r="7" fill="#141414"/>
+  <text x="345" y="302" class="h" font-size="14" fill="#141414">EMBARK Beyond</text>
+  <text x="345" y="320" font-size="11.5" fill="#5E6266">luxury advisory + Blackbook AI</text>
+  <circle cx="262" cy="352" r="7" fill="#141414"/>
+  <text x="277" y="349" class="h" font-size="14" fill="#141414">Serandipians</text>
+  <text x="277" y="367" font-size="11.5" fill="#5E6266">boutique “travel designer” network</text>
 
   <!-- bionic host: ink dot -->
-  <circle cx="455" cy="445" r="7" fill="#000505"/>
-  <text x="470" y="442" class="h" font-size="14" fill="#000505">Fora Travel</text>
-  <text x="470" y="460" font-size="11.5" fill="#6E6E73">bionic host · taste-neutral platform</text>
+  <circle cx="455" cy="445" r="7" fill="#141414"/>
+  <text x="470" y="442" class="h" font-size="14" fill="#141414">Fora Travel</text>
+  <text x="470" y="460" font-size="11.5" fill="#5E6266">bionic host · taste-neutral platform</text>
 
   <!-- AI-natives: mute grey dots -->
-  <circle cx="235" cy="530" r="7" fill="#6E6E73"/>
-  <text x="250" y="527" class="h" font-size="14" fill="#000505">Mindtrip</text>
-  <text x="250" y="545" font-size="11.5" fill="#6E6E73">agentic B2C booking</text>
-  <circle cx="320" cy="565" r="7" fill="#6E6E73"/>
-  <text x="335" y="562" class="h" font-size="14" fill="#000505">Layla</text>
-  <text x="335" y="580" font-size="11.5" fill="#6E6E73">conversational discovery</text>
-  <circle cx="660" cy="520" r="7" fill="#6E6E73"/>
-  <text x="675" y="517" class="h" font-size="14" fill="#000505">Voyagier</text>
-  <text x="675" y="535" font-size="11.5" fill="#6E6E73">B2B AI rails + creator “Navigator”</text>
+  <circle cx="235" cy="530" r="7" fill="#8D9297"/>
+  <text x="250" y="527" class="h" font-size="14" fill="#141414">Mindtrip</text>
+  <text x="250" y="545" font-size="11.5" fill="#5E6266">agentic B2C booking</text>
+  <circle cx="320" cy="565" r="7" fill="#8D9297"/>
+  <text x="335" y="562" class="h" font-size="14" fill="#141414">Layla</text>
+  <text x="335" y="580" font-size="11.5" fill="#5E6266">conversational discovery</text>
+  <circle cx="660" cy="520" r="7" fill="#8D9297"/>
+  <text x="675" y="517" class="h" font-size="14" fill="#141414">Voyagier</text>
+  <text x="675" y="535" font-size="11.5" fill="#5E6266">B2B AI rails + creator “Navigator”</text>
 
   <!-- white space marker -->
-  <circle cx="700" cy="250" r="9" fill="#0075A2" stroke="#FFFFFF" stroke-width="2"/>
-  <text x="700" y="220" text-anchor="middle" class="h" font-size="18" fill="#0075A2">THE WHITE SPACE</text>
-  <text x="700" y="285" text-anchor="middle" class="h" font-size="13" fill="#000505">Editorial-taste luxury agency,</text>
-  <text x="700" y="303" text-anchor="middle" class="h" font-size="13" fill="#000505">AI-augmented · own the supply</text>
-  <text x="700" y="345" text-anchor="middle" font-size="11.5" fill="#6E6E73">distinctive voice + relationship + access,</text>
-  <text x="700" y="361" text-anchor="middle" font-size="11.5" fill="#6E6E73">with AI as leverage rather than the product</text>
+  <circle cx="700" cy="250" r="9" fill="#15E0C6" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="700" y="220" text-anchor="middle" class="h" font-size="18" fill="#0C7A69">THE WHITE SPACE</text>
+  <text x="700" y="285" text-anchor="middle" class="h" font-size="13" fill="#141414">Editorial-taste luxury agency,</text>
+  <text x="700" y="303" text-anchor="middle" class="h" font-size="13" fill="#141414">AI-augmented · own the supply</text>
+  <text x="700" y="345" text-anchor="middle" font-size="11.5" fill="#5E6266">distinctive voice + relationship + access,</text>
+  <text x="700" y="361" text-anchor="middle" font-size="11.5" fill="#5E6266">with AI as leverage rather than the product</text>
 
-  <line x1="64" y1="678" x2="896" y2="678" stroke="#00050524" stroke-width="1"/>
-  <text x="64" y="700" font-size="12" fill="#6E6E73">Incumbents (ink) own access but speak in generic luxury language · AI-natives (grey) own tech but lack relationships and stall at the trust gate.</text>
-  <text x="64" y="715" font-size="10" fill="#6E6E73">Stage 2 · Synthesis · positions are editorial judgement from the gather, not measured coordinates</text>
+  <line x1="64" y1="678" x2="896" y2="678" stroke="#14141424" stroke-width="1"/>
+  <text x="64" y="700" font-size="12" fill="#5E6266">Incumbents (ink) own access but speak in generic luxury language · AI-natives (grey) own tech but lack relationships and stall at the trust gate.</text>
+  <text x="64" y="715" font-size="10" fill="#8D9297">Stage 2 · Synthesis · positions are editorial judgement from the gather, not measured coordinates</text>
 </svg>
       <figcaption>The competitive map — teal marks the unoccupied corner.</figcaption>
     </figure>
@@ -226,67 +226,67 @@ footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
       <div class="step"><div class="n">③ DEEPEN</div><h3>Membership</h3><p>Convert earned trust into recurring, drag-free membership for frequent-luxury clients — the lifetime-value destination.</p></div>
     </div>
     <figure>
-      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Inter','Segoe UI',system-ui,sans-serif">
+      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'Geist','Hanken Grotesk',system-ui,sans-serif">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;display=swap');
       text{letter-spacing:-0.012em}
       .h{font-weight:500;letter-spacing:-0.03em}
     </style>
     <marker id="arrowc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#0075A2"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#0C7A69"/>
     </marker>
   </defs>
   <rect x="0" y="0" width="960" height="720" fill="#FFFFFF"/>
 
-  <text x="64" y="68" class="h" font-size="26" fill="#000505">One brand, entered on a wedge, grown into membership.</text>
-  <text x="64" y="98" font-size="15" fill="#6E6E73">Three candidate concepts on the positioning map — and the sequence that resolves each other’s weaknesses</text>
-  <line x1="64" y1="116" x2="896" y2="116" stroke="#00050524" stroke-width="1"/>
+  <text x="64" y="68" class="h" font-size="26" fill="#141414">One brand, entered on a wedge, grown into membership.</text>
+  <text x="64" y="98" font-size="15" fill="#5E6266">Three candidate concepts on the positioning map — and the sequence that resolves each other’s weaknesses</text>
+  <line x1="64" y1="116" x2="896" y2="116" stroke="#14141424" stroke-width="1"/>
 
-  <line x1="150" y1="170" x2="150" y2="620" stroke="#000505" stroke-width="1.5"/>
-  <line x1="150" y1="620" x2="880" y2="620" stroke="#000505" stroke-width="1.5"/>
-  <line x1="515" y1="170" x2="515" y2="620" stroke="#00050524" stroke-width="0.75" stroke-dasharray="4 5"/>
-  <line x1="150" y1="395" x2="880" y2="395" stroke="#00050524" stroke-width="0.75" stroke-dasharray="4 5"/>
+  <line x1="150" y1="170" x2="150" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="150" y1="620" x2="880" y2="620" stroke="#141414" stroke-width="1.5"/>
+  <line x1="515" y1="170" x2="515" y2="620" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
+  <line x1="150" y1="395" x2="880" y2="395" stroke="#14141424" stroke-width="0.75" stroke-dasharray="4 5"/>
 
-  <text x="515" y="655" text-anchor="middle" font-size="12" fill="#6E6E73" letter-spacing="0.02em">WHAT YOU’RE BUYING  →</text>
-  <text x="165" y="640" font-size="11" fill="#6E6E73">access &amp; logistics</text>
-  <text x="878" y="640" text-anchor="end" font-size="11" fill="#6E6E73">taste &amp; point of view</text>
-  <text x="128" y="395" text-anchor="middle" font-size="12" fill="#6E6E73" letter-spacing="0.02em" transform="rotate(-90 128 395)">RELATIONSHIP  →</text>
-  <text x="160" y="190" font-size="11" fill="#6E6E73">ongoing · membership</text>
-  <text x="160" y="610" font-size="11" fill="#6E6E73">per-trip · transactional</text>
+  <text x="515" y="655" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em">WHAT YOU’RE BUYING  →</text>
+  <text x="165" y="640" font-size="11" fill="#8D9297">access &amp; logistics</text>
+  <text x="878" y="640" text-anchor="end" font-size="11" fill="#8D9297">taste &amp; point of view</text>
+  <text x="128" y="395" text-anchor="middle" font-size="12" fill="#8D9297" letter-spacing="0.02em" transform="rotate(-90 128 395)">RELATIONSHIP  →</text>
+  <text x="160" y="190" font-size="11" fill="#8D9297">ongoing · membership</text>
+  <text x="160" y="610" font-size="11" fill="#8D9297">per-trip · transactional</text>
 
   <!-- faded incumbent reference -->
-  <circle cx="250" cy="540" r="6" fill="#6E6E73" opacity="0.5"/>
-  <text x="264" y="537" font-size="12.5" fill="#6E6E73">generic access-led agencies</text>
-  <text x="264" y="553" font-size="10.5" fill="#6E6E73" opacity="0.8">(today’s incumbents — for reference)</text>
+  <circle cx="250" cy="540" r="6" fill="#8D9297" opacity="0.5"/>
+  <text x="264" y="537" font-size="12.5" fill="#8D9297">generic access-led agencies</text>
+  <text x="264" y="553" font-size="10.5" fill="#8D9297" opacity="0.8">(today’s incumbents — for reference)</text>
 
   <!-- sequence path B -> A -> C -->
-  <path d="M 600 530 C 690 480, 720 440, 716 392" fill="none" stroke="#0075A2" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowc)"/>
-  <path d="M 716 372 C 712 320, 690 270, 656 236" fill="none" stroke="#0075A2" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowc)"/>
-  <text x="788" y="470" font-size="10.5" fill="#0075A2">recommended</text>
-  <text x="788" y="485" font-size="10.5" fill="#0075A2">sequence →</text>
+  <path d="M 600 530 C 690 480, 720 440, 716 392" fill="none" stroke="#0C7A69" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowc)"/>
+  <path d="M 716 372 C 712 320, 690 270, 656 236" fill="none" stroke="#0C7A69" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowc)"/>
+  <text x="788" y="470" font-size="10.5" fill="#0C7A69">recommended</text>
+  <text x="788" y="485" font-size="10.5" fill="#0C7A69">sequence →</text>
 
   <!-- B -->
-  <circle cx="600" cy="540" r="8" fill="#000505"/>
-  <text x="600" y="585" text-anchor="middle" class="h" font-size="15" fill="#000505">B · Vertical Authority</text>
-  <text x="600" y="603" text-anchor="middle" font-size="11.5" fill="#6E6E73">the wedge — deep, defensible, acute WTP</text>
-  <text x="600" y="520" text-anchor="middle" font-size="9.5" fill="#6E6E73" letter-spacing="0.04em">① START HERE</text>
+  <circle cx="600" cy="540" r="8" fill="#141414"/>
+  <text x="600" y="585" text-anchor="middle" class="h" font-size="15" fill="#141414">B · Vertical Authority</text>
+  <text x="600" y="603" text-anchor="middle" font-size="11.5" fill="#5E6266">the wedge — deep, defensible, acute WTP</text>
+  <text x="600" y="520" text-anchor="middle" font-size="9.5" fill="#5E6266" letter-spacing="0.04em">① START HERE</text>
 
   <!-- A (recommended, teal) -->
-  <circle cx="716" cy="382" r="13" fill="#0075A2" stroke="#FFFFFF" stroke-width="2.5"/>
-  <text x="716" y="345" text-anchor="middle" class="h" font-size="18" fill="#0075A2">A · The Editorial House</text>
-  <text x="716" y="418" text-anchor="middle" font-size="11.5" fill="#6E6E73">the brand &amp; point of view — the recommended core</text>
-  <text x="716" y="320" text-anchor="middle" font-size="9.5" fill="#0075A2" letter-spacing="0.04em">② BECOME THE BRAND</text>
+  <circle cx="716" cy="382" r="13" fill="#15E0C6" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="716" y="345" text-anchor="middle" class="h" font-size="18" fill="#0C7A69">A · The Editorial House</text>
+  <text x="716" y="418" text-anchor="middle" font-size="11.5" fill="#5E6266">the brand &amp; point of view — the recommended core</text>
+  <text x="716" y="320" text-anchor="middle" font-size="9.5" fill="#0C7A69" letter-spacing="0.04em">② BECOME THE BRAND</text>
 
   <!-- C -->
-  <circle cx="648" cy="222" r="8" fill="#000505"/>
-  <text x="648" y="200" text-anchor="middle" class="h" font-size="15" fill="#000505">C · Membership Concierge</text>
-  <text x="648" y="255" text-anchor="middle" font-size="11.5" fill="#6E6E73">the LTV destination — recurring, drag-free</text>
-  <text x="648" y="182" text-anchor="middle" font-size="9.5" fill="#6E6E73" letter-spacing="0.04em">③ DEEPEN TO MEMBERSHIP</text>
+  <circle cx="648" cy="222" r="8" fill="#141414"/>
+  <text x="648" y="200" text-anchor="middle" class="h" font-size="15" fill="#141414">C · Membership Concierge</text>
+  <text x="648" y="255" text-anchor="middle" font-size="11.5" fill="#5E6266">the LTV destination — recurring, drag-free</text>
+  <text x="648" y="182" text-anchor="middle" font-size="9.5" fill="#5E6266" letter-spacing="0.04em">③ DEEPEN TO MEMBERSHIP</text>
 
-  <line x1="64" y1="678" x2="896" y2="678" stroke="#00050524" stroke-width="1"/>
-  <text x="64" y="700" font-size="12" fill="#6E6E73">The wedge (B) earns the credibility taste-claims can’t manufacture · the brand (A) lifts B’s ceiling · membership (C) banks the trust A+B built.</text>
-  <text x="64" y="715" font-size="10" fill="#6E6E73">Stage 3 · Concept · recommended DVF  D 4 / V 4 / F 4 · confidence Medium · positions are editorial judgement, not measured coordinates</text>
+  <line x1="64" y1="678" x2="896" y2="678" stroke="#14141424" stroke-width="1"/>
+  <text x="64" y="700" font-size="12" fill="#5E6266">The wedge (B) earns the credibility taste-claims can’t manufacture · the brand (A) lifts B’s ceiling · membership (C) banks the trust A+B built.</text>
+  <text x="64" y="715" font-size="10" fill="#8D9297">Stage 3 · Concept · recommended DVF  D 4 / V 4 / F 4 · confidence Medium · positions are editorial judgement, not measured coordinates</text>
 </svg>
       <figcaption>The three concepts and the recommended sequence.</figcaption>
     </figure>
@@ -300,72 +300,72 @@ footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
     <h2>The mix shifts from transactional to recurring.</h2>
     <p class="seclead" style="margin-top:16px">Commission alone is a sub-5%-margin commodity. Fees lift net margin to 12–20% and signal quality. Membership banks recurring, drag-free value once trust is earned. The cost structure is people, not technology — AI is leased to raise curator capacity.</p>
     <figure>
-      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Inter','Segoe UI',system-ui,sans-serif">
+      <svg class="figsvg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" font-family="'Geist','Hanken Grotesk',system-ui,sans-serif">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;display=swap');
       text{letter-spacing:-0.012em}
       .h{font-weight:500;letter-spacing:-0.03em}
     </style>
     <marker id="arrowr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#0075A2"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#0C7A69"/>
     </marker>
   </defs>
   <rect x="0" y="0" width="960" height="720" fill="#FFFFFF"/>
 
-  <text x="64" y="68" class="h" font-size="28" fill="#000505">The mix shifts from transactional to recurring.</text>
-  <text x="64" y="98" font-size="15" fill="#6E6E73">Revenue architecture across the three phases — fees win margin early, membership banks recurring value late</text>
-  <line x1="64" y1="116" x2="896" y2="116" stroke="#00050524" stroke-width="1"/>
+  <text x="64" y="68" class="h" font-size="28" fill="#141414">The mix shifts from transactional to recurring.</text>
+  <text x="64" y="98" font-size="15" fill="#5E6266">Revenue architecture across the three phases — fees win margin early, membership banks recurring value late</text>
+  <line x1="64" y1="116" x2="896" y2="116" stroke="#14141424" stroke-width="1"/>
 
   <!-- legend -->
-  <g font-size="12" fill="#000505">
-    <rect x="64" y="150" width="14" height="14" rx="3" fill="#A1A1A6"/>
+  <g font-size="12" fill="#26282A">
+    <rect x="64" y="150" width="14" height="14" rx="3" fill="#C9CCce"/>
     <text x="84" y="162">Consortia commission</text>
-    <rect x="240" y="150" width="14" height="14" rx="3" fill="#6E6E73"/>
+    <rect x="240" y="150" width="14" height="14" rx="3" fill="#8D9297"/>
     <text x="260" y="162">Net-rate markup</text>
-    <rect x="396" y="150" width="14" height="14" rx="3" fill="#000505"/>
+    <rect x="396" y="150" width="14" height="14" rx="3" fill="#141414"/>
     <text x="416" y="162">Planning / booking fees</text>
-    <rect x="576" y="150" width="14" height="14" rx="3" fill="#0075A2"/>
+    <rect x="576" y="150" width="14" height="14" rx="3" fill="#15E0C6"/>
     <text x="596" y="162">Membership / retainer</text>
   </g>
 
-  <line x1="120" y1="600" x2="840" y2="600" stroke="#000505" stroke-width="1.5"/>
+  <line x1="120" y1="600" x2="840" y2="600" stroke="#141414" stroke-width="1.5"/>
 
   <!-- Phase 1 -->
-  <rect x="260" y="500" width="130" height="100" fill="#A1A1A6"/>
-  <rect x="260" y="440" width="130" height="60" fill="#6E6E73"/>
-  <rect x="260" y="380" width="130" height="60" fill="#000505"/>
-  <text x="325" y="625" text-anchor="middle" class="h" font-size="15" fill="#000505">Phase 1 · Wedge</text>
-  <text x="325" y="643" text-anchor="middle" font-size="11" fill="#6E6E73">fees + commission + markup</text>
-  <text x="325" y="660" text-anchor="middle" font-size="10" fill="#6E6E73">host route · ~12–20% net</text>
+  <rect x="260" y="500" width="130" height="100" fill="#C9CCce"/>
+  <rect x="260" y="440" width="130" height="60" fill="#8D9297"/>
+  <rect x="260" y="380" width="130" height="60" fill="#141414"/>
+  <text x="325" y="625" text-anchor="middle" class="h" font-size="15" fill="#141414">Phase 1 · Wedge</text>
+  <text x="325" y="643" text-anchor="middle" font-size="11" fill="#5E6266">fees + commission + markup</text>
+  <text x="325" y="660" text-anchor="middle" font-size="10" fill="#8D9297">host route · ~12–20% net</text>
 
   <!-- Phase 2 -->
-  <rect x="470" y="510" width="130" height="90" fill="#A1A1A6"/>
-  <rect x="470" y="430" width="130" height="80" fill="#6E6E73"/>
-  <rect x="470" y="320" width="130" height="110" fill="#000505"/>
-  <text x="535" y="625" text-anchor="middle" class="h" font-size="15" fill="#000505">Phase 2 · Brand</text>
-  <text x="535" y="643" text-anchor="middle" font-size="11" fill="#6E6E73">higher fees &amp; trip value</text>
-  <text x="535" y="660" text-anchor="middle" font-size="10" fill="#6E6E73">direct DMC · approach consortia</text>
+  <rect x="470" y="510" width="130" height="90" fill="#C9CCce"/>
+  <rect x="470" y="430" width="130" height="80" fill="#8D9297"/>
+  <rect x="470" y="320" width="130" height="110" fill="#141414"/>
+  <text x="535" y="625" text-anchor="middle" class="h" font-size="15" fill="#141414">Phase 2 · Brand</text>
+  <text x="535" y="643" text-anchor="middle" font-size="11" fill="#5E6266">higher fees &amp; trip value</text>
+  <text x="535" y="660" text-anchor="middle" font-size="10" fill="#8D9297">direct DMC · approach consortia</text>
 
   <!-- Phase 3 -->
-  <rect x="680" y="530" width="130" height="70" fill="#A1A1A6"/>
-  <rect x="680" y="460" width="130" height="70" fill="#6E6E73"/>
-  <rect x="680" y="390" width="130" height="70" fill="#000505"/>
-  <rect x="680" y="240" width="130" height="150" fill="#0075A2"/>
-  <text x="745" y="625" text-anchor="middle" class="h" font-size="15" fill="#000505">Phase 3 · Membership</text>
-  <text x="745" y="643" text-anchor="middle" font-size="11" fill="#6E6E73">+ recurring membership</text>
-  <text x="745" y="660" text-anchor="middle" font-size="10" fill="#6E6E73">drag-free · high-LTV</text>
+  <rect x="680" y="530" width="130" height="70" fill="#C9CCce"/>
+  <rect x="680" y="460" width="130" height="70" fill="#8D9297"/>
+  <rect x="680" y="390" width="130" height="70" fill="#141414"/>
+  <rect x="680" y="240" width="130" height="150" fill="#15E0C6"/>
+  <text x="745" y="625" text-anchor="middle" class="h" font-size="15" fill="#141414">Phase 3 · Membership</text>
+  <text x="745" y="643" text-anchor="middle" font-size="11" fill="#5E6266">+ recurring membership</text>
+  <text x="745" y="660" text-anchor="middle" font-size="10" fill="#8D9297">drag-free · high-LTV</text>
 
-  <text x="828" y="318" font-size="10.5" fill="#0075A2" letter-spacing="0.04em" transform="rotate(90 828 318)">RECURRING</text>
+  <text x="828" y="318" font-size="10.5" fill="#0C7A69" letter-spacing="0.04em" transform="rotate(90 828 318)">RECURRING</text>
 
-  <path d="M 330 372 C 480 350, 600 300, 740 232" fill="none" stroke="#0075A2" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowr)"/>
-  <text x="330" y="305" font-size="12.5" fill="#0075A2" font-style="italic">margin &amp; recurring share rising</text>
+  <path d="M 330 372 C 480 350, 600 300, 740 232" fill="none" stroke="#0C7A69" stroke-width="2" stroke-dasharray="3 6" marker-end="url(#arrowr)"/>
+  <text x="330" y="305" font-size="12.5" fill="#0C7A69" font-style="italic">margin &amp; recurring share rising</text>
 
-  <text x="108" y="420" text-anchor="middle" font-size="11" fill="#6E6E73" letter-spacing="0.02em" transform="rotate(-90 108 420)">REVENUE MIX  →</text>
+  <text x="108" y="420" text-anchor="middle" font-size="11" fill="#8D9297" letter-spacing="0.02em" transform="rotate(-90 108 420)">REVENUE MIX  →</text>
 
-  <line x1="64" y1="678" x2="896" y2="678" stroke="#00050524" stroke-width="1"/>
-  <text x="64" y="700" font-size="11.5" fill="#6E6E73">Commission alone is a sub-5%-margin commodity · fees lift net margin to 12–20% · membership banks recurring value once trust is earned.</text>
-  <text x="64" y="715" font-size="10" fill="#6E6E73">Stage 4 · Business model · proportions are illustrative/directional — the sized economics are Stage 5</text>
+  <line x1="64" y1="678" x2="896" y2="678" stroke="#14141424" stroke-width="1"/>
+  <text x="64" y="700" font-size="11.5" fill="#5E6266">Commission alone is a sub-5%-margin commodity · fees lift net margin to 12–20% · membership banks recurring value once trust is earned.</text>
+  <text x="64" y="715" font-size="10" fill="#8D9297">Stage 4 · Business model · proportions are illustrative/directional — the sized economics are Stage 5</text>
 </svg>
       <figcaption>The phased revenue architecture — teal marks the recurring layer that compounds.</figcaption>
     </figure>
@@ -388,7 +388,7 @@ footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
       </tbody>
     </table>
     </div>
-    <p style="margin-top:18px;color:#A1A1A6;font-size:.92rem">The low case loses money at Year 3 — driven by the same question that gates the whole thesis: affluent-tier willingness-to-pay for fees and membership.</p>
+    <p style="margin-top:18px;color:#9aa0a0;font-size:.92rem">The low case loses money at Year 3 — driven by the same question that gates the whole thesis: affluent-tier willingness-to-pay for fees and membership.</p>
   </div>
 </section>
 
@@ -404,7 +404,7 @@ footer{background:var(--black);color:#A1A1A6;font-size:.86rem;padding:48px 0}
     </div>
     <div class="btns" style="margin-top:32px">
       <a class="btn" href="report.html">Read the detailed report</a>
-      <a class="btn ghost" href="report.html#gonogo" style="color:#F5F5F7;border-color:#FFFFFF2E">The full recommendation</a>
+      <a class="btn ghost" href="report.html#gonogo" style="color:#F1F0EB;border-color:#FFFFFF2E">The full recommendation</a>
     </div>
   </div>
 </section>
