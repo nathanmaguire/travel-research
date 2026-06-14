@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Travel Adjacencies — DVF Study · Full Report</title>
+<title>Travel Adjacencies — Study 3 · Full Report</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,230 +16,288 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:#26282A;font-family:var(--sans);font-size:17px;line-height:1.6;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:#26282A;font-family:var(--sans);font-size:17px;line-height:1.62;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-weight:500;line-height:1.06;letter-spacing:-.03em;color:var(--ink)}
-h1{font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.038em;line-height:1.0}
-h2{font-size:clamp(1.6rem,3.2vw,2.3rem);letter-spacing:-.035em;margin-bottom:18px}
-h3{font-size:1.2rem;margin:30px 0 10px}
-p{margin-bottom:14px}
+h1{font-size:clamp(2.4rem,5.4vw,4.0rem);letter-spacing:-.038em;line-height:1.02}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.035em}
+h3{font-size:1.18rem}
+h4{font-size:.95rem;color:var(--ink-soft)}
+p{margin-top:14px;max-width:68ch}
+em{font-style:italic}
 a{color:var(--ink);text-decoration:underline;text-decoration-color:#14141438;text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{text-decoration-color:var(--ink)}
-.wrap{max-width:840px;margin:0 auto;padding:0 28px}
-section{padding:58px 0;border-top:1px solid var(--line)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+section{padding:80px 0;border-top:1px solid var(--line)}
 .dark{background:var(--black);color:#F1F0EB;border:none}
 .dark h1,.dark h2,.dark h3{color:#F1F0EB}
 .dark p{color:#F1F0EBCC}
 .eyebrow{display:inline-block;font-weight:500;font-size:.74rem;letter-spacing:-.005em;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;margin-bottom:16px}
 .dark .eyebrow{color:var(--accent);border-color:#FFFFFF2E}
 nav{position:sticky;top:0;background:#FFFFFFF2;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:840px;margin:0 auto}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1060px;margin:0 auto}
 .wordmark{font-weight:500;letter-spacing:-.02em;font-size:1rem}
-.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:500;padding:9px 18px;border-radius:999px;border:none;text-decoration:none;font-size:.9rem}
-.nav-cta:hover{background:#0FD1B8}
-.lede{font-size:1.15rem;color:var(--ink-soft)}
-.tablebox{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;margin:24px 0}
-table{width:100%;border-collapse:collapse;font-size:.86rem}
-th{background:var(--paper-2);text-align:left;font-weight:500;padding:11px 13px;letter-spacing:-.005em}
-td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
-.pill{display:inline-block;border-radius:999px;font-size:.62rem;font-weight:500;padding:3px 10px;white-space:nowrap}
+.nav-links a{margin-left:22px;text-decoration:none;color:var(--ink-soft);font-size:.9rem}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--accent);color:var(--accent-ink)!important;font-weight:500;padding:9px 18px;border-radius:999px;border:none;text-decoration:none!important;font-size:.9rem}
+.lede{font-size:1.18rem;color:var(--ink-soft);max-width:52ch;margin-top:22px}
+.meta{font-size:.8rem;color:var(--mute);margin-top:28px}
+.callout{background:var(--paper-2);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin-top:26px;font-size:.96rem;max-width:74ch}
+.callout .cl{font-size:.7rem;font-weight:500;color:var(--accent-deep);display:block;margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase}
+.dark .callout{background:#FFFFFF0A;border-left-color:var(--accent)}
+.dark .callout .cl{color:var(--accent)}
+.pill{display:inline-block;border-radius:999px;font-size:.64rem;font-weight:500;padding:3px 10px;white-space:nowrap}
 .p-vhigh{background:var(--black);color:#F1F0EB}.p-high{background:var(--accent);color:var(--accent-ink)}
 .p-med{background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-strong)}
 .p-low{background:transparent;color:var(--mute);border:1px solid var(--line)}
-.t-build{background:var(--accent);color:var(--accent-ink)}.t-gated{background:var(--black);color:#F1F0EB}
-.t-watch{background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-strong)}
-.callout{background:var(--paper-2);border-left:3px solid var(--ink);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:22px 0;font-size:.95rem}
-.callout.pos{border-left-color:var(--accent)}
-.callout .cl{font-size:.7rem;font-weight:500;color:var(--accent-deep);display:block;margin-bottom:6px}
-.score{display:flex;gap:8px;margin:14px 0 6px}
-.score .t{background:var(--paper-2);border-radius:9px;padding:9px 14px;text-align:center;min-width:86px}
-.score .t .v{font-size:1.2rem;font-weight:500;color:var(--ink)}
-.score .t .k{font-size:.62rem;color:var(--mute)}
-.conf{font-size:.74rem;color:var(--mute)}
-.meta{font-size:.8rem;color:var(--mute)}
-footer{background:var(--black);color:#8D9297;padding:36px 0;font-size:.8rem}
+.p-in{background:var(--accent);color:var(--accent-ink)}.p-out{background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-strong)}
+.sqgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:34px}
+.sq{border:1px solid var(--line-strong);border-radius:var(--r);padding:22px}
+.sq .id{font-size:.7rem;color:var(--accent-deep);font-weight:500;letter-spacing:.02em}
+.sq h3{margin:8px 0 6px;font-size:1.04rem}
+.sq p{font-size:.9rem;color:var(--ink-soft);margin-top:8px}
+.forces{margin-top:34px;border:1px solid #FFFFFF24;border-radius:var(--r);overflow:hidden}
+.force{padding:20px 22px;border-top:1px solid #FFFFFF14;display:grid;grid-template-columns:74px 1fr;gap:18px}
+.force:first-child{border-top:none}
+.force .fid{font-weight:500;font-size:.82rem}
+.force b{color:#F1F0EB;font-weight:500}
+.force p{margin-top:6px;font-size:.92rem;color:#F1F0EBA8}
+.tbl{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;margin-top:30px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:680px}
+th{background:var(--paper-2);text-align:left;font-weight:500;padding:11px 13px;letter-spacing:-.005em;vertical-align:bottom}
+td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#F1F0EB66}
+td b{font-weight:500;color:var(--ink)}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-top:32px}
+.card{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;background:var(--paper)}
+.card .hd{padding:20px 20px 12px}
+.card .zid{font-size:.68rem;color:var(--mute)}
+.card h3{margin:6px 0 10px;font-size:1.08rem}
+.dvf{display:flex;gap:8px;padding:0 20px 14px}
+.dvf .t{flex:1;background:var(--paper-2);border-radius:9px;padding:9px;text-align:center}
+.dvf .t .v{font-size:1.2rem;font-weight:500;letter-spacing:-.03em;color:var(--ink)}
+.dvf .t .k{font-size:.6rem;color:var(--mute)}
+.card .body-inner{padding:0 20px 20px;border-top:1px solid var(--line);padding-top:13px;font-size:.9rem;color:var(--ink-soft)}
+.t-build{background:var(--accent);color:var(--accent-ink)}.t-gated{background:var(--black);color:#F1F0EB}.t-watch{background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-strong)}
+.bars{margin-top:30px;display:grid;gap:16px;max-width:760px}
+.bar-row .lbl{display:flex;justify-content:space-between;gap:14px;font-size:.86rem;margin-bottom:7px}
+.bar-row .lbl b{font-weight:500;color:var(--ink)}.bar-row .lbl span{color:var(--mute);white-space:nowrap}
+.bar{height:13px;background:var(--paper-2);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.bar i.gated{background:var(--ink)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.cmp .c{border:1px solid #FFFFFF24;border-radius:var(--r);padding:20px}
+.cmp .c .h{font-size:.72rem;color:var(--accent);font-weight:500;letter-spacing:.02em;text-transform:uppercase;margin-bottom:8px}
+.cmp .c .res{font-size:1.0rem;color:#F1F0EB;font-weight:500;margin-bottom:8px}
+.cmp .c p{font-size:.86rem;color:#F1F0EBB0;margin-top:0}
+.fals{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.fals .f{border:1px solid var(--line-strong);border-radius:var(--r);padding:18px;font-size:.88rem;color:var(--ink-soft)}
+.fals .f b{display:block;color:var(--accent-deep);font-weight:500;margin-bottom:6px;font-size:.72rem;letter-spacing:.02em;text-transform:uppercase}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:999px;font-weight:500;font-size:.74rem;padding:6px 14px;margin-bottom:18px}
+.verd{font-size:clamp(1.4rem,2.8vw,2.0rem);font-weight:500;letter-spacing:-.03em;line-height:1.22;max-width:34ch}
+.srcs{margin-top:24px;columns:2;column-gap:34px;font-size:.82rem;color:var(--ink-soft)}
+.srcs div{break-inside:avoid;margin-bottom:9px}
+.flag{font-size:.78rem;color:var(--mute);font-style:italic;margin-top:10px;max-width:74ch}
+footer{background:var(--black);color:#8D9297;padding:40px 0;font-size:.8rem}
 footer a{color:#F1F0EB}
-.src{font-size:.82rem;color:var(--ink-soft)}
-.src li{margin-bottom:7px;margin-left:18px}
-ol,ul{margin:0 0 14px 22px}
-li{margin-bottom:6px}
+svg text{font-family:var(--sans)}
+@media(max-width:760px){.cmp{grid-template-columns:1fr}.srcs{columns:1}.nav-links a:not(.nav-cta){display:none}}
 </style>
 </head>
 <body>
 
 <nav><div class="nav-inner">
-  <span class="wordmark"><a href="../index.html" style="color:inherit;text-decoration:none">AI × Travel · Research</a></span>
-  <a class="nav-cta" href="index.html">← Hero map</a>
+  <span class="wordmark">Travel Adjacencies · Study 3</span>
+  <span class="nav-links">
+    <a href="#question">Question</a><a href="#forces">Forces</a><a href="#heat">Heat map</a><a href="#dash">Dashboard</a><a href="#zones">Zones</a><a href="#verdict">Verdict</a><a href="#review">Red team</a>
+    <a class="nav-cta" href="index.html">Opportunity map</a>
+  </span>
 </div></nav>
 
-<header style="padding:80px 0 50px">
+<header style="padding:92px 0 64px">
   <div class="wrap">
-    <span class="eyebrow">DVF Opportunity Study · Global · Full Big-4 depth · June 2026</span>
-    <h1>Travel opportunities in adjacent industries, horizontals and verticals.</h1>
-    <p class="lede" style="margin-top:20px">A Desirability–Viability–Feasibility assessment of the businesses that sit next to travel — services, software, insurance, media and tooling — scoped for a small, AI-native operator with consultant-scale capital. Companion to the <a href="index.html">interactive opportunity map</a>.</p>
-    <p class="meta" style="margin-top:18px">Method: staged autonomous study · 35 sourced evidence rows + 9 transparent estimates · independent Stage-6 stress-test · public sources and structured estimation only.</p>
+    <span class="eyebrow">DVF Opportunity Study · Study 3 of 3 · Global · June 2026</span>
+    <h1>Follow the money that moves <em>because</em> people travel.</h1>
+    <p class="lede">A negative-space scan of the value pools that form around travel — money, risk, mobility, the destination, the asset — but are not the booked trip itself, screened for the ones being structurally repriced by AI and regulation.</p>
+    <p class="meta">Full Big-4 depth · two independent research passes cross-verified · evidence ledgered with H/M/L confidence · companion to the <a href="index.html">opportunity map</a></p>
+    <div class="callout"><span class="cl">Headline verdict</span><b>Conditional GO — on <em>owning</em> the regulated cross-border mobility-compliance layer, not advising it.</b> The most durable, highest-margin, least-crowded pool around travel is the one where AI compresses the cost of regulated paperwork while the operator keeps the margin because it holds the legal accountability. It complements Study 1's supply-side zones and dominates Study 2's Editorial House — gated on a single thing: an attackable wedge between the sovereign-contract monopolies above it and the EOR-saturated core beside it.</div>
   </div>
 </header>
 
-<section id="exec">
+<section id="question">
   <div class="wrap">
-    <span class="eyebrow">Executive summary</span>
-    <h2>The verdict is GO — but not where adjacency-scanning usually looks.</h2>
-    <p>This study scanned every category of business adjacent to selling travel — from marketing agencies and insurance to vertical SaaS, the creator economy and the advisor layer — and asked a single question: where, over the next three to five years, is the most attractive and feasible venture for a small, AI-native operator, and is any zone strong enough for a GO?</p>
-    <p>The answer turns on a structural shift the evidence supports from multiple independent directions: <b>AI is moving travel's adjacent profit pools from production to legibility and judgment.</b> Production — content volume, tier-one servicing, SEO-era discoverability — is being costed out: travel executives already report realised AI cost reductions, and Expedia's agent alone absorbs 143 million conversations a year. What is being created is a new, budgeted set of problems. The overlap between Google rankings and AI-engine citations collapsed from 76% to between 17% and 38% in a matter of months, meaning twenty years of SEO equity does not reliably transfer to the channel where a third of travellers now begin research. Suppliers must simultaneously become legible to AI agents — the Sabre/PayPal/Mindtrip pipeline launches this quarter across 420+ airlines and two million hotel properties — while 80% of executives plan agentic deployment that only 2% of consumers yet trust. Visibility, agent-readiness, and governance are forced, board-visible problems with no entrenched service incumbent.</p>
-    <p>Consumer-facing adjacencies, by contrast, are closed: fintech and insurance behind licences and flows, planning apps behind a distribution wall investors have explicitly abandoned (B2B funding overtook B2C in 2024 for the first time), and experiences demand-aggregation behind funded OTAs. The travel-funding drought — a decade low, with 83% of capital going to 6% of companies — is hostile to venture-scale entry but favourable to cash-flow businesses: niches contain fewer subsidised competitors than at any point since 2016.</p>
-    <p>The recommended play is a sequenced B2B "legibility stack": an <b>AI-visibility (GEO) practice for travel brands</b> as the anchor (scored 5-4-5 on DVF), paired with <b>travel-specialised AI strategy and governance advisory</b> (4-3-5), distributed through an owned <b>intelligence wedge</b>, with <b>agentic-readiness consulting</b> and a <b>productised diagnostic/benchmark</b> gated behind explicit triggers. Directionally, the portfolio supports A$1.1–3.0M of revenue within three years on under A$250k of capital. The verdict survived an independent red-team with one material adjustment: viability evidence for the anchor zone rests partly on young, aggregator-grade GEO market forecasts, so the GO carries four monitorable falsifiers rather than unconditional confidence.</p>
-  </div>
-</section>
-
-<section id="question" style="background:var(--paper-2)">
-  <div class="wrap">
-    <span class="eyebrow">The strategic question</span>
+    <span class="eyebrow">The brief</span>
     <h2>What the study had to answer.</h2>
-    <div class="callout pos" style="background:var(--paper)"><span class="cl">Central question</span>Where, across the industries adjacent to travel, is the most attractive and feasible venture opportunity for a small, AI-native operator over the next 3–5 years — and is any zone strong enough for a GO?</div>
-    <p>Scope: global; all adjacency types (B2B services to travel companies, consumer travel-adjacent products, tech and platforms serving travel, travel verticals inside horizontal industries); explicitly excluding the launch of a core travel seller, which is the territory of a separate venture-feasibility study and treated only as context here. Six sub-questions structured the work: where value is migrating in the adjacent chain; whether a defensible services business exists; where vertical software and AI gaps remain unclosed; which consumer adjacencies have attractive economics; who the buyer is and what they pay; and which zones are enterable with under ~A$250k, no inventory, and one to three people.</p>
+    <p>The first two studies in this series mapped the booked-trip value chain. Study 1 went GO on supply-side hotel tooling and SME corporate travel; Study 2 returned a Conditional GO on an editorial luxury agency. This study exists to find what those two could not see — value pools that <em>could not have appeared</em> in either, screened through everything they proved. The exclusion fence is binding: no booking journey, no hotel revenue-management, no corporate self-serve, no agentic rails, no advisory. The question is where high-value pools form at travel's edges, and which are being repriced.</p>
+    <div class="sqgrid">
+      <div class="sq"><div class="id">SQ1</div><h3>Travel money &amp; loyalty</h3><p>FX, interchange, insurance premiums and loyalty-point liabilities — who unlocks them, and is any position defensible against devaluation and incumbents?</p></div>
+      <div class="sq"><div class="id">SQ2</div><h3>Risk, rights &amp; compliance</h3><p>Is EU261-style claims recovery durable or a regulatory artifact? Who pays for corporate duty-of-care, and is the moat data or distribution?</p></div>
+      <div class="sq"><div class="id">SQ3</div><h3>Mobility, not trips</h3><p>Relocation, visas, digital-nomad infra, cross-border tax/payroll. Which segment combines acute WTP, regulatory complexity and fragmented incumbents?</p></div>
+      <div class="sq"><div class="id">SQ4</div><h3>Purpose-built verticals</h3><p>Medical/longevity, faith/pilgrimage, sports, study-abroad, accessible/senior — standalone business, or merely a wedge into the agency model?</p></div>
+      <div class="sq"><div class="id">SQ5</div><h3>The side that owns the place</h3><p>Destinations &amp; governments as paying buyers; travel-adjacent property. Does regulation create real budget, or grant-funded theatre?</p></div>
+      <div class="sq"><div class="id">SQ6</div><h3>Undercovered supply</h3><p>Cruise, ground transport, vacation-rental long tail, airport/ground ops — is any earlier on the same adoption curve hotels already proved?</p></div>
+    </div>
+    <p class="flag">Inherited axioms, applied as screens: defensibility is structural not model-based · the trust/liability gate is binding (advise-side ships, act-side stalls) · value-in beats cost-out · gross bookings ≠ revenue · default to the buyer who isn't the traveller.</p>
   </div>
 </section>
 
-<section id="themes">
+<section id="forces" class="dark">
   <div class="wrap">
-    <span class="eyebrow">Findings · disruption themes</span>
-    <h2>Seven forces, one direction.</h2>
-    <h3>T1 — The discoverability reset</h3>
-    <p>The single most important finding in the corpus. Ahrefs measured the overlap between Google top-10 rankings and AI Overview citations at 76% in July 2025 and 38% by early 2026 across 863,000 keywords; BrightEdge's parallel methodology found roughly 17%; ChatGPT's overlap with Google's top ten runs at 7–12%. The numbers disagree on magnitude but agree on direction and volatility — which is exactly the condition under which brands buy external help. The first Airlines &amp; Hotels AI Visibility Index (5W, 2026 — vendor-produced and flagged accordingly) found earned media and structured third-party authority dominate citation share, the top three brands capture over 70% of citations in several sub-categories, and luxury hotel brands — the highest-margin buyers in hospitality — measure structurally under-cited relative to their pricing power. A third-plus of US travellers reportedly begin research in AI engines, and 55% used AI in trip planning in 2025, with extensive use up 124% year on year.</p>
-    <h3>T2 — The agentic plumbing wave</h3>
-    <p>MCP has become the connective standard between AI assistants and travel systems, adopted or built against by Booking.com, Expedia, Turkish Airlines, Amadeus and Sabre. Sabre shipped agentic-ready APIs and an MCP server in September 2025, demonstrated end-to-end conversational booking at CES in January 2026, and its partnership with PayPal and Mindtrip launches the industry's first end-to-end agentic booking pipeline in Q2 2026. Amadeus publicly argues MCP is necessary but insufficient and is pushing a commerce-layer standard (UCP) — contested standards being themselves a source of advisory demand. AI-driven web traffic grew 187% in 2025 with over 95% concentrated in retail, media and travel. The GDS vendors sell the rails; the work of making an individual travel business agent-legible — and deciding what not to expose — is unclaimed.</p>
-    <h3>T3 — Cost-out commoditises production, not judgment</h3>
-    <p>In McKinsey's survey of travel executives, 26% report realised AI cost reductions and 59% productivity gains, with a majority reporting more than 6% annual cost savings. Expedia's AI agent handles 143 million conversations a year with over half of travellers self-serving. The implication for adjacent services: anything priced on deliverable volume — content production, tier-one support, generic campaign execution — deflates with its buyer's costs. Services priced on judgment, accountability and outcomes hold their pricing.</p>
-    <h3>T4 — Barbell capital</h3>
-    <p>Travel startup funding sits at decade lows: $5.3B (2023), $5.8B (2024), $3.5B through 3Q25 and under $5B for the full year, against the $16.3B peak of 2021. Deal count collapsed from roughly a thousand rounds a year to 161 through 3Q25; only ~260 travel companies raised in 2025 versus 1,077 in 2018, and 83% of all funding goes to 6% of companies. B2B funding overtook B2C for the first time in 2024. Venture-scale entry is hostile; cash-flow niches are emptier of subsidised competitors than at any time in a decade.</p>
-    <h3>T5 — The judgment premium professionalises</h3>
-    <p>Luxury travel yields are holding while mainstream yields decline. Fora reached $2.3 billion in cumulative sales (gross bookings, not revenue) in five years on just $73.5M raised — crossing $1B around April 2025 and adding roughly the next $1.3B within about twelve months — and is acquiring AI tooling for advisor workflow. Human curation is migrating upmarket, professionalising, and under-buying software, marketing and intelligence.</p>
-    <h3>T6 — Embedded everything</h3>
-    <p>Travel insurance is a $22–31B global market growing at 11–18% annually, but distribution is consolidating into embedded, API-placed products inside booking flows (Chubb's parametric Travel Pro embedded in airline and OTA paths). Value accrues to underwriters and flow-owners; everyone else is an affiliate. The same logic closes consumer FX and payments.</p>
-    <h3>T7 — The under-digitised long tail</h3>
-    <p>The experiences sector reached $271B in gross bookings in 2025, heading to $342B by 2029 — and only 33% of it is booked online (versus 64% for travel overall), across roughly a million operators, more than 70% of them small or very small. Enormous and real, but profitably serving micro-operators is a product-and-distribution game already contested by funded platforms.</p>
+    <span class="eyebrow">The repricing direction</span>
+    <h2 style="max-width:24ch">Six forces, one place the margin lands.</h2>
+    <p style="max-width:64ch">AI and regulation are not redistributing travel's edge-pools evenly. They concentrate durable margin in one structural position: the layer that <b style="color:#F1F0EB">holds the legal accountability</b> for a regulated, cross-border act. Where AI only advises, value leaks; where someone must act and answer for it, value sticks.</p>
+    <div class="forces">
+      <div class="force"><div class="fid">F1</div><div><b>Paperwork is being cost-out — accountability is not.</b><p>AI collapses the cost of visa pre-screening, day-count tracking, translation and document validation. But the operator who absorbs the regulatory liability captures the efficiency as margin rather than passing it on as price. Compression becomes expansion only for the liability-bearing layer.</p></div></div>
+      <div class="force"><div class="fid">F2</div><div><b>Regulation is minting paying buyers.</b><p>Permanent-establishment enforcement, ISO 31030 duty-of-care, the EU261 reform, tourist taxes and entry levies each create a budget line that did not exist — and a buyer who is not the traveller.</p></div></div>
+      <div class="force"><div class="fid">F3</div><div><b>Loyalty has become a balance-sheet asset.</b><p>Top frequent-flyer programs are now valued above their parent airline's flight operations, with vast unredeemed-point liabilities. The value is in the issuance economics — owned by airlines and card networks, not arbitrageurs.</p></div></div>
+      <div class="force"><div class="fid">F4</div><div><b>Distribution owns the disruption moment.</b><p>Parametric insurance, claims recovery and risk intelligence all turn on who owns the point of integration — the booking checkout, the TMC, the corporate HR stack. The underwriting and the AI are commoditising; the distribution slot is the moat.</p></div></div>
+      <div class="force"><div class="fid">F5</div><div><b>Sovereign platforms close pools as they grow.</b><p>The largest faith-travel pool routes B2B flow through a state clearinghouse that locks out outside operators; sovereign visa processing sits inside multi-year contracts with near-total renewal. Scale here is the state's, not a startup's.</p></div></div>
+      <div class="force"><div class="fid">F6</div><div><b>The proven supply-tooling trade is repeating, five years younger.</b><p>The ROI logic that took hotels — revenue-management RevPAR up double digits, service cost down — is arriving in airport ground handling: asset-heavy, labour-strained, structurally receptive, barely begun.</p></div></div>
+    </div>
   </div>
 </section>
 
-<section id="heatmap" style="background:var(--paper-2)">
+<section id="heat">
   <div class="wrap">
-    <span class="eyebrow">Findings · value chain</span>
-    <h2>The adjacent value chain, heat-mapped.</h2>
-    <p>Each adjacent layer is rated for disruption intensity and typed as cost-out (AI removes spend) or value-in (AI creates a new budgeted problem). Value is being created at the edges and captured at the cores.</p>
-    <div class="tablebox" style="background:var(--paper)"><table>
-      <thead><tr><th>Adjacent layer</th><th>Intensity</th><th>Type</th><th>Where value lands</th></tr></thead>
+    <span class="eyebrow">Value-pool heat map</span>
+    <h2>The four adjacency families, typed.</h2>
+    <p style="max-width:62ch">Each family rated for how hard AI/regulation is repricing it, and whether the change is <span class="pill p-in">value-in</span> (creates a new budgeted problem) or <span class="pill p-out">cost-out</span> (removes spend, commoditises fast).</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Adjacency family</th><th>Repricing intensity</th><th>Type</th><th>Where the durable margin lands</th></tr></thead>
       <tbody>
-        <tr><td><b>Discoverability infrastructure</b></td><td><span class="pill p-vhigh">Very high</span></td><td>value-in</td><td>Up for grabs — tooling funded, travel-specialist services vacant</td></tr>
-        <tr><td><b>Distribution plumbing</b></td><td><span class="pill p-vhigh">Very high</span></td><td>value-in</td><td>Rails to GDS/payments incumbents; adoption work uncaptured</td></tr>
-        <tr><td><b>Demand creation</b></td><td><span class="pill p-high">High</span></td><td>cost-out + value-in</td><td>Specialists who own the new visibility problem</td></tr>
-        <tr><td><b>Trip servicing</b></td><td><span class="pill p-high">High</span></td><td>cost-out</td><td>Brands + AI vendors; implementation in the middle</td></tr>
-        <tr><td><b>Intelligence &amp; enablement</b></td><td><span class="pill p-high">High</span></td><td>value-in</td><td>Fragmented consultancies; capability gap acute</td></tr>
-        <tr><td><b>Operator tooling</b></td><td><span class="pill p-med">Medium</span></td><td>cost-out</td><td>Funded platforms — cores closed</td></tr>
-        <tr><td><b>Transaction adjacencies</b></td><td><span class="pill p-med">Medium</span></td><td>cost-out</td><td>Underwriters and flow-owners</td></tr>
-        <tr><td><b>Judgment layer</b></td><td><span class="pill p-low">Med-low</span></td><td>value-in</td><td>Advisors and host platforms; yields holding</td></tr>
+        <tr><td><b>Money that moves because of travel</b><br><span style="color:var(--mute);font-size:.78rem">FX, interchange, insurance, loyalty liabilities, claims</span></td><td><span class="pill p-med">Medium</span></td><td><span class="pill p-out">cost-out</span></td><td>Issuers, underwriters, flow-owners; everyone else is an affiliate or an arbitrageur with a half-life</td></tr>
+        <tr><td><b>Travel as a life event</b><br><span style="color:var(--mute);font-size:.78rem">relocation, visas, immigration, cross-border tax/payroll</span></td><td><span class="pill p-vhigh">Very high</span></td><td><span class="pill p-in">value-in</span></td><td><b style="color:var(--ink)">The accountability layer.</b> Regulated paperwork + absorbed liability = margin expansion under AI. The anchor.</td></tr>
+        <tr><td><b>The side that owns the place</b><br><span style="color:var(--mute);font-size:.78rem">governments, tourist taxes, DMOs, travel-adjacent property</span></td><td><span class="pill p-high">High</span></td><td><span class="pill p-in">value-in</span></td><td>Regulation creates real B2G budget for collection/compliance tooling; property value shifts toward AI-equipped operators</td></tr>
+        <tr><td><b>Undercovered supply</b><br><span style="color:var(--mute);font-size:.78rem">cruise, ground transport, vacation-rental tail, airport/ground ops</span></td><td><span class="pill p-high">High</span></td><td><span class="pill p-out">cost-out</span></td><td>Asset owners + their tooling vendors; ground handling is the earliest, structurally-gated entry</td></tr>
       </tbody>
     </table></div>
-    <h3>Segment model — buyers × offerings</h3>
-    <div class="tablebox" style="background:var(--paper)"><table>
-      <thead><tr><th>Buyer ↓ / Offering →</th><th>AI visibility</th><th>Agentic readiness</th><th>Strategy &amp; governance</th><th>Content &amp; intelligence</th><th>Tooling</th></tr></thead>
+    <div class="callout"><span class="cl">Read</span>Only one family is <em>both</em> very-high-intensity and value-in: travel-as-a-life-event, where regulated accountability concentrates margin. The money family is loud but cost-out; the place and supply families are real but either small near-term or incumbent-gated. The anchor follows the value-in family.</div>
+  </div>
+</section>
+
+<section id="dash" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow">Screening dashboard</span>
+    <h2>Every candidate, screened before scoring.</h2>
+    <p style="max-width:64ch">Pools are annual service revenue after take-rate, never gross bookings. Buyer is the non-traveller unless WTP is evidenced. Sizes are order-of-magnitude from cross-verified public sources; aggregator figures are rated down.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Candidate</th><th class="num">Annual pool</th><th>Paying buyer</th><th>Revenue</th><th>Gate</th><th>Moat</th></tr></thead>
       <tbody>
-        <tr><td>Luxury hotels &amp; resorts</td><td><b>Very high</b></td><td>Medium</td><td>Medium</td><td>High</td><td>Low (served)</td></tr>
-        <tr><td>Airlines</td><td>High</td><td><b>Very high</b></td><td>High</td><td>Medium</td><td>Low (served)</td></tr>
-        <tr><td>OTAs / platforms</td><td>Medium</td><td>High (in-house)</td><td>Medium</td><td>Low</td><td>n/a</td></tr>
-        <tr><td>DMOs / tourism boards</td><td><b>High</b></td><td>Low</td><td>Medium</td><td>High</td><td>Low</td></tr>
-        <tr><td>Advisors &amp; host agencies</td><td>Medium</td><td>Medium</td><td>Low</td><td>Medium</td><td><b>Med-high</b></td></tr>
-        <tr><td>Experiences operators</td><td>Medium</td><td>Med-high</td><td>Low</td><td>Low</td><td>High need, low WTP</td></tr>
-        <tr><td>Corporate travel buyers</td><td>Low</td><td>Medium</td><td>Medium</td><td>Medium</td><td>Served</td></tr>
+        <tr><td><b>Cross-border mobility compliance</b> <span style="color:var(--mute)">(anchor)</span></td><td class="num">$4–6B</td><td>Corporate HR / GC / CFO; applicants</td><td>Annuity + VAS take-rate</td><td>Act</td><td><span class="pill p-high">Structural</span></td></tr>
+        <tr><td>Sovereign visa &amp; consular outsourcing</td><td class="num">~$5.5B</td><td>Governments (contracts) + applicants</td><td>Take-rate + VAS</td><td>Act</td><td><span class="pill p-vhigh">Structural — sovereign-locked</span></td></tr>
+        <tr><td>Study-abroad recruitment</td><td class="num">~$12B</td><td>Universities (10–25% of yr-1 tuition)</td><td>Take-rate</td><td>Act</td><td><span class="pill p-med">Structural — already consolidated</span></td></tr>
+        <tr><td>Airport ground-handling AI <span style="color:var(--mute)">(runner-up)</span></td><td class="num">~$2.8B</td><td>Independent handlers (Swissport, Dnata, SATS)</td><td>Annuity SaaS</td><td>Act</td><td><span class="pill p-high">Structural — distribution-gated</span></td></tr>
+        <tr><td>Tourist-tax / visitor-compliance B2G <span style="color:var(--mute)">(runner-up)</span></td><td class="num">~$1.1B</td><td>Municipal &amp; national DMOs</td><td>Annuity SaaS</td><td>Act</td><td><span class="pill p-high">Structural — mandate-backed</span></td></tr>
+        <tr><td>Parametric travel insurance MGA</td><td class="num">~$3.0B</td><td>Booking channels (embedded API)</td><td>Take-rate</td><td>Act</td><td><span class="pill p-low">Capability-gap — closing</span></td></tr>
+        <tr><td>Corporate travel-risk / duty-of-care</td><td class="num">~$3.5B</td><td>Enterprise safety / HR</td><td>Annuity SaaS</td><td>Advise→Act</td><td><span class="pill p-low">Distribution — incumbent-held</span></td></tr>
+        <tr><td>Property PMS &amp; AI optimisation</td><td class="num">~$3.2B</td><td>Rental operators / asset owners</td><td>Annuity + take-rate</td><td>Act</td><td><span class="pill p-low">Capability-gap — funded field</span></td></tr>
+        <tr><td>Faith &amp; pilgrimage B2B logistics</td><td class="num">~$2.5B</td><td>Licensed operators (via state platform)</td><td>Take-rate</td><td>Act</td><td><span class="pill p-vhigh">Sovereign — closed to outsiders</span></td></tr>
+        <tr><td>EU261 claims recovery</td><td class="num">~$0.8B</td><td>Disrupted passengers</td><td>Take-rate (25–35%)</td><td>Act</td><td><span class="pill p-low">Regulatory artifact</span></td></tr>
+        <tr><td>Loyalty arbitrage / optimisation</td><td class="num">~$1.5B</td><td>Affluent consumers</td><td>Annuity SaaS</td><td>Advise</td><td><span class="pill p-low">Capability-gap — devaluation risk</span></td></tr>
       </tbody>
     </table></div>
+    <p class="flag">Junk-data adjustments adopted: a widely-repeated "$34B digital-nomad services" figure rated down to ~$4.2B (it conflated personal living costs); inflight-catering and travel-risk aggregator sizes normalised to primary-source figures; an airline-catering "47.5% CAGR" discarded as mathematically incoherent.</p>
   </div>
 </section>
 
 <section id="zones">
   <div class="wrap">
     <span class="eyebrow">Opportunity zones × DVF</span>
-    <h2>Seven zones, scored and tiered.</h2>
-    <p>Scores are 1–5 per lens with per-lens confidence (H/M/L); attractiveness = (D+V)/2 plotted against feasibility on the <a href="index.html#matrix">interactive 2×2</a>. The frame is the operator in the brief: 1–3 people, &lt;A$250k, no inventory, AI-native delivery.</p>
-
-    <h3>Z1 — Travel AI-Visibility practice (GEO) <span class="pill t-build">BUILD NOW · ANCHOR</span></h3>
-    <div class="score"><div class="t"><div class="v">5</div><div class="k">D · conf H</div></div><div class="t"><div class="v">4</div><div class="k">V · conf M</div></div><div class="t"><div class="v">5</div><div class="k">F · conf H</div></div></div>
-    <p>Measurement and remediation of brand citation share inside ChatGPT, Claude, Perplexity and Google AI Overviews, for luxury hotels, DMOs and airlines — sold audit → retainer, delivered earned-media-first with rented measurement tooling. Desirability is the strongest in the study: the SEO-to-AI transfer failure is measured by multiple independent parties, the most under-cited segment (luxury hospitality) is also the highest-margin buyer, and visibility indices are already being published to create boardroom anxiety. Viability rests on a real budget line (the ~$10B US travel ad pool and an existing SEO/PR allocation to redirect) and a GEO services market measured around $1B and forecast to compound at 34–46% — though those forecasts are aggregator-grade and flagged. Feasibility is near-perfect for this operator: no licence, no capital, directly adjacent to existing CX/AI credentials, and the category-creation playbook (publish your own index) is proven.</p>
-
-    <h3>Z3 — AI strategy &amp; governance advisory for travel <span class="pill t-build">BUILD NOW · PAIR</span></h3>
-    <div class="score"><div class="t"><div class="v">4</div><div class="k">D · conf M</div></div><div class="t"><div class="v">3</div><div class="k">V · conf M</div></div><div class="t"><div class="v">5</div><div class="k">F · conf H</div></div></div>
-    <p>The 80%-deploy / 2%-trust gap is, by definition, a governance and trust problem, and boards are committing real money under uncertainty (26% already report realised cost-outs). Travel-specialised AI allocation strategy, EU AI Act readiness and capability diagnostics differentiate on the vertical context generic governance consultants lack. Utilisation-bound and competing with Big-4 at the top end — but year-one revenue at zero capital, and the credibility engine for Z1 and Z2.</p>
-
-    <h3>Z2 — Agentic-readiness consulting &amp; integration <span class="pill t-gated">GATED BUILD</span></h3>
-    <div class="score"><div class="t"><div class="v">4</div><div class="k">D · conf H</div></div><div class="t"><div class="v">4</div><div class="k">V · conf M</div></div><div class="t"><div class="v">3</div><div class="k">F · conf M</div></div></div>
-    <p>MCP server scoping, agent-facing content and commerce architecture, exposure governance — for airlines, hotel groups and mid-market intermediaries. The Q2 2026 pipelines and contested standards make demand real and rising; GDS vendors sell rails, not adoption. Feasibility is the constraint: enterprise cycles and integration depth strain a three-person shop entered cold. <b>Gate:</b> enter through Z1/Z3 relationships once agentic pipelines demonstrably move booking volume.</p>
-
-    <h3>Z4 — Productised diagnostic &amp; benchmark <span class="pill t-gated">GATED BUILD</span></h3>
-    <div class="score"><div class="t"><div class="v">3</div><div class="k">D · conf M</div></div><div class="t"><div class="v">4</div><div class="k">V · conf M</div></div><div class="t"><div class="v">4</div><div class="k">F · conf M</div></div></div>
-    <p>Z1 and Z3 codified into a scored instrument — AI visibility, agent-readiness, governance maturity — with a subscription benchmark behind it. Product margins beyond utilisation, and the benchmark data compounds into the proprietary substrate that makes the whole stack defensible. <b>Gate:</b> five to eight paid service engagements first.</p>
-
-    <h3>Z7 — B2B travel-AI intelligence &amp; media <span class="pill t-build">BUILD NOW · WEDGE</span></h3>
-    <div class="score"><div class="t"><div class="v">3</div><div class="k">D · conf M</div></div><div class="t"><div class="v">3</div><div class="k">V · conf M</div></div><div class="t"><div class="v">5</div><div class="k">F · conf H</div></div></div>
-    <p>A focused research product on AI disruption in travel, including the operator's own visibility index. Media economics are thin at niche scale; the return is distribution and pipeline for everything above. Near-zero capital; not a business, a wedge.</p>
-
-    <h3>Z5 — Advisor-economy B2B <span class="pill t-watch">WATCH</span></h3>
-    <div class="score"><div class="t"><div class="v">3</div><div class="k">D · conf M</div></div><div class="t"><div class="v">3</div><div class="k">V · conf L</div></div><div class="t"><div class="v">4</div><div class="k">F · conf M</div></div></div>
-    <p>The curation layer is scaling fast and under-tooled, but the largest host builds in-house and independents carry thin budgets. Opportunistic only — though synergy with the parallel luxury-agency study is strong.</p>
-
-    <h3>Z6 — Experiences long-tail enablement <span class="pill t-watch">WATCH</span></h3>
-    <div class="score"><div class="t"><div class="v">4</div><div class="k">D · conf H</div></div><div class="t"><div class="v">2</div><div class="k">V · conf M</div></div><div class="t"><div class="v">2</div><div class="k">F · conf M</div></div></div>
-    <p>The biggest under-digitised pool in travel — and the hardest to monetise at boutique scale. Watch for channel-partner openings (booking-tech vendors, host platforms) rather than direct entry.</p>
-
-    <div class="callout"><span class="cl">Culled — explicit non-opportunities</span>Consumer fintech/FX (licence and scale gated) · insurance underwriting/MGA (capital gated; viable only as embedded distribution for flow-owners) · B2C planning and itinerary apps (investor-confirmed death zone; B2B overtook B2C funding in 2024) · horizontal AI customer-service SaaS for travel (funded incumbents and platform-native agents) · generic travel digital-marketing agency (deliverable-volume pricing deflates with T3) · travel gear and physical product.</div>
+    <h2>One anchor, two runners-up, the rest culled or watched.</h2>
+    <p style="max-width:62ch">Scores are 1–5 per lens; every score traces to the cross-verified evidence ledger. The cull line is deliberate — most of travel's loud edge-pools fail the moat or buyer screen.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="hd"><div class="zid">Z1 · anchor</div><h3>Cross-border mobility-compliance infrastructure</h3><span class="pill t-build">BUILD</span></div>
+        <div class="dvf"><div class="t"><div class="v">4</div><div class="k">Desirability</div></div><div class="t"><div class="v">4</div><div class="k">Viability</div></div><div class="t"><div class="v">3</div><div class="k">Feasibility</div></div></div>
+        <div class="body-inner">The PE-risk, day-count, certificate-of-coverage and immigration-paperwork layer that absorbs employer liability for cross-border work. Acute WTP — unmanaged remote work triggers permanent-establishment tax exposure, with eight- and nine-figure enforcement settlements on record. AI compresses the paperwork; because the operator holds the audit accountability, that lands as margin, not price. Annuity SaaS to corporates plus high-margin value-added services to individuals. The gate is feasibility, not desirability — see the verdict.</div>
+      </div>
+      <div class="card">
+        <div class="hd"><div class="zid">Z2 · runner-up</div><h3>Airport ground-handling AI</h3><span class="pill t-build">BUILD · SUPPLY-SIDE</span></div>
+        <div class="dvf"><div class="t"><div class="v">4</div><div class="k">Desirability</div></div><div class="t"><div class="v">3</div><div class="k">Viability</div></div><div class="t"><div class="v">3</div><div class="k">Feasibility</div></div></div>
+        <div class="body-inner">The cleanest repeat of Study 1's supply-tooling trade, five years earlier on the curve. Predictive dispatch and turn-management cut aircraft turnaround materially; handlers are asset-heavy, labour-strained and structurally receptive. Moat is structural (security clearance, GSE telematics integration), but distribution is gated by a consolidated incumbent set and the near-term software pool is modest. Strong, but narrower and slower than the anchor.</div>
+      </div>
+      <div class="card">
+        <div class="hd"><div class="zid">Z3 · runner-up</div><h3>Tourist-tax &amp; visitor-compliance B2G tooling</h3><span class="pill t-gated">GATED · B2G</span></div>
+        <div class="dvf"><div class="t"><div class="v">4</div><div class="k">Desirability</div></div><div class="t"><div class="v">3</div><div class="k">Viability</div></div><div class="t"><div class="v">2</div><div class="k">Feasibility</div></div></div>
+        <div class="body-inner">Regulation has created a real paying buyer with budget: levy collection, day-tripper access systems, QR enforcement, registration and remittance. The enforcement gap is real and admitted by cities. But B2G sales cycles are long, the near-term pool is small, and procurement favours integrators. Real, not theatre — but a patient game.</div>
+      </div>
+      <div class="card">
+        <div class="hd"><div class="zid">Z4 · watch</div><h3>Study-abroad recruitment</h3><span class="pill t-watch">WATCH · YOU'RE LATE</span></div>
+        <div class="dvf"><div class="t"><div class="v">3</div><div class="k">Desirability</div></div><div class="t"><div class="v">4</div><div class="k">Viability</div></div><div class="t"><div class="v">2</div><div class="k">Feasibility</div></div></div>
+        <div class="body-inner">The biggest sized pool here and a genuine standalone business — take-rate on first-year tuition, structural multi-university channel lock-up. But it is already consolidated by scaled incumbents. Attractive economics, closed front door for a new entrant; a partnership or niche-geography play at best.</div>
+      </div>
+      <div class="card">
+        <div class="hd"><div class="zid">Z5 · watch</div><h3>Parametric insurance / property optimisation</h3><span class="pill t-watch">WATCH · CLOSING</span></div>
+        <div class="dvf"><div class="t"><div class="v">3</div><div class="k">Desirability</div></div><div class="t"><div class="v">3</div><div class="k">Viability</div></div><div class="t"><div class="v">2</div><div class="k">Feasibility</div></div></div>
+        <div class="body-inner">Both are value-in stories whose moat is a capability gap with a half-life. Parametric insurance is being entered by major carriers at the moment AI cheapens the tech; the distribution slot, not the model, is the prize — and it's being taken. Property PMS is shifting value back to operators, but the field is funded. Affiliate or partner, not anchor.</div>
+      </div>
+      <div class="card">
+        <div class="hd"><div class="zid">Z6 · cull</div><h3>Sovereign-locked &amp; artifact pools</h3><span class="pill t-watch">CULL</span></div>
+        <div class="dvf"><div class="t"><div class="v">—</div><div class="k">Desirability</div></div><div class="t"><div class="v">—</div><div class="k">Viability</div></div><div class="t"><div class="v">1</div><div class="k">Feasibility</div></div></div>
+        <div class="body-inner">Faith/pilgrimage B2B is enormous but routed through a state clearinghouse that locks out outsiders — the "place" is owned by the sovereign. EU261 claims recovery is a sub-scale regulatory artifact whose rule is being revised. EOR core and duty-of-care are venture-saturated. Loyalty arbitrage dies on devaluation. All fail buyer-or-moat before DVF.</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="sizing" style="background:var(--paper-2)">
+<section id="zeropress" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow">Counter to availability bias</span>
+    <h2>Three &gt;$5bn pools with near-zero startup press.</h2>
+    <p style="max-width:64ch">Mandatory long-list entries: large, P&amp;L-documented, almost entirely uncovered by venture media — because they are physically heavy, geographically concentrated, or sovereign-procured.</p>
+    <div class="sqgrid">
+      <div class="sq"><div class="id">ZP1</div><h3>Sovereign visa &amp; consular outsourcing</h3><p>Two private operators run much of the world's outsourced visa flow on multi-year government contracts at 37–42% EBITDA, with up to a third of revenue from ~70%-margin value-added upsells. Capital-heavy physical-centre networks keep venture money away — but the workflow is digitising.</p></div>
+      <div class="sq"><div class="id">ZP2</div><h3>Sovereign Hajj &amp; Umrah B2B infrastructure</h3><p>A faith-travel economy at multi-billion direct scale whose entire B2B housing, transit and visa flow must clear a state-run digital platform. Documented in sovereign filings, invisible to Western VC — and, crucially, closed to outside entrants.</p></div>
+      <div class="sq"><div class="id">ZP3</div><h3>Inflight catering &amp; onboard retail</h3><p>A ~$14B capital-intensive cold-chain adjacency dominated by a few industrial giants, now digitising toward pre-order and dynamic onboard retail. Unglamorous, unionised, security-gated — and almost never written about by startup press.</p></div>
+    </div>
+    <div class="callout"><span class="cl">The cull challenge</span>A conventional strategy team would cull <b>sovereign visa outsourcing</b> and <b>inflight catering</b> on capital intensity. That cull is wrong only if value is migrating from the physical asset to a software/identity layer a light operator can own — which is exactly what's happening in visa processing (biometric-enrolment hubs plus online value-added services) and beginning in catering (a software take-rate on dynamic pre-order, leaving the kitchens to incumbents). The trigger to reopen each: evidence of pure-play software margins detaching from the physical network.</div>
+  </div>
+</section>
+
+<section id="sizing">
   <div class="wrap">
     <span class="eyebrow">Directional sizing</span>
-    <h2>Order-of-magnitude, with the chains visible.</h2>
-    <p>Built for a gate, not an operating model. Pools are annual service or software revenue — never gross bookings. Each chain is four steps or fewer; confidence is recorded per figure in the ledger.</p>
-    <div class="tablebox" style="background:var(--paper)"><table>
-      <thead><tr><th>Zone</th><th>TAM</th><th>SAM / pool</th><th>SOM (operator, yr 2–3)</th><th>Chain</th></tr></thead>
-      <tbody>
-        <tr><td><b>Z1 AI-Visibility</b></td><td>Global GEO services ≈ $1B (2025) → $2–3B by 2027–28 <span class="conf">(L)</span></td><td>Travel slice 5–10%, advisory-grade 30–50% → $50–150M/yr <span class="conf">(L/M)</span></td><td><b>A$0.8–2.0M ARR</b> <span class="conf">(M)</span></td><td>8–15 clients × $50–150k blended; cross-checked vs US travel digital ad spend ($8.8B) × 5–10% organic-services share</td></tr>
-        <tr><td><b>Z3 Strategy &amp; governance</b></td><td colspan="2">~5,000 mid-to-large travel orgs × 10–20% advisory attach ÷ 3 yrs × $40–120k → $20–120M/yr <span class="conf">(L)</span></td><td><b>A$0.3–0.8M/yr</b> <span class="conf">(M)</span></td><td>4–8 engagements/yr, utilisation-bound</td></tr>
-        <tr><td><b>Z2 Agentic readiness</b> (gated)</td><td colspan="2">~5,000 orgs × 25–40% external buy (vs 80% intent) × $50–250k ÷ 3 yrs → $20–170M/yr <span class="conf">(L)</span></td><td><b>A$0.2–0.8M/yr</b> from 2027 <span class="conf">(L)</span></td><td>2–6 projects × $60–150k</td></tr>
-        <tr><td><b>Z4 Diagnostic</b> (gated)</td><td colspan="2">Inherits Z1+Z3 pools</td><td><b>A$0.3–1.0M/yr</b> by yr 3 <span class="conf">(L)</span></td><td>30–80 instruments ($5–15k) + 10–25 benchmark subscriptions ($5–10k)</td></tr>
-      </tbody>
-    </table></div>
-    <div class="callout pos" style="background:var(--paper)"><span class="cl">Portfolio envelope</span><b>A$1.1–3.0M revenue potential within three years on under A$250k capital.</b> The low end clears a senior-consultant opportunity-cost hurdle (≈A$0.4–0.6M/yr) once two zones are live; the high end requires the gated zones to open.</div>
+    <h2>Order-of-magnitude, built for a gate.</h2>
+    <p style="max-width:64ch">Annual service-revenue pools after take-rate. Bars are relative scale of the serviceable pool, not a forecast. Confidence is capped at Medium for any figure resting on aggregator sources; the anchor's range spans the EOR-adjacent compliance and immigration-services layers it would straddle.</p>
+    <div class="bars">
+      <div class="bar-row"><div class="lbl"><b>Study-abroad recruitment</b><span>~$12B · already consolidated</span></div><div class="bar"><i class="gated" style="width:100%"></i></div></div>
+      <div class="bar-row"><div class="lbl"><b>Sovereign visa &amp; consular</b><span>~$5.5B · sovereign-locked</span></div><div class="bar"><i class="gated" style="width:46%"></i></div></div>
+      <div class="bar-row"><div class="lbl"><b>Z1 · Mobility compliance (anchor)</b><span>$4–6B · attackable wedge</span></div><div class="bar"><i style="width:42%"></i></div></div>
+      <div class="bar-row"><div class="lbl"><b>Corporate travel-risk software</b><span>~$3.5B · incumbent-held</span></div><div class="bar"><i class="gated" style="width:29%"></i></div></div>
+      <div class="bar-row"><div class="lbl"><b>Parametric insurance</b><span>~$3.0B · closing window</span></div><div class="bar"><i class="gated" style="width:25%"></i></div></div>
+      <div class="bar-row"><div class="lbl"><b>Z2 · Airport ground-handling AI</b><span>~$2.8B · supply-side</span></div><div class="bar"><i style="width:23%"></i></div></div>
+      <div class="bar-row"><div class="lbl"><b>Z3 · Tourist-tax B2G tooling</b><span>~$1.1B · patient</span></div><div class="bar"><i style="width:9%"></i></div></div>
+    </div>
+    <p class="flag">Teal = open to a focused new operator · black = sized but gated (consolidated, sovereign, or incumbent-held). The anchor is not the largest pool — it is the largest pool with an attackable, defensible wedge.</p>
   </div>
 </section>
 
-<section id="risks">
+<section id="verdict" class="dark">
   <div class="wrap">
-    <span class="eyebrow">Risks</span>
-    <h2>What could break this.</h2>
-    <p><b>Efficacy risk (Z1).</b> GEO is young enough that nobody has proven citation share is reliably movable. If two to three quarters of earned-media and structured-authority work doesn't move client numbers, retainers collapse to one-off audits. Mitigation: price the first cohort on audits plus performance-framed retainers; instrument everything.</p>
-    <p><b>Platform risk.</b> If AI platforms monetise answer placement (ads inside answers), organic visibility services shrink toward media buying — a different, scale-favouring business. Mitigation: keep the practice channel-agnostic (visibility = earned + structured + paid as it emerges).</p>
-    <p><b>Timing risk (Z2).</b> Consumer trust in autonomous booking is 2%; if agentic pipelines don't shift measurable volume by mid-2027, the urgency narrative deflates. That is why Z2 is gated, not built.</p>
-    <p><b>Competition risk.</b> Big-4, GDS professional-services arms and PR conglomerates (5W is already publishing travel visibility research) will move in as categories mature. The defence is sequencing: vertical authority and benchmark data established before they arrive.</p>
-    <p><b>Measurement risk.</b> Citation-overlap statistics swing wildly between methodologies and months; a practice built on a number that stabilises favourably for incumbents loses its founding story. Mitigation: own the measurement (Z4) rather than rent the narrative.</p>
-  </div>
-</section>
-
-<section class="dark" id="verdict">
-  <div class="wrap">
-    <span class="eyebrow">Verdict</span>
-    <h2>GO — on the B2B legibility stack.</h2>
-    <p>Build the AI-visibility practice (Z1) as the anchor, paired with travel-specialised AI strategy and governance advisory (Z3), distributed through an owned intelligence wedge (Z7). Gate agentic-readiness (Z2) on demonstrated booking volume through the 2026 pipelines, and gate the productised diagnostic (Z4) on five to eight completed service engagements. Watch the advisor economy (Z5) and the experiences long tail (Z6). Do not enter licensed, flow-owned or consumer-distribution categories.</p>
-    <p>Confidence: moderate-high on direction, moderate on magnitude. The desirability and feasibility evidence for the anchor is strong and multi-sourced; viability rests partly on young, aggregator-grade market forecasts, which is why the GO carries falsifiers rather than certainty.</p>
+    <span class="tag">VERDICT · CONDITIONAL GO</span>
+    <p class="verd">GO on AI-native cross-border mobility-compliance infrastructure — the regulated-paperwork-with-accountability layer — provided the entry wedge sits clear of the sovereign monopolies above it and the EOR incumbents beside it.</p>
+    <p style="max-width:64ch">The brief's gate is opportunity cost, not absolute attractiveness. The test is how the top adjacency ranks against the two standing best options.</p>
+    <div class="cmp">
+      <div class="c"><div class="h">vs Benchmark A — Study 1 supply-side</div><div class="res">COMPLEMENTS · peer</div><p>Comparable-or-larger annuity pool ($4–6B vs ~$3–5B SAM) with a more durable moat — regulated accountability versus a hotel-tooling capability gap that Study 1's own first axiom scores down. It does not clearly <em>dominate</em>, because the best sub-segments are owned by EOR incumbents and sovereign contracts; the attackable wedge is narrower than the headline pool. A genuine peer that widens the portfolio rather than replacing it.</p></div>
+      <div class="c"><div class="h">vs Benchmark B — Study 2 Editorial House</div><div class="res">DOMINATES · on size &amp; moat</div><p>Larger annuity pool and a structural moat (regulated liability) versus a taste-and-relationship moat gated on affluent willingness-to-pay. Different skill set and risk profile, but on size, defensibility and repeatability the mobility-compliance anchor is the stronger venture object. Study 2's separate WTP gate remains live and untouched.</p></div>
+    </div>
+    <div class="callout"><span class="cl" style="color:var(--accent)">The condition</span>The whole verdict rests on the wedge. The most defensible sub-pool (sovereign visa processing) is not venture-attackable; the adjacent core (EOR payroll) is venture-saturated. The thesis lives in the band between them: the PE-risk / day-count / immigration-compliance-with-liability layer for the mid-market and digital-nomad-employer segment, sold as annuity SaaS plus value-added services, riding the enforcement wave. If that band is real and ownable, this is a Tier-1 call. If incumbents close it first, it collapses to a feature.</div>
+    <p style="margin-top:24px;color:#F1F0EBAA;font-size:.95rem"><b style="color:#F1F0EB">P(thesis correct at 12 months) = 57%.</b> Carried so the call can be scored later. Confidence: moderate-high on direction (two independent passes converged on the accountability layer), moderate on the wedge's defensibility and on magnitudes resting partly on aggregator forecasts.</p>
   </div>
 </section>
 
 <section id="review">
   <div class="wrap">
-    <span class="eyebrow">Stage 6 · independent stress-test</span>
-    <h2>Red-team review.</h2>
-    <p>An independent review pass re-verified the gate-critical anchor numbers from fresh search and attacked the thesis. Note on method: this environment could not spawn a fully separate agent, so independence was approximated by a clean-context re-verification of anchors and an adversarial pass conducted against, not from, the study documents. Findings:</p>
-    <p><b>Numbers stress-test.</b> Anchor figures re-confirmed within rounding: travel funding decade-low and 83/6 concentration (Phocuswright); citation-overlap collapse (Ahrefs 863k-keyword study; BrightEdge parallel); Navan S-1 figures (CNBC); Fora $2.3B (Skift); experiences $271B/33% online (Arival–Phocuswright); global bookings $1.67T (Phocuswright). Two figures were rated down during the study and remain down: the GEO market size (aggregator-grade) and the 5W Index findings (vendor-produced, self-interested). One pre-existing unledgered corpus found in the workspace was quarantined at Stage 1 and used only as a hypothesis list; all retained claims were independently re-sourced.</p>
-    <p><b>Strongest counter-arguments.</b> (1) <i>GEO may be SEO rebranded, and the overlap statistics may stabilise</i> — overlap numbers moved 76→38→17% within months on methodology changes; a practice must own measurement, not rent a scary statistic. Accepted: folded into risk and Z4 gating. (2) <i>The buyer may become the competitor</i> — large hotel groups and OTAs will in-house visibility work as tooling matures; the durable client set is the mid-market and luxury independent segment plus DMOs, which is consistent with Z1's targeting. (3) <i>Agencies with media scale (5W et al.) can outrun a boutique</i> — true at enterprise tier; the boutique defence is vertical depth + governance credentials they lack, and speed. (4) <i>The A$1.1–3.0M envelope is a consulting income, not a venture</i> — accepted as framing: this is a cash-flow venture with a productised option (Z4), which matches the operator's stated capital and model, not a venture-scale claim.</p>
-    <p><b>Confidence-adjusted verdict.</b> GO confirmed, with the explicit condition that Z1 is run as a falsifiable experiment for its first two to three quarters (audit-led, instrumented), not as a committed multi-year build. The four falsifiers on the <a href="index.html#verdict">hero map</a> are the monitoring plan: citation-share movability, paid-placement encroachment, agentic booking volume by mid-2027, and incumbent productisation by 2027.</p>
+    <span class="eyebrow">Independent red-team</span>
+    <h2>What could break this.</h2>
+    <p style="max-width:64ch">Run as a clean pass against the evidence and draft, not the conversation. The strongest counter-arguments and the one genuine source disagreement are surfaced rather than smoothed over.</p>
+    <div class="fals">
+      <div class="f"><b>The wedge may not exist</b>The defensible sub-pool is sovereign-locked; the attackable one abuts a saturated EOR core. If Deel-class incumbents extend from payroll into PE-risk and immigration compliance, the wedge closes before a new entrant scales. This is the central risk, not a footnote.</div>
+      <div class="f"><b>Margin-from-AI assumes concentrated liability</b>That AI efficiency becomes margin rather than price holds only where accountability is concentrated (visa, immigration-with-liability). Where compliance is commoditised checklist work, the saving is competed away. The anchor must stay on the liability-bearing layer.</div>
+      <div class="f"><b>Regulation cuts both ways</b>The same rule-making that creates the buyer can disintermediate it. If a regulator mandates issuer-side or automatic compliance — as the EU261 reform hints at for claims — the paperwork intermediary's margin compresses. Watch for "compliance-by-default" rules.</div>
+      <div class="f"><b>Source disagreement, disclosed</b>The two research passes split on the June 2026 EU261 reform: one reads pre-filled forms and easier direct claiming as <em>eroding</em> claims-recovery agents; the other reads the retained friction (no automatic payouts) as keeping them <em>durable</em>. Both agree the core compensation survived. The pool is small and not the anchor, so this does not move the verdict — left as an open disagreement, not a forced pick.</div>
+    </div>
+    <div class="callout"><span class="cl">Relationship to the sibling study</span>An earlier travel-adjacencies study under a different brief went GO on the <em>B2B legibility stack</em> — selling AI-visibility and governance <em>services</em> into travel brands. This study deliberately goes the other way: not advising travel's edges but <em>owning</em> the regulated pools at them. The two are complementary — advise-side, capability-gap moats there; act-side, structural moats here — and the current brief fences the advisory lane out entirely, so there is no overlap to re-litigate.</div>
   </div>
 </section>
 
@@ -247,28 +305,29 @@ li{margin-bottom:6px}
   <div class="wrap">
     <span class="eyebrow">Method &amp; sources</span>
     <h2>How the study was built.</h2>
-    <p>Seven-stage autonomous DVF process: frame (one scoping round) → gather (fresh web evidence, four lenses) → synthesise (value chain, themes, thesis) → opportunities × DVF → directional sizing → deliverables → independent stress-test. Evidence discipline: every quantified or load-bearing claim carries a ledger row tagged SOURCED (with link) or ESTIMATED (with assumption and method) and an H/M/L confidence rating; vendor-reported figures flagged and rated down; gross bookings never compared to revenue. Public sources and structured estimation only. Sizing is order-of-magnitude, built for a gate.</p>
-    <h3>Principal sources</h3>
-    <ul class="src">
-      <li>Phocuswright / PhocusWire — travel startup funding and concentration; Travel Forward 2026 global market sizing; OTA market structure.</li>
-      <li>Ahrefs; BrightEdge; Search Engine Journal — AI citation vs ranking overlap studies (863k keywords; parallel methodologies).</li>
-      <li>5W — Airlines &amp; Hotels AI Visibility Index 2026 (vendor-produced; flagged).</li>
-      <li>McKinsey × Skift — Remapping Travel with Agentic AI (executive and traveller surveys); Skift US Travel Tracker.</li>
-      <li>Skift — Sabre/PayPal/Mindtrip agentic pipeline; MCP in travel explainer; Fora growth; APAC luxury yields (Onyx).</li>
-      <li>CNBC / Navan S-1 — corporate travel platform economics; Sacra — competitive landscape.</li>
-      <li>Arival × Phocuswright — Outlook for Travel Experiences 2019–2029.</li>
-      <li>eMarketer — US travel ad spend; travel media network forecasts.</li>
-      <li>Mordor Intelligence, IMARC, Allied Market Research — travel insurance market (range reported; aggregator-grade).</li>
-      <li>Valuates / Intel Market Research — GEO services market (aggregator-grade; flagged low confidence).</li>
-      <li>YouGov; Global Rescue; Amadeus research; HUMAN Security — consumer AI adoption and traffic telemetry.</li>
-    </ul>
-    <p class="meta">Full evidence ledger (35 sourced rows + 9 estimates, with links, methods and confidence ratings) accompanies this report as LEDGER.md. Interactive companion: <a href="index.html">opportunity map</a>.</p>
+    <p style="max-width:64ch">Two independent deep-research passes — this model's own web research and a separate Deep Research pass — were combined into a single evidence list, duplicates merged and contradictions logged. Every load-bearing number carries a source or estimation method and an H/M/L confidence. Vendor and aggregator market sizes are flagged and rated down; gross bookings are never compared to revenue. Claims appearing near-verbatim across multiple secondary sources with no identifiable primary — notably an inflated headline figure for the pilgrimage economy — are flagged as correlated-consensus and anchored instead on the soundest primary figure. The report was self-checked for evidence-match and internal consistency, then red-teamed in a fresh pass against the evidence list and draft alone.</p>
+    <h4 style="margin-top:30px">Principal sources (illustrative)</h4>
+    <div class="srcs">
+      <div>On Point Loyalty — Top 100 Most Valuable Airline Loyalty Programs 2026 (program valuations).</div>
+      <div>European Parliament EPRS and EU261 reform coverage (June 2026); IATA position; AirHelp (claims-recovery economics).</div>
+      <div>Indian DGCA CAR Section 3 (APAC passenger-rights analog).</div>
+      <div>International SOS, Crisis24, Control Risks; Sabre / CWT / AmEx GBT duty-of-care moves, 2025.</div>
+      <div>VFS Global and BLS International filings and analyst notes (sovereign visa economics); Lighthouse Reports.</div>
+      <div>Deel, Remote, Papaya, Velocity Global (EOR); cross-border permanent-establishment enforcement cases.</div>
+      <div>Saudi GASTAT, Ministry of Hajj &amp; Umrah, Nusuk / Nusuk Masar; Salaam Gateway (faith-travel economy).</div>
+      <div>ApplyBoard and Leap profiles (study-abroad recruitment economics).</div>
+      <div>Swissport, Dnata, SATS results; IATA traffic (ground-handling scale and AI ROI).</div>
+      <div>Savills Branded Residences report; Pacaso (travel-adjacent property).</div>
+      <div>City and national levy coverage — Barcelona, Venice, Amsterdam, Edinburgh, Bali, Thailand, EU ETIAS (tourist-tax pipeline).</div>
+      <div>Aggregator market sizes (Mordor, Grand View, FMI, Market.us family) — used for order-of-magnitude only, rated down.</div>
+    </div>
+    <p class="flag">This study evaluates the venture lens only. Nothing here — particularly on travel-adjacent property — should be read as personal asset-allocation advice. Market-size figures are directional, not investable precision.</p>
   </div>
 </section>
 
 <footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
-  <span>Travel Adjacencies DVF Study · June 2026 · full Big-4 depth</span>
-  <span><a href="index.html">← Back to the hero map</a></span>
+  <span>Travel Adjacencies · Study 3 of 3 · negative-space scoping · two-pass cross-verified · June 2026</span>
+  <span><a href="index.html">← Opportunity map</a></span>
 </div></footer>
 
 </body>
