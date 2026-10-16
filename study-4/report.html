@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Consulting Day Rates</title>
+<meta name="description" content="Study 4: What a Sydney independent AI strategy, transformation and governance consultant can charge per day, split by service category, using only published figures.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF;--paper-2:#F1F0EB;--black:#000000;--ink:#141414;--ink-soft:#5E6266;
+  --mute:#8D9297;--accent:#15E0C6;--accent-ink:#06120F;--accent-deep:#0C7A69;
+  --line:#14141414;--line-strong:#14141424;
+  --measured:#0A8F7A;--published:#C25A12;
+  --sans:'PP Neue Montreal','Geist','Hanken Grotesk',system-ui,-apple-system,sans-serif;--r:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:#26282A;font-family:var(--sans);font-size:17px;line-height:1.62;letter-spacing:-.012em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:500;line-height:1.06;letter-spacing:-.03em;color:var(--ink)}
+h1{font-size:clamp(2.2rem,5.4vw,3.8rem);letter-spacing:-.038em;line-height:1.02}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);letter-spacing:-.035em}
+h3{font-size:1.15rem;margin-top:34px}
+p{margin-top:14px;max-width:68ch}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:#14141438;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-color:var(--ink)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+section{padding:76px 0;border-top:1px solid var(--line)}
+.dark{background:var(--black);color:#F1F0EB;border:none}
+.dark h1,.dark h2,.dark h3{color:#F1F0EB}
+.dark p{color:#F1F0EBCC}
+.eyebrow{display:inline-block;font-weight:500;font-size:.74rem;color:var(--ink);border:1px solid var(--line-strong);border-radius:999px;padding:5px 13px;margin-bottom:16px}
+.dark .eyebrow{color:var(--accent);border-color:#FFFFFF2E}
+nav{position:sticky;top:0;background:#FFFFFFF2;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:1060px;margin:0 auto}
+.wordmark{font-weight:500;letter-spacing:-.02em;font-size:1rem}
+.nav-links a{margin-left:22px;text-decoration:none;color:var(--ink-soft);font-size:.9rem}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--accent);color:var(--accent-ink)!important;font-weight:500;padding:9px 18px;border-radius:999px;text-decoration:none!important;font-size:.9rem}
+.lede{font-size:1.18rem;color:var(--ink-soft);max-width:56ch;margin-top:22px}
+.meta{font-size:.8rem;color:var(--mute);margin-top:28px}
+.callout{background:var(--paper-2);border-left:3px solid var(--accent);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin-top:26px;font-size:.96rem;max-width:74ch}
+.callout .cl{font-size:.7rem;font-weight:500;color:var(--accent-deep);display:block;margin-bottom:6px;letter-spacing:.02em;text-transform:uppercase}
+.callout p{margin-top:6px}
+.dark .callout{background:#FFFFFF0A}
+.dark .callout .cl{color:var(--accent)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:34px}
+.kpi{border:1px solid #FFFFFF24;border-radius:var(--r);padding:18px 20px}
+.kpi .v{font-size:1.9rem;font-weight:500;letter-spacing:-.03em;color:#F1F0EB;font-variant-numeric:tabular-nums}
+.kpi .k{font-size:.82rem;color:#F1F0EBA8;margin-top:4px}
+.tbl{border:1px solid var(--line-strong);border-radius:var(--r);overflow:hidden;margin-top:26px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:680px}
+th{background:var(--paper-2);text-align:left;font-weight:500;padding:11px 13px;vertical-align:bottom}
+td{padding:11px 13px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:hover{background:#F1F0EB66}
+td b{font-weight:500;color:var(--ink)}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;border-radius:999px;font-size:.66rem;font-weight:500;padding:2px 9px;white-space:nowrap}
+.p-m{background:#0A8F7A1F;color:#075E50}
+.p-p{background:#C25A121F;color:#8A3F0C}
+.p-d{background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line-strong)}
+.p-x{background:transparent;color:#8A3F0C;border:1px solid #C25A1266}
+
+/* range chart */
+.chart{margin-top:30px;border:1px solid var(--line-strong);border-radius:var(--r);padding:22px 22px 14px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:.8rem;color:var(--ink-soft);margin-bottom:14px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:14px;height:8px;border-radius:2px;display:inline-block}
+.legend .mk{width:2px;height:14px;background:var(--ink);border-radius:0}
+.grp{font-size:.7rem;font-weight:500;color:var(--mute);letter-spacing:.04em;text-transform:uppercase;margin:16px 0 6px}
+.row{display:grid;grid-template-columns:minmax(150px,280px) 1fr;gap:14px;align-items:center;min-height:26px}
+.row .rl{font-size:.8rem;color:var(--ink);line-height:1.25}
+.row .rl small{display:block;color:var(--mute);font-size:.7rem}
+.track{position:relative;height:26px}
+.track .grid-l{position:absolute;top:0;bottom:0;width:1px;background:var(--line)}
+.track .ref{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.75}
+.track .b{position:absolute;top:8px;height:10px;border-radius:4px;cursor:default}
+.track .b.pt{width:10px;height:10px;border-radius:50%;margin-left:-5px;box-shadow:0 0 0 2px var(--paper)}
+.track .b:hover,.track .b:focus{outline:2px solid var(--ink);outline-offset:1px}
+.track .hit{position:absolute;top:0;height:26px}
+.axis{display:grid;grid-template-columns:minmax(150px,280px) 1fr;gap:14px;margin-top:8px}
+.axis .ticks{position:relative;height:18px;font-size:.68rem;color:var(--mute);font-variant-numeric:tabular-nums}
+.axis .ticks span{position:absolute;transform:translateX(-50%)}
+#tip{position:fixed;pointer-events:none;background:var(--ink);color:#F1F0EB;font-size:.78rem;padding:8px 11px;border-radius:8px;max-width:280px;opacity:0;transition:opacity .1s;z-index:100;line-height:1.35}
+#tip b{font-weight:500;color:#fff}
+
+.verd{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:500;letter-spacing:-.03em;line-height:1.24;max-width:38ch;color:#F1F0EB}
+.ratecard{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:30px}
+.rc{border:1px solid var(--line-strong);border-radius:var(--r);padding:20px}
+.rc .h{font-size:.72rem;color:var(--accent-deep);font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+.rc .v{font-size:1.5rem;font-weight:500;letter-spacing:-.03em;color:var(--ink);margin-top:6px;font-variant-numeric:tabular-nums}
+.rc p{font-size:.86rem;color:var(--ink-soft);margin-top:8px}
+.srcs{margin-top:24px;columns:2;column-gap:34px;font-size:.82rem;color:var(--ink-soft)}
+.srcs div{break-inside:avoid;margin-bottom:9px}
+.flag{font-size:.78rem;color:var(--mute);margin-top:10px;max-width:80ch}
+footer{background:var(--black);color:#8D9297;padding:40px 0;font-size:.8rem}
+footer a{color:#F1F0EB}
+@media(max-width:760px){
+  .wrap{padding:0 16px}.nav-inner{padding:14px 16px}
+  .srcs{columns:1}.nav-links a:not(.nav-cta){display:none}
+  .row,.axis{grid-template-columns:120px 1fr;gap:8px}
+  .chart{padding:16px 12px 10px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <span class="wordmark">AI Consulting Rates · Study 4</span>
+  <span class="nav-links">
+    <a href="#chart">Chart</a><a href="#categories">Categories</a><a href="#baseline">Baseline check</a><a href="#verdict">Verdict</a><a href="#method">Method</a>
+    <a class="nav-cta" href="../index.html">Library</a>
+  </span>
+</div></nav>
+
+<!-- OPENING -->
+<section class="dark" style="border:none;padding-top:96px">
+  <div class="wrap">
+    <span class="eyebrow">Study 4 · Rate benchmark · Sydney · October 2026</span>
+    <h1>A$2,000 a day buys an interim CAIO, not a consultant</h1>
+    <p class="lede">No measured Sydney contract rate for an AI consultant, transformation lead or governance specialist reaches A$2,000. The only measured band that contains it is interim Chief AI Officer work, at A$1,908 to A$2,582.</p>
+
+    <div class="callout">
+      <span class="cl">Why it matters</span>
+      <p>Recruiter datasets put senior AI transformation consultants at A$1,016 a day (Sydney median) and AI governance leads at A$1,030 to A$1,393. The vendor price guides you used top out between A$2,200 and A$3,500. A$2,000 holds only if buyers see you as executive-level AI leadership and not as a contractor filling a seat.</p>
+    </div>
+    <div class="callout">
+      <span class="cl">The bottom line</span>
+      <p>Keep A$2,000 for strategy and fractional leadership work, sold direct and scoped around outcomes. Price governance-only work at A$1,400 to A$1,600. Do not sell engineering by the day. Two of your four baseline sources could not be confirmed as stated; see the <a href="#baseline" style="color:#F1F0EB">baseline check</a>.</p>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="v">A$1,016</div><div class="k">Senior AI transformation consultant, Sydney contract median (Galileo, July 2026)</div></div>
+      <div class="kpi"><div class="v">A$1,908–2,582</div><div class="k">Chief AI Officer, interim or fractional day rate (Galileo, July 2026)</div></div>
+      <div class="kpi"><div class="v">A$1,000–3,500</div><div class="k">Spread across the AI consulting vendor price guides you started from</div></div>
+      <div class="kpi"><div class="v">0 of 10</div><div class="k">Australian AI providers with public prices that publish a day rate (Aivy review)</div></div>
+    </div>
+    <p class="meta">Built from 36 published pages. Every number on this page is a published figure or a stated calculation from one. Rates are A$ per day and exclude GST unless marked.</p>
+  </div>
+</section>
+
+<!-- CHART -->
+<section id="chart">
+  <div class="wrap">
+    <span class="eyebrow">By the numbers</span>
+    <h2>Measured rates cluster at A$800–1,600. Most price guides run well past them.</h2>
+    <p>Each bar is one published range. Green bars come from recruiter datasets and advertised roles: what employers pay a contractor for a seat. Orange bars come from consultancy and marketplace price guides: what firms say the market charges for advice. The black line marks A$2,000.</p>
+
+    <div class="chart" role="img" aria-label="Range chart of Australian AI day rates by category and source. A full table of the same figures appears in the Full data section.">
+      <div class="legend">
+        <span><i style="background:var(--measured)"></i>Measured (recruiter data, advertised roles)</span>
+        <span><i style="background:var(--published)"></i>Published price guide or marketplace</span>
+        <span><i class="mk"></i>A$2,000 estimate</span>
+      </div>
+      <div id="rows"></div>
+      <div class="axis"><div></div><div class="ticks" id="ticks"></div></div>
+    </div>
+    <p class="flag">Point markers are single averages or medians. Hover a bar for its source. Aivy's AusTender-implied team rates (A$1,959 to A$20,524, GST-inclusive) are left off the chart because they price whole teams, not people.</p>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section id="categories">
+  <div class="wrap">
+    <span class="eyebrow">By category</span>
+    <h2>Six categories, three price levels</h2>
+    <p>The evidence splits AI work into three price levels. Engineering, governance and transformation delivery cluster at A$800 to A$1,600. Interim leadership runs A$1,300 to A$2,600. Advisory price guides run A$1,000 to A$3,500, but nobody has measured what solo advisers actually get paid.</p>
+
+    <h3>1. AI strategy and advisory</h3>
+    <p>This is your core offer, and it has no measured rate data at all. Every figure is a firm's own guide. Expert360 is the closest to market evidence because its experts set their own rates, and it puts AI strategy work at A$1,000 to A$1,500. That is well below the other guides.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>What it covers</th><th>A$/day</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Expert360</b></td><td>AI advisory and strategy: use cases, roadmaps, readiness</td><td class="num">1,000–1,500</td><td><span class="pill p-p">Marketplace guide</span></td></tr>
+        <tr><td><b>Expert360</b></td><td>Business strategy consultants, specialist</td><td class="num">1,200–2,500</td><td><span class="pill p-p">Marketplace guide</span></td></tr>
+        <tr><td><b>Expert360</b></td><td>Strategy freelancers: junior vs 8+ years</td><td class="num">1,000–1,400 / 2,200+</td><td><span class="pill p-p">Marketplace guide</span></td></tr>
+        <tr><td><b>Edison AI</b></td><td>Independent and specialist AI consultants</td><td class="num">1,000–2,500</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Team 400</b></td><td>Independent senior consultants</td><td class="num">1,400–2,200</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Nexus Digital</b></td><td>AI consulting, Australia</td><td class="num">1,200–3,200</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Flowtivity</b> (via Factoryjet)</td><td>AI consultants, March 2026</td><td class="num">1,500–3,000</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Zinto</b> (as you cited)</td><td>Senior AI consultants</td><td class="num">1,500–3,500</td><td><span class="pill p-x">Not located</span></td></tr>
+        <tr><td><b>prepmybook</b></td><td>Solo digital strategy consultants (closest non-AI analogue)</td><td class="num">1,800–2,500</td><td><span class="pill p-p">Guide, no method</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>2. AI transformation and adoption</h3>
+    <p>This is the best-measured category, and it comes in lowest. Galileo's Sydney dataset puts an AI transformation consultant at A$827 (mid) to A$1,300 (principal). Hudson's program director band, A$1,300 to A$1,500, is the closest non-AI comparison for running a transformation, and it still sits A$500 below your estimate.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Role</th><th>A$/day</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Galileo</b></td><td>AI transformation consultant, Sydney: mid / senior median / lead / principal</td><td class="num">827 / 1,016 / 1,170 / 1,300</td><td><span class="pill p-m">Advertised roles</span></td></tr>
+        <tr><td><b>Galileo</b></td><td>AI transformation or adoption lead (directional, few postings disclose pay)</td><td class="num">768–1,005</td><td><span class="pill p-m">Dataset</span></td></tr>
+        <tr><td><b>Galileo</b></td><td>Head of AI Transformation, median contract day rate</td><td class="num">1,832</td><td><span class="pill p-m">Dataset</span></td></tr>
+        <tr><td><b>Hudson</b></td><td>Program or portfolio director, contract</td><td class="num">1,300–1,500</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>Hudson</b></td><td>Program manager / change manager, contract</td><td class="num">1,100–1,400 / 900–1,000</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>Paymetric</b></td><td>Transformation manager / programme director, national</td><td class="num">1,242 / 1,426</td><td><span class="pill p-m">Rate index</span></td></tr>
+        <tr><td><b>AI Talent On Demand</b></td><td>Senior AI transformation consulting</td><td class="num">2,500–3,500+</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>3. Fractional and interim AI leadership</h3>
+    <p>A$2,000 is a fair price here, and only here, among the measured bands. Galileo's interim Chief AI Officer band runs A$1,908 to A$2,582. Interim Head of AI tops out at A$1,766. Expert360's fractional retainers work out at A$1,385 to A$1,846 a day, which puts A$2,000 just above the marketplace.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Role or model</th><th>A$/day</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Galileo</b></td><td>Chief AI Officer, interim or fractional</td><td class="num">1,908–2,582</td><td><span class="pill p-m">Dataset</span></td></tr>
+        <tr><td><b>Galileo</b></td><td>Head of AI or Director of AI, interim</td><td class="num">1,306–1,766</td><td><span class="pill p-m">Dataset</span></td></tr>
+        <tr><td><b>AI Talent On Demand</b></td><td>Fractional CAIO, 1–3 days a week. This is the A$1,500–3,000 figure you attributed to Synap.</td><td class="num">1,500–3,000</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Expert360</b></td><td>Fractional AI advisory, A$8k–18k a month for 1–3 days a week</td><td class="num">≈1,385–1,846</td><td><span class="pill p-d">Derived</span></td></tr>
+        <tr><td><b>Expert360</b></td><td>Senior generative-AI and agentic specialists</td><td class="num">2,200–4,500</td><td><span class="pill p-p">Marketplace guide</span></td></tr>
+        <tr><td><b>Robert Walters</b> (2025 guide)</td><td>Head of Data, contract</td><td class="num">1,900–2,500</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>Paymetric</b></td><td>Head of Data and AI, national</td><td class="num">1,656</td><td><span class="pill p-m">Rate index</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="flag">Derived: A$8,000 ÷ 4.33 days (one day a week) = A$1,846; A$18,000 ÷ 13 days (three days a week) = A$1,385. Salary anchor for comparison: Galileo puts a Sydney Head of AI at a A$291k median package and a CAIO at a A$380k median base.</p>
+
+    <h3>4. AI governance and responsible AI</h3>
+    <p>Governance-only work prices below strategy. Three measured sources agree on A$850 to A$1,400. Galileo calls the day-rate data thin because the dedicated talent pool "barely exists yet", so expect this to move. Its note that APRA-regulated employers price above large-company medians is the best case for charging more in banking and insurance.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Role or service</th><th>A$/day or fee</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Galileo</b></td><td>AI governance lead, Sydney</td><td class="num">1,030–1,393</td><td><span class="pill p-m">Dataset, thin</span></td></tr>
+        <tr><td><b>Clicks</b></td><td>AI governance specialist: salary-equivalent average / contract listings</td><td class="num">1,140 / 850–1,250</td><td><span class="pill p-m">Recruiter guide</span></td></tr>
+        <tr><td><b>AI Talent On Demand</b></td><td>AI governance specialist, contract or fractional</td><td class="num">1,000–2,000</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Morgan McKinley</b></td><td>Head of Data Governance, Sydney (salary only)</td><td class="num">A$230k avg</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>ISO 42001 vendors</b> (QuickCert and others)</td><td>Gap analysis / full implementation support</td><td class="num">A$5k–15k / A$20k–80k</td><td><span class="pill p-p">Project fee</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>5. AI engineering and implementation</h3>
+    <p>This is the deepest data and the clearest ceiling. Five measured sources put senior AI engineers in Sydney at A$900 to A$1,300, with GenAI specialists reaching A$1,596. Only Expert360's GenAI tier (A$1,500 to A$3,000) supports A$2,000 for hands-on work.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Role</th><th>A$/day</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Robert Walters 2026</b> (via secondary)</td><td>AI engineer / senior AI engineer, NSW</td><td class="num">800–900 / 1,000–1,150</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>Galileo</b></td><td>AI engineer mid / senior / senior GenAI, Sydney</td><td class="num">785–1,061 / 952–1,288 / 1,180–1,596</td><td><span class="pill p-m">Dataset</span></td></tr>
+        <tr><td><b>Re:Sourced</b></td><td>AI/ML engineer senior / principal, Sydney</td><td class="num">900–1,200 / 1,100–1,300</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>Clicks</b></td><td>ML engineer / AI engineer, average</td><td class="num">1,040 / 985</td><td><span class="pill p-m">Recruiter guide</span></td></tr>
+        <tr><td><b>Bigwave Digital</b></td><td>Experienced ML and data engineers</td><td class="num">950–1,400</td><td><span class="pill p-m">Recruiter guide</span></td></tr>
+        <tr><td><b>Expert360</b></td><td>AI engineers / GenAI and LLM specialists</td><td class="num">850–1,800 / 1,500–3,000</td><td><span class="pill p-p">Marketplace guide</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>6. AI and enterprise architecture</h3>
+    <p>Architecture is a bridge role and prices between engineering and leadership. The measured enterprise architect median in Sydney is A$1,350. The single vendor figure for AI solutions architects contradicts itself on its own page, quoting both A$1,400 to A$2,500 and A$1,800 to A$2,500.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Role</th><th>A$/day</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Morgan McKinley</b></td><td>Enterprise architect, Sydney: low / median / high</td><td class="num">1,150 / 1,350 / 1,650</td><td><span class="pill p-m">Salary guide</span></td></tr>
+        <tr><td><b>Morgan McKinley</b></td><td>Senior solution architect, Sydney listing</td><td class="num">1,200–1,500</td><td><span class="pill p-m">Advertised role</span></td></tr>
+        <tr><td><b>SEEK / Workable listing</b></td><td>AI architect, Sydney, 6 months, inclusive of all charges</td><td class="num">800–950</td><td><span class="pill p-m">Single listing</span></td></tr>
+        <tr><td><b>AI Talent On Demand</b></td><td>AI solutions architect</td><td class="num">1,400–2,500</td><td><span class="pill p-p">Vendor guide, inconsistent</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Firm tiers and project prices</h3>
+    <p>Firm pricing sets the ceiling a solo consultant competes under. Team 400 places independents (A$1,400 to A$2,200) below boutiques (A$1,600 to A$2,800) and the Big Four (A$2,800 to A$4,500). Federal contracts show what firms really bill. Aivy's AusTender review found implied team rates from A$1,959 (Deloitte) to A$20,524 (McKinsey) per working day, GST-inclusive.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Source</th><th>Engagement</th><th>Price</th><th>Evidence</th></tr></thead>
+      <tbody>
+        <tr><td><b>Team 400</b></td><td>Day rates by tier: freelancer / boutique / mid-tier / Big Four</td><td class="num">800–1,400 / 1,600–2,800 / 1,800–2,800 / 2,800–4,500</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+        <tr><td><b>Aivy</b></td><td>Implied per working day, federal AI contracts (whole teams)</td><td class="num">1,959–20,524 incl GST</td><td><span class="pill p-d">Derived from AusTender</span></td></tr>
+        <tr><td><b>Team 400</b></td><td>AI strategy assessment, 2–4 weeks</td><td class="num">A$15k–40k</td><td><span class="pill p-p">Project fee</span></td></tr>
+        <tr><td><b>Synap</b></td><td>AI Readiness Sprint, 2 weeks</td><td class="num">A$9,950</td><td><span class="pill p-p">Published price</span></td></tr>
+        <tr><td><b>Enterprise Monkey</b></td><td>AI strategy workshop, Melbourne</td><td class="num">A$8.5k–15k</td><td><span class="pill p-p">Published price</span></td></tr>
+        <tr><td><b>Amjid.au</b></td><td>Fractional CAIO retainer / 90-day embedded engagement</td><td class="num">from A$8k/month / from A$60k</td><td><span class="pill p-p">Published price</span></td></tr>
+        <tr><td><b>Edison AI</b></td><td>90-day SME implementation / Big Four 3–6 month engagement</td><td class="num">A$15k–50k / A$120k–400k</td><td><span class="pill p-p">Vendor guide</span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- BASELINE CHECK -->
+<section id="baseline">
+  <div class="wrap">
+    <span class="eyebrow">Between the lines</span>
+    <h2>Two of your four baselines hold up. Two need replacing.</h2>
+    <p>Edison AI and Team 400 match your figures. Synap's own pages show retainers and fixed-price sprints, not a day rate. The A$1,500 to A$3,000 fractional figure traces to AI Talent On Demand. Zinto did not appear in any search, so its range stays unverified.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Your source</th><th>Figure you cited</th><th>What we found</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><b>Edison AI</b></td><td class="num">1,000–2,500</td><td>Same band in Edison's own insight guides (edisonai.au). Expert360 publishes the same band for independent AI consultants.</td><td><span class="pill p-m">Confirmed</span></td></tr>
+        <tr><td><b>Team 400</b></td><td class="num">1,400–2,200 / 1,600–2,800</td><td>Confirmed in its 2026 day-rate table. Another Team 400 post gives boutiques A$1,800–2,500 and Microsoft partners A$2,200–3,200, so its own pages disagree.</td><td><span class="pill p-m">Confirmed, inconsistent</span></td></tr>
+        <tr><td><b>Synap</b></td><td class="num">1,500–3,000</td><td>Synap publishes fractional advisor retainers from A$1,200 a month and a A$9,950 two-week sprint. The A$1,500–3,000 fractional CAIO figure is AI Talent On Demand's.</td><td><span class="pill p-x">Misattributed</span></td></tr>
+        <tr><td><b>Zinto</b></td><td class="num">1,500–3,500</td><td>No Zinto page returned in three searches. The range matches an independent-consultant figure in another Sydney guide.</td><td><span class="pill p-x">Not located</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="flag">We could not open any source page directly; this session's network policy blocked them. Figures were confirmed through search-engine extracts of each page. Spot-check the Synap and Zinto pages yourself before citing them again.</p>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="dark" id="verdict">
+  <div class="wrap">
+    <span class="eyebrow">The bottom line</span>
+    <p class="verd">A$2,000 a day is a leadership price. Hold it for strategy and fractional CAIO work, cut it for governance-only work, and stop quoting days for build work.</p>
+    <p>The gap between measured and published rates is not noise. Contract rates price a person doing defined work in someone else's structure. Advisory rates price judgement, accountability and the absence of an agency margin. Buyers will compare you to whichever market your proposal resembles.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">What's next</span>
+    <h2>A rate card the evidence supports</h2>
+    <div class="ratecard">
+      <div class="rc"><div class="h">AI strategy and fractional leadership</div><div class="v">A$2,000–2,500</div><p>Sits inside Galileo's interim CAIO band (A$1,908–2,582). Sell it as a retainer of 1–2 days a week to a named executive sponsor, not as a contract seat.</p></div>
+      <div class="rc"><div class="h">Strategy sprints</div><div class="v">A$15k–30k fixed</div><p>Inside Team 400's A$15k–40k assessment range and above Synap's A$9,950 entry sprint. At A$2,000 a day this buys 7–15 days of your time.</p></div>
+      <div class="rc"><div class="h">Governance only</div><div class="v">A$1,400–1,600</div><p>Just above the measured top (A$1,393). Go to A$2,000 only for APRA-regulated clients, or when governance comes bundled with a strategy engagement.</p></div>
+      <div class="rc"><div class="h">Transformation delivery</div><div class="v">A$1,500–1,800</div><p>Above the program director band (A$1,300–1,500) and close to the Head of AI Transformation median (A$1,832). Keep it in the leadership bracket.</p></div>
+      <div class="rc"><div class="h">Engineering</div><div class="v">Fixed price only</div><p>Measured senior rates top out at A$1,596. A day rate invites that comparison. Price builds as fixed projects or subcontract them.</p></div>
+    </div>
+    <div class="callout">
+      <span class="cl">Close the evidence gap</span>
+      <p>No source here measures what Sydney solo AI advisers actually bill. Your own data would be the first. Log every quote, win and loss for the next 10 proposals. Ask three Expert360 or Galileo account managers what AI strategy experts actually clear. Ask buyers who turn you down what the winning bid cost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method">
+  <div class="wrap">
+    <span class="eyebrow">Method and caveats</span>
+    <h2>How this was built</h2>
+    <p>We started from your four sources, then searched for Australian AI rate data in six service categories. We kept only figures with a named source and a number. We tagged each one by evidence type: <span class="pill p-m">Measured</span> means a recruiter dataset, salary guide or advertised role. <span class="pill p-p">Published</span> means a consultancy or marketplace price guide. <span class="pill p-d">Derived</span> means our own stated calculation from a published figure.</p>
+    <h3>Limits that change the reading</h3>
+    <p><b>Measured is not achieved.</b> Galileo's 24,024-point dataset is the largest source here (snapshot 23 July 2026). But it covers advertised roles and large Sydney companies, and its leadership day rates price interim and fractional engagements, not a standing contract market.</p>
+    <p><b>Bases differ.</b> Clicks quotes rates paid to the contractor, including super and excluding agency margin. Re:Sourced and most guides exclude GST. Aivy's AusTender figures include GST and cover whole teams. Treat gaps under about 10% as noise.</p>
+    <p><b>Some figures are second-hand.</b> The Robert Walters 2026 AI engineer rates come from third-party summaries of its guide. Its Head of Data figure is from the 2025 guide. Flowtivity's range comes via Factoryjet.</p>
+    <p><b>Location.</b> Re:Sourced puts Melbourne 5–8% below Sydney and Brisbane 10–15% below. National figures (Paymetric, Clicks) likely understate Sydney slightly.</p>
+    <p><b>Access.</b> This session's network policy blocked direct page access, so every figure was read from search-engine extracts of the source page. We did not fetch AusTender data ourselves.</p>
+    <p><b>International context.</b> UK ITJobsWatch data shows the same split. AI consultant contracts advertise a £563 median (72 rates, six months to August 2026), far below UK consultancy price guides.</p>
+
+    <h3>Sources</h3>
+    <div class="srcs">
+      <div><a href="https://edisonai.au/insights">Edison AI, Insights: AI consulting guides</a></div>
+      <div><a href="https://team400.ai/blog/2026-05-microsoft-ai-consulting-rates-australia-what-to-expect">Team 400, Microsoft AI consulting rates in Australia (May 2026)</a></div>
+      <div><a href="https://team400.ai/blog/2026-04-03-ai-consulting-cost-australia">Team 400, How much does AI consulting cost in Australia</a></div>
+      <div><a href="https://www.synap.au/top-10-ai-consultants-australia">Synap, Top 10 AI consultants in Australia</a></div>
+      <div><a href="https://blog.synap.au/your-first-step-to-ai-the-readiness-sprint">Synap, The Readiness Sprint</a></div>
+      <div><a href="https://galileosearch.com.au/ai-talent-index">Galileo Search, AU AI Talent Index Q3 2026</a></div>
+      <div><a href="https://galileosearch.com.au/ai-salary-guide-australia">Galileo Search, AI Salary Guide Australia 2026</a></div>
+      <div><a href="https://salary.galileosearch.com.au/salary/ai-transformation-consultant">Galileo Search, AI transformation consultant</a></div>
+      <div><a href="https://salary.galileosearch.com.au/salary/head-of-ai-transformation">Galileo Search, Head of AI Transformation</a></div>
+      <div><a href="https://expert360.com/expert-titles/artificial-intelligence-consultants">Expert360, AI consultants</a></div>
+      <div><a href="https://expert360.com/expert-titles/ai-engineers">Expert360, AI engineers</a></div>
+      <div><a href="https://expert360.com/expert-titles/business-strategy-consultants">Expert360, Business strategy consultants</a></div>
+      <div><a href="https://expert360.com/community-guides/strategy-freelancer-guide">Expert360, Strategy freelancer guide</a></div>
+      <div><a href="https://www.aitalentondemand.com.au/article/ai-transformation-leader-salary-australia-2026">AI Talent On Demand, AI transformation leader salary 2026</a></div>
+      <div><a href="https://www.aitalentondemand.com.au/article/ai-governance-specialist-salary-australia-2026">AI Talent On Demand, AI governance specialist salary 2026</a></div>
+      <div><a href="https://www.aitalentondemand.com.au/article/ai-solutions-architect-salary-australia-2026">AI Talent On Demand, AI solutions architect salary 2026</a></div>
+      <div><a href="https://clicks.com.au/job-salary/ai-governance-specialist/">Clicks, AI governance specialist rates</a></div>
+      <div><a href="https://clicks.com.au/job-salary/machine-learning-engineer/">Clicks, Machine learning engineer rates</a></div>
+      <div><a href="https://www.resourced.com.au/tools/salary-guide-2026">Re:Sourced, Australian tech engineering salary guide 2026</a></div>
+      <div><a href="https://www.resourced.com.au/articles/contractor-day-rates-australia-guide-2026">Re:Sourced, Tech contractor day rates 2026</a></div>
+      <div><a href="https://www.robertwalters.com.au/content/dam/robert-walters-redesign/country/australia/files/salary-survey/salary-guide-2026.pdf">Robert Walters, Salary Guide 2026 (Australia)</a></div>
+      <div><a href="https://www.robertwalters.co.nz/content/dam/robert-walters-redesign/country/australia/files/salary-survey/RWANZ-Tech-Transformation-Salary-Guide-2025.pdf">Robert Walters, Tech &amp; Transformation guide 2025</a></div>
+      <div><a href="https://factoryjet.com/blog/hire-ai-developers-australia-cost-2026">Factoryjet, Hire AI developers Australia 2026 (Robert Walters summary)</a></div>
+      <div><a href="https://factoryjet.com/blog/ai-cost-australia-2026">Factoryjet, AI consultant cost Australia 2026 (Flowtivity)</a></div>
+      <div><a href="https://bigwavedigital.com/ai-salary-guide-sydney/">Bigwave Digital, AI salary guide Sydney 2026</a></div>
+      <div><a href="https://au.hudson.com/salary-guide-projects-transformation/">Hudson, Projects &amp; Transformation salary guide</a></div>
+      <div><a href="https://www.morganmckinley.com/au/salary-guide/technology/contract-salaries">Morgan McKinley, Technology contract salaries 2026</a></div>
+      <div><a href="https://www.morganmckinley.com/au/2026-salary-guide/data/head-of-data-governance/sydney">Morgan McKinley, Head of Data Governance, Sydney</a></div>
+      <div><a href="https://www.paymetriclabs.com/au/contract-rates">Paymetric, Australia contractor day rates 2026</a></div>
+      <div><a href="https://aivy.com.au/resources/ai-consulting-costs-australia/">Aivy, What AI consulting really costs in Australia (AusTender analysis)</a></div>
+      <div><a href="https://www.nexusdigital.studio/guides/how-much-does-ai-consulting-cost-australia">Nexus Digital, AI consulting cost in Australia</a></div>
+      <div><a href="https://enterprisemonkey.com.au/9-most-common-ai-consulting-questions-melbourne-businesses-ask-2026/">Enterprise Monkey, AI consulting questions 2026</a></div>
+      <div><a href="https://amjid.au/services/fractional-caio/">Amjid.au, Fractional Chief AI Officer</a></div>
+      <div><a href="https://quickcert.com.au/2026/02/09/iso-42001-certification-australia-complete-guide/">QuickCert, ISO 42001 certification Australia 2026</a></div>
+      <div><a href="https://prepmybook.com/blog-consultant-daily-rate-benchmarks">prepmybook, Management consultant daily rate benchmarks 2026</a></div>
+      <div><a href="https://www.sharpcode.co.uk/insights/ai-consultant-day-rate-uk-2026">Sharpcode, AI consultant day rate UK 2026 (ITJobsWatch)</a></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
+  <span>AI Consulting Rates · Study 4 · Sydney · published figures only · October 2026</span>
+  <span><a href="../index.html">← Library</a></span>
+</div></footer>
+
+<div id="tip" role="tooltip"></div>
+
+<script>
+// [group, label, sublabel, lo, hi, type: m=measured p=published, source note]
+const DATA = [
+  ["Strategy & advisory","AI advisory & strategy","Expert360",1000,1500,"p","Expert360 AI consultants page; experts set own rates"],
+  ["Strategy & advisory","Business strategy specialist","Expert360",1200,2500,"p","Expert360 business strategy consultants"],
+  ["Strategy & advisory","Independent / specialist","Edison AI",1000,2500,"p","Edison AI insight guides"],
+  ["Strategy & advisory","Independent senior","Team 400",1400,2200,"p","Team 400 2026 day-rate table"],
+  ["Strategy & advisory","AI consultants","Nexus Digital",1200,3200,"p","Nexus Digital 2026 guide"],
+  ["Strategy & advisory","Senior AI consultant","Zinto (not located)",1500,3500,"p","As cited by you; source page not found"],
+  ["Transformation","AI transformation consultant","Galileo, Sydney",827,1300,"m","Mid A$827 to principal A$1,300; senior median A$1,016"],
+  ["Transformation","Program / portfolio director","Hudson",1300,1500,"m","Hudson Projects & Transformation guide"],
+  ["Transformation","Head of AI Transformation","Galileo median",1832,1832,"m","Median contract day rate"],
+  ["Leadership","Head of AI, interim","Galileo, Sydney",1306,1766,"m","Interim / fractional engagement rate"],
+  ["Leadership","Chief AI Officer, interim","Galileo, Sydney",1908,2582,"m","Interim / fractional engagement rate"],
+  ["Leadership","Fractional CAIO","AI Talent On Demand",1500,3000,"p","1–3 days a week; the figure attributed to Synap"],
+  ["Governance","AI governance lead","Galileo, Sydney",1030,1393,"m","Thin data; talent pool small"],
+  ["Governance","AI governance specialist","Clicks listings",850,1250,"m","Contract listings; salary-equivalent avg A$1,140"],
+  ["Governance","AI governance specialist","AI Talent On Demand",1000,2000,"p","Contract or fractional"],
+  ["Engineering","Senior AI engineer, NSW","Robert Walters 2026",1000,1150,"m","Via secondary summary"],
+  ["Engineering","Senior AI/ML engineer","Re:Sourced, Sydney",900,1200,"m","Principal A$1,100–1,300"],
+  ["Engineering","Senior GenAI engineer","Galileo, Sydney",1180,1596,"m","Large company tier"],
+  ["Engineering","GenAI / LLM specialist","Expert360",1500,3000,"p","Expert360 AI engineers page"],
+  ["Architecture","Enterprise architect","Morgan McKinley, Sydney",1150,1650,"m","Median A$1,350"],
+  ["Architecture","AI solutions architect","AI Talent On Demand",1400,2500,"p","Page also quotes A$1,800–2,500"],
+];
+const MIN=500, MAX=4500, REF=2000;
+const pct=v=>((v-MIN)/(MAX-MIN)*100);
+const rows=document.getElementById('rows'), tip=document.getElementById('tip');
+const fmt=n=>'A$'+n.toLocaleString('en-AU');
+let last='';
+DATA.forEach(([g,l,s,lo,hi,t,note])=>{
+  if(g!==last){const h=document.createElement('div');h.className='grp';h.textContent=g;rows.appendChild(h);last=g;}
+  const r=document.createElement('div');r.className='row';
+  const lab=document.createElement('div');lab.className='rl';lab.innerHTML=l+'<small>'+s+'</small>';
+  const tr=document.createElement('div');tr.className='track';
+  [1000,1500,2500,3000,3500,4000].forEach(v=>{const gl=document.createElement('i');gl.className='grid-l';gl.style.left=pct(v)+'%';tr.appendChild(gl);});
+  const ref=document.createElement('i');ref.className='ref';ref.style.left='calc('+pct(REF)+'% - 1px)';tr.appendChild(ref);
+  const b=document.createElement('span');b.className='b'+(lo===hi?' pt':'');b.tabIndex=0;
+  b.style.left=pct(lo)+'%';if(lo!==hi)b.style.width=(pct(hi)-pct(lo))+'%';
+  b.style.background=t==='m'?'var(--measured)':'var(--published)';
+  const txt='<b>'+l+'</b><br>'+s+': '+(lo===hi?fmt(lo):fmt(lo)+'–'+hi.toLocaleString('en-AU'))+'<br>'+(t==='m'?'Measured':'Published guide')+' · '+note;
+  b.setAttribute('aria-label',l+', '+s+', '+(lo===hi?fmt(lo):fmt(lo)+' to '+fmt(hi)));
+  const show=e=>{tip.innerHTML=txt;tip.style.opacity=1;const x=(e.clientX||b.getBoundingClientRect().left)+14,y=(e.clientY||b.getBoundingClientRect().top)+14;tip.style.left=Math.min(x,window.innerWidth-300)+'px';tip.style.top=y+'px';};
+  const hide=()=>tip.style.opacity=0;
+  // hit area larger than the mark
+  const hit=document.createElement('span');hit.className='hit';
+  hit.style.left='calc('+pct(lo)+'% - 6px)';hit.style.width='calc('+Math.max(pct(hi)-pct(lo),0)+'% + 12px)';
+  [hit,b].forEach(el=>{el.addEventListener('mousemove',show);el.addEventListener('mouseleave',hide);});
+  b.addEventListener('focus',show);b.addEventListener('blur',hide);
+  tr.appendChild(b);tr.appendChild(hit);
+  r.appendChild(lab);r.appendChild(tr);rows.appendChild(r);
+});
+const ticks=document.getElementById('ticks');
+[1000,2000,3000,4000].forEach(v=>{const s=document.createElement('span');s.style.left=pct(v)+'%';s.textContent=(v/1000)+'k';ticks.appendChild(s);});
+</script>
+</body>
+</html>
